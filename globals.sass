@@ -5,9 +5,13 @@ html, body
 	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif
 
 body
-	margin: 0.625rem
+	background-color: var(--bg-color)
+	color: var(--font-color)
+	margin-left: 0.625rem
+	margin-right: 0.625rem
 	@media (min-width: $desktop-breakpoint)
-		margin: 5rem
+		margin-left: 5rem
+		margin-right: 5rem
 
 a
 	color: inherit
@@ -17,11 +21,11 @@ a
 	box-sizing: border-box
 
 :root
+	--bg-color: #fff
 	--primary-color: #1eb3b6
 	--font-color: #171819
-	--bg-color: #fff
 
 [data-theme='dark']
+	--bg-color: #171819
 	--primary-color: #e53246
 	--font-color: #fff
-	--bg-color: #171819

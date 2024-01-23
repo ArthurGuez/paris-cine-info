@@ -1,0 +1,23 @@
+.header
+    margin-top: 0.625rem
+    display: flex
+    height: 3.438rem
+    align-items: center
+    justify-content: space-between
+    gap: 0 20px
+    &__logo
+        display: block
+        width: 35px
+        height: 35px
+        @media only screen and (min-width: 680px)
+            display: none
+    &__desktop-logo
+        display: none
+        @media only screen and (min-width: 680px)
+            display: block
+            width: 215px
+            height: 43px
+    &__options
+        display: none
+        @media only screen and (min-width: 680px)
+            display: block

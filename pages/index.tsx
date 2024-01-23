@@ -1,5 +1,11 @@
+import Header from '../components/organisms/Header/Header';
+
 function Home() {
-	return <div>Paris Cine Info</div>;
+	return (
+		<div>
+			<Header />
+		</div>
+	);
 }
 
 export default Home;

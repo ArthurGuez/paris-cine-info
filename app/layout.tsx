@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 
-import '../globals.sass';
+import '../globals.css';
+import '../index.css';
 
 export const metadata: Metadata = {
   title: 'Home',
@@ -15,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='fr'>
+    <html lang="fr">
       <body>{children}</body>
     </html>
   );

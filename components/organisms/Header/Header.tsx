@@ -1,19 +1,18 @@
 import Image from 'next/image';
 
-import Optionsbar from '../../molecules/Optionsbar/Optionsbar';
-import Searchbar from '../../molecules/Searchbar/Searchbar';
+import OptionsBar from '../../molecules/options-bar/OptionsBar';
+import Searchbar from '../../molecules/searchbar/Searchbar';
 import regularLogo from '../../../public/images/pci-logo.png';
 import smallLogo from '../../../public/images/small-pci-logo.png';
 import styles from './Header.module.css';
 import { css } from '../../../styled-system/css';
 
 const headerClassName = css({
-  marginTop: '0.625rem',
   display: 'flex',
-  height: '3.438rem',
   alignItems: 'center',
   justifyContent: 'space-between',
-  gap: '0 20px',
+  marginTop: '3',
+  gridGap: '8',
 });
 
 export default function Header() {
@@ -27,7 +26,7 @@ export default function Header() {
       </div>
       <Searchbar />
       <div className={styles.header__options}>
-        <Optionsbar />
+        <OptionsBar />
       </div>
     </header>
   );

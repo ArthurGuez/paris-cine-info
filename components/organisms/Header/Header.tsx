@@ -1,31 +1,27 @@
 import Image from 'next/image';
 
-import OptionsBar from '../../molecules/options-bar/OptionsBar';
-import Searchbar from '../../molecules/searchbar/Searchbar';
 import regularLogo from '../../../public/images/pci-logo.png';
 import smallLogo from '../../../public/images/small-pci-logo.png';
-import styles from './Header.module.css';
-import { css } from '../../../styled-system/css';
-
-const headerClassName = css({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'space-between',
-  marginTop: '3',
-  gridGap: '8',
-});
+import OptionsBar from '../../molecules/options-bar/OptionsBar';
+import SearchBar from '../../molecules/search-bar/SearchBar';
+import {
+  headerClass,
+  headerDesktopLogoClass,
+  headerLogoClass,
+  headerOptionsClass,
+} from './Header.style';
 
 export default function Header() {
   return (
-    <header className={headerClassName}>
-      <div className={styles.header__logo}>
+    <header className={headerClass}>
+      <div className={headerLogoClass}>
         <Image alt="Logo Paris Ciné Info" src={smallLogo} />
       </div>
-      <div className={styles['header__desktop-logo']}>
+      <div className={headerDesktopLogoClass}>
         <Image alt="Logo Paris Ciné Info" src={regularLogo} />
       </div>
-      <Searchbar />
-      <div className={styles.header__options}>
+      <SearchBar />
+      <div className={headerOptionsClass}>
         <OptionsBar />
       </div>
     </header>

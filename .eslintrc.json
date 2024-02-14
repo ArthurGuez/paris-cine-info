@@ -6,21 +6,23 @@
     "next/core-web-vitals",
     "plugin:@typescript-eslint/strict",
     "plugin:@typescript-eslint/stylistic",
+    "plugin:perfectionist/recommended-natural",
     "prettier"
   ],
   "parserOptions": {
     "project": ["tsconfig.json"]
   },
-  "plugins": ["testing-library"],
+  "plugins": ["testing-library", "perfectionist"],
   "rules": {
     "import/extensions": "off",
+    "import/prefer-default-export": "off",
+    "perfectionist/sort-objects": "off",
     "react/jsx-filename-extension": [
       1,
       {
         "extensions": [".tsx", ".jsx"]
       }
     ],
-    "import/prefer-default-export": "off",
     "react/jsx-props-no-spreading": "off",
     "react/require-default-props": "off",
     "import/no-extraneous-dependencies": [

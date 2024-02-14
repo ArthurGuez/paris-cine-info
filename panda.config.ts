@@ -22,6 +22,9 @@ export default defineConfig({
   theme: {
     extend: {
       tokens: defineTokens({
+        borders: {
+          subtle: { value: '1px solid {colors.primary}' },
+        },
         colors: {
           black: { value: '#171819' },
           white: { value: '#fff' },

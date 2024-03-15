@@ -13,7 +13,7 @@ Elle permet d'accéder à une liste de films en salle à Paris. L'utilisateur pe
 - Next.js : framework React incluant un router, des fonctionnalités SEO, le SSR, et permettant d'utiliser les Server Components (render des composants par le serveur, réduisant ainsi la charge côté client et améliorant les performances de chargement des pages).
 - React Table : facilite la gestion des données dans des tableaux complexes en incluant les fonctionnalités pour trier, filtrer, et paginer. Aucun style n'est imposé, les tableaux sont donc totalement personnalisables.
 - Panda CSS : librairie de CSS-in-JS zero runtime (CSS généré au build) compatible avec les Server Components.
-- Typescript : pour une meilleure maintenanibilité et fiabilitié du code, mais aussi pour améliorier la détection des erreurs.
+- Typescript : pour une meilleure maintenanibilité et fiabilitié du code, mais aussi pour améliorer la détection des erreurs.
 
 ## Structure du projet
 

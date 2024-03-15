@@ -2,6 +2,18 @@
 
 Designs finaux disponibles [ici](https://www.figma.com/file/l8pmDTYzH7hf1EvOoCsHYl/Paris-Cin%C3%A9-Info?type=design&node-id=1302%3A4623&mode=design&t=LJ9lkecIQhNYlOCT-1).
 
+## Installation et lancement de l'application
+
+```sh
+npm i
+```
+
+```sh
+npm run dev
+```
+
+Accessible sur : http://localhost:3000
+
 ## L'application et ses fonctionnalités
 
 L'application utilise React, Next 14 (App Router), Typescript, React Table et Panca CSS. Elle est branchée à une API Rest.

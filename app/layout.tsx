@@ -1,11 +1,10 @@
 import { Metadata } from 'next';
 
 import '../globals.css';
-import '../index.css';
 
 export const metadata: Metadata = {
-  title: 'Home',
-  description: 'Welcome to Next.js',
+  title: 'Paris Ciné Info - Le programme cinéma complet et sur mesure',
+  description: 'Le programme cinéma complet et sur mesure',
 };
 
 export default function RootLayout({

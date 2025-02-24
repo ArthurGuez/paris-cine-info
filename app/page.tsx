@@ -1,11 +1,11 @@
-import Header from '../components/organisms/Header/Header';
+import Header from '../components/organisms/header/Header';
 
 function Home() {
-	return (
-		<div>
-			<Header />
-		</div>
-	);
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 }
 
 export default Home;

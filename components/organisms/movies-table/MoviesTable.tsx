@@ -1,44 +1,13 @@
 'use client';
 
-import {
-  createColumnHelper,
-  flexRender,
-  getCoreRowModel,
-  useReactTable,
-} from '@tanstack/react-table';
+import type { SortingState } from '@tanstack/react-table';
+
+import { flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import { useState } from 'react';
 
 import type { Movie } from '../../../app/api/types';
 
-const columnHelper = createColumnHelper<Movie>();
-
-const columns = [
-  columnHelper.accessor('title', {
-    header: () => 'Titre',
-  }),
-  columnHelper.accessor('dir', {
-    header: () => 'Réalisateur',
-  }),
-  columnHelper.accessor('imdbr', {
-    header: () => 'IMDB',
-  }),
-  columnHelper.accessor('sc_rating', {
-    header: 'Sens Critique',
-  }),
-  columnHelper.accessor('allo_prating', {
-    header: () => 'Allo Presse',
-  }),
-  columnHelper.accessor('allo_srating', {
-    header: () => 'Allo Spec.',
-  }),
-  columnHelper.accessor((row) => row.year, {
-    id: 'year',
-    header: () => <span>Année</span>,
-  }),
-  columnHelper.accessor('copies', {
-    header: () => <span>Copies</span>,
-  }),
-];
+import { MOVIES_COLUMNS } from '../../../constants/columns';
 
 interface Props {
   movies: Movie[];
@@ -46,8 +15,17 @@ interface Props {
 
 export default function MoviesTable({ movies }: Props) {
   const [data] = useState<Movie[]>(movies);
+  const [sorting, setSorting] = useState<SortingState>([]);
 
-  const table = useReactTable({ columns, data, getCoreRowModel: getCoreRowModel() });
+  const table = useReactTable({
+    columns: MOVIES_COLUMNS,
+    data,
+    getCoreRowModel: getCoreRowModel(),
+    state: {
+      sorting,
+    },
+    onSortingChange: setSorting,
+  });
 
   return (
     <main>

@@ -2,7 +2,7 @@ import Header from '../components/organisms/header/Header';
 import MoviesTable from '../components/organisms/movies-table/MoviesTable';
 import { searchAll } from './api/movies';
 
-async function Home() {
+export default async function Home() {
   const { data } = await searchAll();
 
   return (
@@ -12,5 +12,3 @@ async function Home() {
     </div>
   );
 }
-
-export default Home;

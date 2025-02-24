@@ -12,14 +12,14 @@ export const headerLogoClass = css({
   display: 'block',
   width: '10',
   height: '10',
-  hideFrom: 'md',
+  hideFrom: 'lg',
 });
 
 export const headerDesktopLogoClass = css({
   display: 'block',
   width: '52',
   height: '10',
-  hideBelow: 'md',
+  hideBelow: 'lg',
 });
 
 export const headerOptionsClass = css({

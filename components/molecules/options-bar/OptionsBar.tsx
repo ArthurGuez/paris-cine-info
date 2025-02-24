@@ -4,16 +4,16 @@ import { css } from '../../../styled-system/css';
 import { token } from '../../../styled-system/tokens';
 import OptionsBarItem from '../../atoms/OptionsBarItem';
 
-const OptionsBarClassName = css({
-  display: 'flex',
+const optionsBarClass = css({
   alignItems: 'center',
+  display: 'flex',
 
   textTransform: 'uppercase',
 });
 
 export default function OptionsBar() {
   return (
-    <div className={OptionsBarClassName}>
+    <div className={optionsBarClass}>
       <OptionsBarItem label="Filtres">
         <Filters fill={token('colors.primary')} height="30px" width="30px" />
       </OptionsBarItem>

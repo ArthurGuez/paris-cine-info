@@ -1,22 +1,6 @@
 import type { ReactNode } from 'react';
-import { sva } from '../../styled-system/css';
 
-const optionsBarItemClassName = sva({
-  slots: ['root', 'label'],
-  base: {
-    root: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-evenly',
-
-      height: '10',
-      width: '40',
-      borderColor: 'primary',
-      borderStyle: 'solid',
-    },
-    label: { color: 'text', fontSize: 'xl', fontWeight: 'bold' },
-  },
-});
+import { optionsBarItemLabelClass, optionsBarItemWrapperClass } from './OptionsBarItem.style';
 
 interface Props {
   children: ReactNode;
@@ -24,12 +8,10 @@ interface Props {
 }
 
 export default function OptionsBarItem({ children, label }: Props) {
-  const classes = optionsBarItemClassName();
-
   return (
-    <div className={classes.root}>
+    <div className={optionsBarItemWrapperClass}>
       {children}
-      <span className={classes.label}>{label}</span>
+      <span className={optionsBarItemLabelClass}>{label}</span>
     </div>
   );
 }

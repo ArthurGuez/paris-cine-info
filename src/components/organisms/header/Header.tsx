@@ -1,7 +1,3 @@
-import Image from 'next/image';
-
-import regularLogo from '../../../public/images/pci-logo.png';
-import smallLogo from '../../../public/images/small-pci-logo.png';
 import OptionsBar from '../../molecules/options-bar/OptionsBar';
 import SearchBar from '../../molecules/search-bar/SearchBar';
 import {
@@ -15,10 +11,10 @@ export default function Header() {
   return (
     <header className={headerClass}>
       <div className={headerLogoClass}>
-        <Image alt="Logo Paris Ciné Info" src={smallLogo} />
+        <img alt="Logo Paris Ciné Info" src="/images/small-pci-logo.png" />
       </div>
       <div className={headerDesktopLogoClass}>
-        <Image alt="Logo Paris Ciné Info" src={regularLogo} />
+        <img alt="Logo Paris Ciné Info" src="/images/pci-logo.png" />
       </div>
       <SearchBar />
       <div className={headerOptionsClass}>

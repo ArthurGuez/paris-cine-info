@@ -5,7 +5,7 @@ import type { SortingState } from '@tanstack/react-table';
 import { flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import { useState } from 'react';
 
-import type { Movie } from '../../../app/api/types';
+import type { Movie } from '../../../api/types';
 
 import { MOVIES_COLUMNS } from '../../../constants/columns';
 

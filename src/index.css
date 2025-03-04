@@ -1,1 +1,20 @@
-@layer reset, base, tokens, recipes, utilities;
+@import 'tailwindcss';
+
+:root {
+  --background: #fff;
+  --body: #000;
+  --accent: #1eb3b6;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #171819;
+    --body: #fff;
+    --accent: #e53246;
+  }
+}
+
+@theme {
+  --color-body: var(--body);
+  --color-accent: var(--accent);
+}

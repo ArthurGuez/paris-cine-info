@@ -1,8 +1,6 @@
 import { createColumnHelper } from '@tanstack/react-table';
 
-import type { Movie } from '../app/api/types';
-
-import { css } from '../styled-system/css';
+import type { Movie } from '../api/types';
 
 const columnHelper = createColumnHelper<Movie>();
 
@@ -16,45 +14,13 @@ const DIRECTOR_COLUMN = columnHelper.accessor('dir', {
 });
 
 const IMDB_RATING_COLUMN = columnHelper.accessor('imdbr', {
-  header: () => (
-    <span
-      className={css({
-        hideBelow: 'md',
-      })}
-    >
-      IMDB
-    </span>
-  ),
-  cell: (info) => (
-    <span
-      className={css({
-        hideBelow: 'md',
-      })}
-    >
-      {info.getValue()}
-    </span>
-  ),
+  header: () => <span className="hidden md:inline">IMDB</span>,
+  cell: (info) => <span className="hidden md:inline">{info.getValue()}</span>,
 });
 
 const SENS_CRITIQUE_RATING_COLUMN = columnHelper.accessor('sc_rating', {
-  header: () => (
-    <span
-      className={css({
-        hideBelow: 'md',
-      })}
-    >
-      Sens Critique
-    </span>
-  ),
-  cell: (info) => (
-    <span
-      className={css({
-        hideBelow: 'md',
-      })}
-    >
-      {info.getValue()}
-    </span>
-  ),
+  header: () => <span className="hidden md:inline">Sens Critique</span>,
+  cell: (info) => <span className="hidden md:inline">{info.getValue()}</span>,
 });
 
 const ALLOCINE_PRESS_RATING_COLUMN = columnHelper.accessor('allo_prating', {
@@ -62,67 +28,19 @@ const ALLOCINE_PRESS_RATING_COLUMN = columnHelper.accessor('allo_prating', {
 });
 
 const ALLOCINE_VIEWER_RATING_COLUMN = columnHelper.accessor('allo_srating', {
-  header: () => (
-    <span
-      className={css({
-        hideBelow: 'md',
-      })}
-    >
-      Allo Spec.
-    </span>
-  ),
-  cell: (info) => (
-    <span
-      className={css({
-        hideBelow: 'md',
-      })}
-    >
-      {info.getValue()}
-    </span>
-  ),
+  header: () => <span className="hidden md:inline">Allo Spec.</span>,
+  cell: (info) => <span className="hidden md:inline">{info.getValue()}</span>,
 });
 
 const YEAR_COLUMN = columnHelper.accessor((row) => row.year, {
   id: 'year',
-  header: () => (
-    <span
-      className={css({
-        hideBelow: 'md',
-      })}
-    >
-      Année
-    </span>
-  ),
-  cell: (info) => (
-    <span
-      className={css({
-        hideBelow: 'md',
-      })}
-    >
-      {info.getValue()}
-    </span>
-  ),
+  header: () => <span className="hidden md:inline">Année</span>,
+  cell: (info) => <span className="hidden md:inline">{info.getValue()}</span>,
 });
 
 const COPIES_COLUMN = columnHelper.accessor('copies', {
-  header: () => (
-    <span
-      className={css({
-        hideBelow: 'md',
-      })}
-    >
-      Copies
-    </span>
-  ),
-  cell: (info) => (
-    <span
-      className={css({
-        hideBelow: 'md',
-      })}
-    >
-      {info.getValue()}
-    </span>
-  ),
+  header: () => <span className="hidden md:inline">Copies</span>,
+  cell: (info) => <span className="hidden md:inline">{info.getValue()}</span>,
 });
 
 export const MOVIES_COLUMNS = [

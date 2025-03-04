@@ -1,33 +1,33 @@
 # Paris-Ciné Info
 
-Designs finaux disponibles [ici](https://www.figma.com/file/l8pmDTYzH7hf1EvOoCsHYl/Paris-Cin%C3%A9-Info?type=design&node-id=1302%3A4623&mode=design&t=LJ9lkecIQhNYlOCT-1).
+Final designs available [here](https://www.figma.com/file/l8pmDTYzH7hf1EvOoCsHYl/Paris-Cin%C3%A9-Info?type=design&node-id=1302%3A4623&mode=design&t=LJ9lkecIQhNYlOCT-1).
 
-## Installation et lancement de l'application
+## Installation and Running the Application
 
 ```sh
-npm i
+pnpm i
 ```
 
 ```sh
-npm run dev
+pnpm run dev
 ```
 
-Accessible sur : http://localhost:3000
+Accessible at: http://localhost:3001
 
-## L'application et ses fonctionnalités
+## The Application and Its Features
 
-L'application utilise React, Next 14 (App Router), Typescript, React Table et Panca CSS. Elle est branchée à une API Rest.
+The application uses React, TanStack Router, TypeScript, React Table, and Tailwind CSS. It is connected to a REST API.
 
-Elle permet d'accéder à une liste de films en salle à Paris. L'utilisateur peut filtrer et trier les films selon un certain nombre de critères (par titre, par date de sortie, par genre, par salle de cinéma, par arrondissement...).
+It provides access to a list of movies currently playing in Paris. Users can filter and sort movies based on various criteria (by title, release date, genre, cinema, district, etc.).
 
 ## Technologies
 
-- Next.js (App Router) : framework React incluant un router, des fonctionnalités SEO, le SSR, et permettant d'utiliser les Server Components (render des composants par le serveur, réduisant ainsi la charge côté client et améliorant les performances de chargement des pages).
-- TanStack Table : facilite la gestion des données dans des tableaux complexes en incluant les fonctionnalités pour trier, filtrer, et paginer. Aucun style n'est imposé, les tableaux sont donc totalement personnalisables.
-- Panda CSS : librairie de CSS-in-JS zero runtime (CSS généré au build) compatible avec les Server Components.
-- Typescript : pour une meilleure maintenabilité et fiabilité du code, mais aussi pour améliorer la détection des erreurs.
+- **TanStack Router**: A type-safe and flexible routing library for React, offering fine-grained control over navigation, state management, and data loading.
+- **TanStack Table**: Simplifies data management in complex tables by including features for sorting, filtering, and pagination. No predefined styles are imposed, making the tables fully customizable.
+- **Tailwind CSS**: A utility-first CSS framework that enables rapid UI development with a highly customizable design system, improving maintainability and consistency.
+- **TypeScript**: Enhances code maintainability and reliability while also improving error detection.
 
-## Structure du projet
+## Project Structure
 
-Le projet est structuré en respectant les principes de l'atomic design.
-Les composants sont rangés dans des dossiers atoms, molecules et organisms.
+The project follows the principles of Atomic Design.  
+Components are organized into **atoms, molecules, and organisms** folders.

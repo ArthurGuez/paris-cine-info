@@ -1,15 +1,36 @@
-import * as React from 'react'
-import { Link, Outlet, createRootRoute } from '@tanstack/react-router'
-import { TanStackRouterDevtools } from '@tanstack/router-devtools'
+import { HeadContent, Link, Outlet, createRootRoute } from '@tanstack/react-router';
+import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 
 export const Route = createRootRoute({
-  component: RootComponent,
-})
+  component: () => (
+    <>
+      <HeadContent />
+      <RootComponent />
+    </>
+  ),
+  head: () => ({
+    meta: [
+      {
+        name: 'description',
+        content: 'Le programme cinéma complet et sur mesure',
+      },
+      {
+        title: 'Paris Ciné Info - Le programme cinéma complet et sur mesure',
+      },
+    ],
+    links: [
+      {
+        rel: 'icon',
+        href: '/favicon.ico',
+      },
+    ],
+  }),
+});
 
 function RootComponent() {
   return (
     <>
-      <div className="p-2 flex gap-2 text-lg">
+      <div className="flex gap-2 p-2 text-lg">
         <Link
           to="/"
           activeProps={{
@@ -32,5 +53,5 @@ function RootComponent() {
       <Outlet />
       <TanStackRouterDevtools position="bottom-right" />
     </>
-  )
+  );
 }

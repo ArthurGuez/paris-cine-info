@@ -7,10 +7,9 @@ export const Route = createFileRoute('/')({
 
 function HomeComponent() {
   return (
-    <div>
-      Home
+    <>
       <Header />
       {/* <MoviesTable movies={data} /> */}
-    </div>
+    </>
   );
 }

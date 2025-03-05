@@ -1,5 +1,3 @@
-'use client';
-
 import type { SortingState } from '@tanstack/react-table';
 
 import { flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';

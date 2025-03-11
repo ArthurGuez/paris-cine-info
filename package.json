@@ -4,11 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "typecheck": "tsc --noEmit",
-    "dev": "vite --port=3001",
     "build": "vite build",
+    "dev": "vite --port=3001",
+    "lint": "eslint",
     "serve": "vite preview",
-    "start": "vite"
+    "start": "vite",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@svg-use/react": "^0.4.3",

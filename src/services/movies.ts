@@ -2,7 +2,7 @@ import type { SearchAllResponse } from './types';
 
 export async function searchAll(): Promise<SearchAllResponse> {
   const res = await fetch(
-    'https://paris-cine.info/get_pcimovies.php?selday=week&selcard=ugc&seladdr=Paris',
+    'https://paris-cine.info/get_pcimovies_nocors.php?selday=week&selcard=ugc&seladdr=Paris',
   );
 
   if (!res.ok) {

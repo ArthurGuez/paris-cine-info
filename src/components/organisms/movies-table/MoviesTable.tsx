@@ -3,21 +3,17 @@ import type { SortingState } from '@tanstack/react-table';
 import { flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
 import { useState } from 'react';
 
-import type { Movie } from '../../../api/types';
-
 import { MOVIES_COLUMNS } from '../../../constants/columns';
+import { getRouteApi } from '@tanstack/react-router';
 
-interface Props {
-  movies: Movie[];
-}
-
-export default function MoviesTable({ movies }: Props) {
-  const [data] = useState<Movie[]>(movies);
+export default function MoviesTable() {
+  const routeApi = getRouteApi('/');
+  const loaderData = routeApi.useLoaderData();
   const [sorting, setSorting] = useState<SortingState>([]);
 
   const table = useReactTable({
     columns: MOVIES_COLUMNS,
-    data,
+    data: loaderData.data,
     getCoreRowModel: getCoreRowModel(),
     state: {
       sorting,
@@ -31,7 +27,7 @@ export default function MoviesTable({ movies }: Props) {
         <table>
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
-              <tr key={headerGroup.id}>
+              <tr className="text-body" key={headerGroup.id}>
                 {headerGroup.headers.map((header) => (
                   <th key={header.id}>
                     {header.isPlaceholder
@@ -44,7 +40,7 @@ export default function MoviesTable({ movies }: Props) {
           </thead>
           <tbody>
             {table.getRowModel().rows.map((row) => (
-              <tr key={row.id}>
+              <tr className="text-body" key={row.id}>
                 {row.getVisibleCells().map((cell) => (
                   <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
                 ))}

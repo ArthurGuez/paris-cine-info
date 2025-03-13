@@ -1,11 +1,11 @@
 import { createFileRoute } from '@tanstack/react-router';
 import Header from '../components/organisms/header/Header';
-import { searchAll } from '../services/movies';
-import MoviesTable from '../components/organisms/movies-table/MoviesTable';
+import { getAllMovies } from '../services/movies';
+import MoviesTable from '../components/organisms/movies/MoviesTable';
 
 export const Route = createFileRoute('/')({
   component: HomeComponent,
-  loader: () => searchAll(),
+  loader: () => getAllMovies(),
 });
 
 function HomeComponent() {

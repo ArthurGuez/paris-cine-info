@@ -1,10 +1,16 @@
 import type { SortingState } from '@tanstack/react-table';
 
-import { flexRender, getCoreRowModel, useReactTable } from '@tanstack/react-table';
-import { useState } from 'react';
+import {
+  flexRender,
+  getCoreRowModel,
+  getExpandedRowModel,
+  useReactTable,
+} from '@tanstack/react-table';
+import React, { useState } from 'react';
 
 import { MOVIES_COLUMNS } from '../../../constants/columns';
 import { getRouteApi } from '@tanstack/react-router';
+import Movie from './Movie';
 
 export default function MoviesTable() {
   const routeApi = getRouteApi('/');
@@ -15,6 +21,9 @@ export default function MoviesTable() {
     columns: MOVIES_COLUMNS,
     data: loaderData.data,
     getCoreRowModel: getCoreRowModel(),
+    getExpandedRowModel: getExpandedRowModel(),
+    // By default, the row.getCanExpand() row instance API will return false unless it finds subRows on a row
+    getRowCanExpand: (row) => true,
     state: {
       sorting,
     },
@@ -38,13 +47,24 @@ export default function MoviesTable() {
               </tr>
             ))}
           </thead>
-          <tbody>
+          <tbody className="text-body">
             {table.getRowModel().rows.map((row) => (
-              <tr className="text-body" key={row.id}>
-                {row.getVisibleCells().map((cell) => (
-                  <td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
-                ))}
-              </tr>
+              <React.Fragment key={row.id}>
+                <tr onClick={row.getToggleExpandedHandler()}>
+                  {row.getVisibleCells().map((cell) => (
+                    <td key={cell.id}>
+                      {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                    </td>
+                  ))}
+                </tr>
+                {row.getIsExpanded() && (
+                  <tr>
+                    <td colSpan={row.getAllCells().length}>
+                      <Movie id={row.original.id} />
+                    </td>
+                  </tr>
+                )}
+              </React.Fragment>
             ))}
           </tbody>
           <tfoot>

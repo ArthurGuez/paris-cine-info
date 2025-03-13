@@ -19,7 +19,7 @@ export interface Movie {
   ye: string;
 }
 
-export interface SearchAllResponse {
+export interface GetAllMoviesResponse {
   data: Movie[];
   favs: boolean;
   follow_movs: string[];

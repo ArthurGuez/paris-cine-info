@@ -1,14 +1,25 @@
-import type { SearchAllResponse } from './types';
+import type { GetAllMoviesResponse } from './types';
 
-export async function searchAll(): Promise<SearchAllResponse> {
+export async function getAllMovies(): Promise<GetAllMoviesResponse> {
   const res = await fetch(
     'https://paris-cine.info/get_pcimovies_nocors.php?selday=week&selcard=ugc&seladdr=Paris',
   );
 
   if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
     throw new Error('Failed to fetch data');
   }
 
   return res.json();
+}
+
+export async function getPoster(id: string): Promise<string> {
+  const res = await fetch(`https://paris-cine.info/get_poster_nocors.php?id=${id}`);
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch data');
+  }
+
+  const posterBlob = await res.blob();
+
+  return URL.createObjectURL(posterBlob);
 }

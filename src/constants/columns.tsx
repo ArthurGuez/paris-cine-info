@@ -1,45 +1,88 @@
 import { createColumnHelper } from '@tanstack/react-table';
 
 import type { Movie } from '../services/types';
+import SortingArrows from '../components/molecules/sorting-arrows/SortingArrows';
+import imdbLogo from '../icons/imdb-logo.svg';
+import allocineCriticsIcon from '../icons/allocine-critics.svg';
+import allocinePublicIcon from '../icons/allocine-public.svg';
+import sensCritiqueLogo from '../icons/sens-critique-logo.svg';
 
 const columnHelper = createColumnHelper<Movie>();
 
 const TITLE_COLUMN = columnHelper.accessor('ti', {
-  header: () => 'Titre',
+  header: () => (
+    <div className="flex items-center gap-1">
+      Titre <SortingArrows />
+    </div>
+  ),
   enableSorting: true,
 });
 
 const DIRECTOR_COLUMN = columnHelper.accessor('di', {
-  header: () => 'Réalisateur',
+  header: () => (
+    <div className="flex items-center gap-1">
+      Réalisateur <SortingArrows />
+    </div>
+  ),
 });
 
 const IMDB_RATING_COLUMN = columnHelper.accessor('im_r', {
-  header: () => <span className="hidden md:inline">IMDB</span>,
-  cell: (info) => <span className="hidden md:inline">{info.getValue()}</span>,
+  header: () => (
+    <div className="flex items-center gap-1">
+      <img alt="IMDB" src={imdbLogo} />
+      <SortingArrows />
+    </div>
+  ),
+  cell: (info) => <span className="hidden lg:inline">{info.getValue()}</span>,
 });
 
 const SENS_CRITIQUE_RATING_COLUMN = columnHelper.accessor('sc_r', {
-  header: () => <span className="hidden md:inline">Sens Critique</span>,
-  cell: (info) => <span className="hidden md:inline">{info.getValue()}</span>,
+  header: () => (
+    <div className="flex items-center gap-1">
+      <img alt="Sens Critique" src={sensCritiqueLogo} />
+      <SortingArrows />
+    </div>
+  ),
+  cell: (info) => <span className="hidden lg:inline">{info.getValue()}</span>,
 });
 
 const ALLOCINE_PRESS_RATING_COLUMN = columnHelper.accessor('ap_r', {
-  header: () => <span>Allo Presse</span>,
+  header: () => (
+    <div className="flex items-center gap-1">
+      <img alt="Allociné Presse" src={allocineCriticsIcon} />
+      <SortingArrows />
+    </div>
+  ),
 });
 
 const ALLOCINE_VIEWER_RATING_COLUMN = columnHelper.accessor('as_r', {
-  header: () => <span className="hidden md:inline">Allo Spec.</span>,
+  header: () => (
+    <div className="flex items-center gap-1">
+      <img alt="Allociné Spectateurs" src={allocinePublicIcon} />
+      <SortingArrows />
+    </div>
+  ),
   cell: (info) => <span className="hidden md:inline">{info.getValue()}</span>,
 });
 
 const YEAR_COLUMN = columnHelper.accessor((row) => row.ye, {
   id: 'ye',
-  header: () => <span className="hidden md:inline">Année</span>,
+  header: () => (
+    <div className="flex items-center gap-1">
+      Année
+      <SortingArrows />
+    </div>
+  ),
   cell: (info) => <span className="hidden md:inline">{info.getValue()}</span>,
 });
 
-const COPIES_COLUMN = columnHelper.accessor('co', {
-  header: () => <span className="hidden md:inline">Copies</span>,
+const SCREENINGS_COLUMN = columnHelper.accessor('co', {
+  header: () => (
+    <div className="flex items-center gap-1">
+      Séances
+      <SortingArrows />
+    </div>
+  ),
   cell: (info) => <span className="hidden md:inline">{info.getValue()}</span>,
 });
 
@@ -51,5 +94,5 @@ export const MOVIES_COLUMNS = [
   ALLOCINE_PRESS_RATING_COLUMN,
   ALLOCINE_VIEWER_RATING_COLUMN,
   YEAR_COLUMN,
-  COPIES_COLUMN,
+  SCREENINGS_COLUMN,
 ];

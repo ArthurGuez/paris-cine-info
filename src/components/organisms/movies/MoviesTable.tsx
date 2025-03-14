@@ -30,10 +30,13 @@ export default function MoviesTable() {
 
   return (
     <main>
-      <table className="w-full border-spacing-x-3">
+      <table className="w-full">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
-            <tr className="border-b border-accent text-body uppercase" key={headerGroup.id}>
+            <tr
+              className="sticky top-[64px] border-b border-accent bg-gradient-to-b from-background via-background to-background/90 text-body uppercase lg:top-[75px]"
+              key={headerGroup.id}
+            >
               {headerGroup.headers.map((header) => (
                 <th className="pb-3 text-start" key={header.id}>
                   {header.isPlaceholder

@@ -6,6 +6,7 @@ import imdbLogo from '../icons/imdb-logo.svg';
 import allocineCriticsIcon from '../icons/allocine-critics.svg';
 import allocinePublicIcon from '../icons/allocine-public.svg';
 import sensCritiqueLogo from '../icons/sens-critique-logo.svg';
+import Rating from '../components/atoms/cells/Rating';
 
 const columnHelper = createColumnHelper<Movie>();
 
@@ -28,62 +29,79 @@ const DIRECTOR_COLUMN = columnHelper.accessor('di', {
 
 const IMDB_RATING_COLUMN = columnHelper.accessor('im_r', {
   header: () => (
-    <div className="flex items-center gap-1">
+    <div className="flex min-w-4 items-center justify-center gap-1">
       <img alt="IMDB" src={imdbLogo} />
       <SortingArrows />
     </div>
   ),
-  cell: (info) => <span className="hidden lg:inline">{info.getValue()}</span>,
+  cell: (info) => (
+    <div className="flex justify-center">
+      <Rating value={info.getValue()} />
+    </div>
+  ),
 });
 
 const SENS_CRITIQUE_RATING_COLUMN = columnHelper.accessor('sc_r', {
   header: () => (
-    <div className="flex items-center gap-1">
+    <div className="hidden min-w-4 lg:flex lg:items-center lg:justify-center lg:gap-1">
       <img alt="Sens Critique" src={sensCritiqueLogo} />
       <SortingArrows />
     </div>
   ),
-  cell: (info) => <span className="hidden lg:inline">{info.getValue()}</span>,
+  cell: (info) => (
+    <div className="hidden lg:flex lg:justify-center">
+      <Rating value={info.getValue()} />
+    </div>
+  ),
 });
 
 const ALLOCINE_PRESS_RATING_COLUMN = columnHelper.accessor('ap_r', {
   header: () => (
-    <div className="flex items-center gap-1">
+    <div className="hidden min-w-4 lg:flex lg:items-center lg:justify-center lg:gap-1">
       <img alt="Allociné Presse" src={allocineCriticsIcon} />
       <SortingArrows />
+    </div>
+  ),
+  cell: (info) => (
+    <div className="hidden lg:flex lg:justify-center">
+      <Rating value={info.getValue()} />
     </div>
   ),
 });
 
 const ALLOCINE_VIEWER_RATING_COLUMN = columnHelper.accessor('as_r', {
   header: () => (
-    <div className="flex items-center gap-1">
+    <div className="hidden min-w-4 lg:flex lg:items-center lg:justify-center lg:gap-1">
       <img alt="Allociné Spectateurs" src={allocinePublicIcon} />
       <SortingArrows />
     </div>
   ),
-  cell: (info) => <span className="hidden md:inline">{info.getValue()}</span>,
+  cell: (info) => (
+    <div className="hidden lg:flex lg:justify-center">
+      <Rating value={info.getValue()} />
+    </div>
+  ),
 });
 
 const YEAR_COLUMN = columnHelper.accessor((row) => row.ye, {
   id: 'ye',
   header: () => (
-    <div className="flex items-center gap-1">
+    <div className="hidden lg:flex lg:items-center lg:justify-center lg:gap-1">
       Année
       <SortingArrows />
     </div>
   ),
-  cell: (info) => <span className="hidden md:inline">{info.getValue()}</span>,
+  cell: (info) => <p className="hidden lg:block lg:text-center">{info.getValue()}</p>,
 });
 
 const SCREENINGS_COLUMN = columnHelper.accessor('co', {
   header: () => (
-    <div className="flex items-center gap-1">
+    <div className="hidden lg:flex lg:items-center lg:justify-center lg:gap-1">
       Séances
       <SortingArrows />
     </div>
   ),
-  cell: (info) => <span className="hidden md:inline">{info.getValue()}</span>,
+  cell: (info) => <p className="hidden lg:block lg:text-center">{info.getValue()}</p>,
 });
 
 export const MOVIES_COLUMNS = [

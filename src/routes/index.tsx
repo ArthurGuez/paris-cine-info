@@ -10,7 +10,7 @@ export const Route = createFileRoute('/')({
 
 function HomeComponent() {
   return (
-    <div className="mx-10 my-3 flex flex-col gap-8">
+    <div className="mx-4 mb-3 flex flex-col lg:mx-10">
       <Header />
       <MoviesTable />
     </div>

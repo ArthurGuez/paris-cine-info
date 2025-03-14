@@ -17,4 +17,5 @@
 @theme {
   --color-body: var(--body);
   --color-accent: var(--accent);
+  --color-background: var(--background);
 }

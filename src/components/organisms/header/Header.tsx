@@ -3,7 +3,7 @@ import SearchBar from '../../molecules/search-bar/SearchBar';
 
 export default function Header() {
   return (
-    <header className="sticky top-0 flex items-center justify-between gap-5 bg-background py-3">
+    <header className="sticky top-0 flex items-center justify-between gap-5 bg-background p-3">
       <div className="block w-10 lg:hidden">
         <img alt="Logo Paris Ciné Info" src="/images/small-pci-logo.png" />
       </div>

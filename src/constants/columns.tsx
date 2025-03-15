@@ -3,7 +3,7 @@ import { createColumnHelper } from '@tanstack/react-table';
 import type { Movie } from '../services/types';
 import SortingArrows from '../components/molecules/sorting-arrows/SortingArrows';
 import imdbLogo from '../icons/imdb-logo.svg';
-import allocineCriticsIcon from '../icons/allocine-critics.svg';
+import allocinePressIcon from '../icons/allocine-press.svg';
 import allocinePublicIcon from '../icons/allocine-public.svg';
 import sensCritiqueLogo from '../icons/sens-critique-logo.svg';
 import Rating from '../components/atoms/cells/Rating';
@@ -29,7 +29,7 @@ const DIRECTOR_COLUMN = columnHelper.accessor('di', {
 
 const IMDB_RATING_COLUMN = columnHelper.accessor('im_r', {
   header: () => (
-    <div className="flex min-w-4 items-center justify-center gap-1">
+    <div className="flex items-center justify-center gap-1">
       <img alt="IMDB" src={imdbLogo} />
       <SortingArrows />
     </div>
@@ -43,7 +43,7 @@ const IMDB_RATING_COLUMN = columnHelper.accessor('im_r', {
 
 const SENS_CRITIQUE_RATING_COLUMN = columnHelper.accessor('sc_r', {
   header: () => (
-    <div className="hidden min-w-4 lg:flex lg:items-center lg:justify-center lg:gap-1">
+    <div className="hidden lg:flex lg:items-center lg:justify-center lg:gap-1">
       <img alt="Sens Critique" src={sensCritiqueLogo} />
       <SortingArrows />
     </div>
@@ -57,8 +57,8 @@ const SENS_CRITIQUE_RATING_COLUMN = columnHelper.accessor('sc_r', {
 
 const ALLOCINE_PRESS_RATING_COLUMN = columnHelper.accessor('ap_r', {
   header: () => (
-    <div className="hidden min-w-4 lg:flex lg:items-center lg:justify-center lg:gap-1">
-      <img alt="Allociné Presse" src={allocineCriticsIcon} />
+    <div className="hidden lg:flex lg:items-center lg:justify-center lg:gap-1">
+      <img alt="Allociné Presse" src={allocinePressIcon} />
       <SortingArrows />
     </div>
   ),
@@ -71,7 +71,7 @@ const ALLOCINE_PRESS_RATING_COLUMN = columnHelper.accessor('ap_r', {
 
 const ALLOCINE_VIEWER_RATING_COLUMN = columnHelper.accessor('as_r', {
   header: () => (
-    <div className="hidden min-w-4 lg:flex lg:items-center lg:justify-center lg:gap-1">
+    <div className="hidden lg:flex lg:items-center lg:justify-center lg:gap-1">
       <img alt="Allociné Spectateurs" src={allocinePublicIcon} />
       <SortingArrows />
     </div>

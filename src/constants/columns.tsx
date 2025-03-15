@@ -12,7 +12,7 @@ const columnHelper = createColumnHelper<Movie>();
 
 const TITLE_COLUMN = columnHelper.accessor('ti', {
   header: () => (
-    <div className="flex items-center gap-1">
+    <div className="flex min-w-40 items-center gap-1">
       Titre <SortingArrows />
     </div>
   ),

@@ -11,6 +11,7 @@ import React, { useState } from 'react';
 import { MOVIES_COLUMNS } from '../../../constants/columns';
 import { getRouteApi } from '@tanstack/react-router';
 import Movie from './Movie';
+import OptionsBar from '../../molecules/options-bar/OptionsBar';
 
 export default function MoviesTable() {
   const routeApi = getRouteApi('/');
@@ -84,6 +85,9 @@ export default function MoviesTable() {
           ))}
         </tfoot>
       </table>
+      <div className="sticky bottom-0 bg-background md:hidden">
+        <OptionsBar />
+      </div>
     </main>
   );
 }

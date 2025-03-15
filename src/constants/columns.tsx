@@ -21,10 +21,15 @@ const TITLE_COLUMN = columnHelper.accessor('ti', {
 
 const DIRECTOR_COLUMN = columnHelper.accessor('di', {
   header: () => (
-    <div className="flex items-center gap-1">
+    <div className="flex min-w-35 items-center gap-1">
       Réalisateur <SortingArrows />
     </div>
   ),
+  cell: (info) =>
+    info
+      .getValue()
+      .split(',')
+      .map((director) => <p>{director}</p>),
 });
 
 const IMDB_RATING_COLUMN = columnHelper.accessor('im_r', {

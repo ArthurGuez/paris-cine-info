@@ -29,12 +29,12 @@ export default function MoviesTable() {
   });
 
   return (
-    <main className="px-3">
+    <main className="px-1.5 lg:px-3">
       <table className="w-full">
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
             <tr
-              className="sticky top-[64px] bg-gradient-to-b from-background via-background to-background/90 text-body uppercase lg:top-[75px]"
+              className="sticky top-[56px] bg-gradient-to-b from-background via-background to-background/90 text-body uppercase lg:top-[75px]"
               key={headerGroup.id}
             >
               {headerGroup.headers.map((header) => (

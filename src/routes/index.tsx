@@ -12,7 +12,6 @@ import {
 
 import { MOVIES_COLUMNS } from '../constants/columns';
 import { getRouteApi } from '@tanstack/react-router';
-import { useState } from 'react';
 
 export const Route = createFileRoute('/')({
   component: HomeComponent,
@@ -32,7 +31,7 @@ function HomeComponent() {
     globalFilterFn: 'includesString',
     getSortedRowModel: getSortedRowModel(),
     // By default, the row.getCanExpand() row instance API will return false unless it finds subRows on a row
-    getRowCanExpand: (row) => true,
+    getRowCanExpand: () => true,
   });
 
   function handleSearch(searchTerm: string) {

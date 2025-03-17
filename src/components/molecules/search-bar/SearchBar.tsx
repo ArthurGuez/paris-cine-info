@@ -20,7 +20,9 @@ export default function SearchBar({ onSearch }: Props) {
         <input
           className="h-10 w-full truncate rounded-full border border-accent bg-transparent pr-11 pl-5 text-base text-body outline-none"
           name="query"
-          onChange={(event) => setSearchTerm(event.target.value)}
+          onChange={(event) => {
+            setSearchTerm(event.target.value);
+          }}
           placeholder={SEARCH_BAR_PLACEHOLDER}
           value={searchTerm}
         />

@@ -1,4 +1,4 @@
-import { HeadContent, Link, Outlet, createRootRoute } from '@tanstack/react-router';
+import { HeadContent, Outlet, createRootRoute } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 
 export const Route = createRootRoute({
@@ -10,20 +10,10 @@ export const Route = createRootRoute({
   ),
   head: () => ({
     meta: [
-      {
-        name: 'description',
-        content: 'Le programme cinéma complet et sur mesure',
-      },
-      {
-        title: 'Paris Ciné Info - Le programme cinéma complet et sur mesure',
-      },
+      { name: 'description', content: 'Le programme cinéma complet et sur mesure' },
+      { title: 'Paris Ciné Info - Le programme cinéma complet et sur mesure' },
     ],
-    links: [
-      {
-        rel: 'icon',
-        href: '/favicon.ico',
-      },
-    ],
+    links: [{ rel: 'icon', href: '/favicon.ico' }],
   }),
 });
 
@@ -31,7 +21,7 @@ function RootComponent() {
   return (
     <>
       <Outlet />
-      <TanStackRouterDevtools position="bottom-right" />
+      {/* <TanStackRouterDevtools position="bottom-right" /> */}
     </>
   );
 }

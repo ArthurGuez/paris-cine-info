@@ -1,4 +1,3 @@
-import type { SortingState } from '@tanstack/react-table';
 import { createFileRoute } from '@tanstack/react-router';
 import Header from '../components/organisms/header/Header';
 import { getAllMovies } from '../services/movies';
@@ -7,6 +6,7 @@ import {
   getCoreRowModel,
   getExpandedRowModel,
   getFilteredRowModel,
+  getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table';
 
@@ -22,7 +22,6 @@ export const Route = createFileRoute('/')({
 function HomeComponent() {
   const routeApi = getRouteApi('/');
   const loaderData = routeApi.useLoaderData();
-  const [sorting, setSorting] = useState<SortingState>([]);
 
   const table = useReactTable({
     columns: MOVIES_COLUMNS,
@@ -31,10 +30,9 @@ function HomeComponent() {
     getExpandedRowModel: getExpandedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
     globalFilterFn: 'includesString',
+    getSortedRowModel: getSortedRowModel(),
     // By default, the row.getCanExpand() row instance API will return false unless it finds subRows on a row
     getRowCanExpand: (row) => true,
-    state: { sorting },
-    onSortingChange: setSorting,
   });
 
   function handleSearch(searchTerm: string) {

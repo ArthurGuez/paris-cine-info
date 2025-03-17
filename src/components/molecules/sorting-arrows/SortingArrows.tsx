@@ -1,13 +1,27 @@
+import { SortDirection } from '@tanstack/react-table';
 import { Component as Triangle } from '../../../icons/triangle.svg?svgUse';
+import { Component as FilledTriangle } from '../../../icons/filled-triangle.svg?svgUse';
 
-export default function SortingArrows() {
+interface Props {
+  isSorted?: false | SortDirection;
+}
+
+export default function SortingArrows({ isSorted }: Props) {
   return (
     <div className="flex flex-col">
       <div>
-        <Triangle color="var(--accent)" height="15px" width="18px" />
+        {isSorted === 'asc' ? (
+          <FilledTriangle color="var(--accent)" height="15px" width="18px" />
+        ) : (
+          <Triangle color="var(--accent)" height="15px" width="18px" />
+        )}
       </div>
       <div className="rotate-180">
-        <Triangle color="var(--accent)" height="15px" width="18px" />
+        {isSorted === 'desc' ? (
+          <FilledTriangle color="var(--accent)" height="15px" width="18px" />
+        ) : (
+          <Triangle color="var(--accent)" height="15px" width="18px" />
+        )}
       </div>
     </div>
   );

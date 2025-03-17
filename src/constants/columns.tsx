@@ -29,7 +29,7 @@ const DIRECTOR_COLUMN = columnHelper.accessor('di', {
     info
       .getValue()
       .split(',')
-      .map((director) => <p>{director}</p>),
+      .map((director) => <p key={director}>{director}</p>),
 });
 
 const IMDB_RATING_COLUMN = columnHelper.accessor('im_r', {

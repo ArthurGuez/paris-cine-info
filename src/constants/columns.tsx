@@ -16,6 +16,7 @@ const TITLE_COLUMN = columnHelper.accessor('ti', {
       Titre <SortingArrows />
     </div>
   ),
+  cell: (info) => <p className="font-bold">{info.getValue()}</p>,
   enableSorting: true,
 });
 

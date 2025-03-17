@@ -9,10 +9,7 @@ export default tseslint.config(
   tseslint.configs.stylisticTypeChecked,
   {
     languageOptions: {
-      parserOptions: {
-        projectService: true,
-        tsconfigRootDir: __dirname,
-      },
+      parserOptions: { projectService: true, tsconfigRootDir: import.meta.dirname },
     },
   },
 );

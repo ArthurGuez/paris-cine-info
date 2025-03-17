@@ -1,34 +1,15 @@
-import type { SortingState } from '@tanstack/react-table';
+import { flexRender, Table } from '@tanstack/react-table';
+import React from 'react';
 
-import {
-  flexRender,
-  getCoreRowModel,
-  getExpandedRowModel,
-  useReactTable,
-} from '@tanstack/react-table';
-import React, { useState } from 'react';
-
-import { MOVIES_COLUMNS } from '../../../constants/columns';
-import { getRouteApi } from '@tanstack/react-router';
 import Movie from './Movie';
 import OptionsBar from '../../molecules/options-bar/OptionsBar';
+import { Movie as MovieType } from '../../../services/types';
 
-export default function MoviesTable() {
-  const routeApi = getRouteApi('/');
-  const loaderData = routeApi.useLoaderData();
-  const [sorting, setSorting] = useState<SortingState>([]);
+interface Props {
+  table: Table<MovieType>;
+}
 
-  const table = useReactTable({
-    columns: MOVIES_COLUMNS,
-    data: loaderData.data,
-    getCoreRowModel: getCoreRowModel(),
-    getExpandedRowModel: getExpandedRowModel(),
-    // By default, the row.getCanExpand() row instance API will return false unless it finds subRows on a row
-    getRowCanExpand: (row) => true,
-    state: { sorting },
-    onSortingChange: setSorting,
-  });
-
+export default function MoviesTable({ table }: Props) {
   return (
     <main className="flex flex-grow flex-col overflow-hidden">
       <div className="flex-grow overflow-auto px-1.5 lg:px-3">

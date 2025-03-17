@@ -42,7 +42,7 @@ function HomeComponent() {
   }
 
   return (
-    <div className="flex h-dvh flex-col text-sm lg:mx-10 lg:mb-3 lg:text-base">
+    <div className="flex h-dvh flex-col text-sm lg:mx-10 lg:text-base">
       <Header onSearch={handleSearch} />
       <MoviesTable table={table} />
     </div>

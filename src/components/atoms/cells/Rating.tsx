@@ -1,4 +1,5 @@
-import star from '../../../icons/star.svg';
+import { Component as Star } from '../../../icons/star.svg?svgUse';
+
 interface Props {
   value: string;
 }
@@ -11,7 +12,7 @@ export default function Rating({ value }: Props) {
       ) : (
         <>
           {value}
-          <img alt="" src={star} />
+          <Star color="var(--accent)" />
         </>
       )}
     </div>

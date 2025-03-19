@@ -12,7 +12,10 @@ const columnHelper = createColumnHelper<Movie>();
 
 const TITLE_COLUMN = columnHelper.accessor('ti', {
   header: ({ column }) => (
-    <div onClick={column.getToggleSortingHandler()} className="flex min-w-40 items-center gap-1">
+    <div
+      onClick={column.getToggleSortingHandler()}
+      className="flex min-w-40 cursor-pointer items-center gap-1"
+    >
       Titre <SortingArrows isSorted={column.getIsSorted()} />
     </div>
   ),
@@ -21,7 +24,10 @@ const TITLE_COLUMN = columnHelper.accessor('ti', {
 
 const DIRECTOR_COLUMN = columnHelper.accessor('di', {
   header: ({ column }) => (
-    <div onClick={column.getToggleSortingHandler()} className="flex min-w-35 items-center gap-1">
+    <div
+      onClick={column.getToggleSortingHandler()}
+      className="flex min-w-35 cursor-pointer items-center gap-1"
+    >
       Réalisateur <SortingArrows isSorted={column.getIsSorted()} />
     </div>
   ),
@@ -36,7 +42,7 @@ const IMDB_RATING_COLUMN = columnHelper.accessor('im_r', {
   header: ({ column }) => (
     <div
       onClick={column.getToggleSortingHandler()}
-      className="flex items-center justify-center gap-1"
+      className="flex cursor-pointer items-center justify-center gap-1"
     >
       <img alt="IMDB" src={imdbLogo} />
       <SortingArrows isSorted={column.getIsSorted()} />
@@ -55,7 +61,7 @@ const SENS_CRITIQUE_RATING_COLUMN = columnHelper.accessor('sc_r', {
   header: ({ column }) => (
     <div
       onClick={column.getToggleSortingHandler()}
-      className="hidden lg:flex lg:items-center lg:justify-center lg:gap-1"
+      className="hidden cursor-pointer lg:flex lg:items-center lg:justify-center lg:gap-1"
     >
       <img alt="Sens Critique" src={sensCritiqueLogo} />
       <SortingArrows isSorted={column.getIsSorted()} />
@@ -74,7 +80,7 @@ const ALLOCINE_PRESS_RATING_COLUMN = columnHelper.accessor('ap_r', {
   header: ({ column }) => (
     <div
       onClick={column.getToggleSortingHandler()}
-      className="hidden lg:flex lg:items-center lg:justify-center lg:gap-1"
+      className="hidden cursor-pointer lg:flex lg:items-center lg:justify-center lg:gap-1"
     >
       <img alt="Allociné Presse" src={allocinePressIcon} />
       <SortingArrows isSorted={column.getIsSorted()} />
@@ -93,7 +99,7 @@ const ALLOCINE_VIEWER_RATING_COLUMN = columnHelper.accessor('as_r', {
   header: ({ column }) => (
     <div
       onClick={column.getToggleSortingHandler()}
-      className="hidden lg:flex lg:items-center lg:justify-center lg:gap-1"
+      className="hidden cursor-pointer lg:flex lg:items-center lg:justify-center lg:gap-1"
     >
       <img alt="Allociné Spectateurs" src={allocinePublicIcon} />
       <SortingArrows isSorted={column.getIsSorted()} />
@@ -113,7 +119,7 @@ const YEAR_COLUMN = columnHelper.accessor((row) => row.ye, {
   header: ({ column }) => (
     <div
       onClick={column.getToggleSortingHandler()}
-      className="hidden lg:flex lg:items-center lg:justify-center lg:gap-1"
+      className="hidden cursor-pointer lg:flex lg:items-center lg:justify-center lg:gap-1"
     >
       Année
       <SortingArrows isSorted={column.getIsSorted()} />
@@ -127,7 +133,7 @@ const SCREENINGS_COLUMN = columnHelper.accessor('co', {
   header: ({ column }) => (
     <div
       onClick={column.getToggleSortingHandler()}
-      className="hidden lg:flex lg:items-center lg:justify-center lg:gap-1"
+      className="hidden cursor-pointer lg:flex lg:items-center lg:justify-center lg:gap-1"
     >
       Séances
       <SortingArrows isSorted={column.getIsSorted()} />

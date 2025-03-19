@@ -12,7 +12,7 @@ interface Props {
 export default function MoviesTable({ table }: Props) {
   return (
     <main className="flex flex-grow flex-col overflow-hidden">
-      <div className="flex-grow overflow-auto px-1.5 lg:px-3">
+      <div className="flex-grow overflow-auto px-1.5 [-ms-overflow-style:none] [scrollbar-width:none] lg:px-3 [&::-webkit-scrollbar]:hidden">
         <table className="w-full">
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (

@@ -1,17 +1,17 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #fff;
   --body: #000;
   --accent: #1eb3b6;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #171819;
-    --body: #fff;
-    --accent: #e53246;
-  }
+[data-theme='dark'] {
+  --background: #171819;
+  --body: #fff;
+  --accent: #e53246;
 }
 
 @theme {

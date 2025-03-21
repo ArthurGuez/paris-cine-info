@@ -2,6 +2,7 @@ import ReactDOM from 'react-dom/client';
 import { RouterProvider, createRouter } from '@tanstack/react-router';
 import { routeTree } from './routeTree.gen';
 import { StrictMode } from 'react';
+import { ThemeProvider } from './contexts/theme';
 
 // Set up a Router instance
 const router = createRouter({ routeTree, defaultPreload: 'intent' });
@@ -19,7 +20,9 @@ if (!rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement);
   root.render(
     <StrictMode>
-      <RouterProvider router={router} />{' '}
+      <ThemeProvider>
+        <RouterProvider router={router} />
+      </ThemeProvider>
     </StrictMode>,
   );
 }

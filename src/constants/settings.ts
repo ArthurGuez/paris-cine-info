@@ -1,4 +1,15 @@
-export const LAYOUTS = { grid: 'Affiches', list: 'Liste' };
-export const RATINGS = ['IMDB', 'senscritique', 'allociné presse', 'allociné spectateurs'];
-export const THEMES = { dark: 'Sombre', light: 'Clair' };
-export const TITLES = { french: 'Français', originals: 'Originaux' };
+export const LAYOUTS = { items: [{ grid: 'Affiches' }, { list: 'Liste' }] };
+
+export const RATINGS = [
+  { value: 'imdb', label: 'IMDB' },
+  { value: 'allocine_press', label: 'Allociné presse' },
+  { value: 'allocine_spectators', label: 'Allociné spectateurs' },
+  { value: 'senscritique', label: 'Senscritique' },
+];
+
+export const TITLES = [
+  { value: 'fr', label: 'Français' },
+  { value: 'original', label: 'Originaux' },
+];
+
+export const SETTINGS_CONFIG = { title: 'Réglages', items: [] };

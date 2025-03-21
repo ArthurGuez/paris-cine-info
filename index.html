@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/src/index.css" rel="stylesheet" />
     <title>Paris Ciné Info</title>
+    <script>
+      const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      const defaultTheme = localStorage.getItem('theme') || 'auto';
+
+      if (defaultTheme === 'auto') {
+        document.documentElement.setAttribute('data-theme', prefersDarkScheme ? 'dark' : 'light');
+      } else {
+        document.documentElement.setAttribute('data-theme', defaultTheme);
+      }
+    </script>
   </head>
   <body style="background-color: var(--background)">
     <div id="app"></div>

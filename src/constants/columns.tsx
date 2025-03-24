@@ -6,21 +6,30 @@ import imdbLogo from '../icons/imdb-logo.svg';
 import allocinePressIcon from '../icons/allocine-press.svg';
 import allocinePublicIcon from '../icons/allocine-public.svg';
 import sensCritiqueLogo from '../icons/sens-critique-logo.svg';
-import Rating from '../components/atoms/cells/Rating';
+import MovieRating from '../components/atoms/cells/MovieRating';
+import MovieTitle from '../components/atoms/cells/MovieTitle';
 
 const columnHelper = createColumnHelper<Movie>();
 
-const TITLE_COLUMN = columnHelper.accessor('ti', {
-  header: ({ column }) => (
-    <div
-      onClick={column.getToggleSortingHandler()}
-      className="flex min-w-40 cursor-pointer items-center gap-1"
-    >
-      Titre <SortingArrows isSorted={column.getIsSorted()} />
-    </div>
-  ),
-  cell: (info) => <p className="font-bold">{info.getValue()}</p>,
-});
+const TITLE_COLUMN = columnHelper.accessor(
+  (row) => ({ frenchTitle: row.ti, originalTitle: row.o_ti }),
+  {
+    id: 'title',
+    header: ({ column }) => (
+      <div
+        onClick={column.getToggleSortingHandler()}
+        className="flex min-w-40 cursor-pointer items-center gap-1"
+      >
+        Titre <SortingArrows isSorted={column.getIsSorted()} />
+      </div>
+    ),
+    cell: (info) => <MovieTitle {...info.getValue()} />,
+    sortingFn: (rowA, rowB) => {
+      return rowA.original.ti.localeCompare(rowB.original.ti);
+    },
+    sortDescFirst: false,
+  },
+);
 
 const DIRECTOR_COLUMN = columnHelper.accessor('di', {
   header: ({ column }) => (
@@ -50,7 +59,7 @@ const IMDB_RATING_COLUMN = columnHelper.accessor('im_r', {
   ),
   cell: (info) => (
     <div className="flex justify-center">
-      <Rating value={info.getValue()} />
+      <MovieRating value={info.getValue()} />
     </div>
   ),
   enableGlobalFilter: false,
@@ -69,7 +78,7 @@ const SENS_CRITIQUE_RATING_COLUMN = columnHelper.accessor('sc_r', {
   ),
   cell: (info) => (
     <div className="hidden lg:flex lg:justify-center">
-      <Rating value={info.getValue()} />
+      <MovieRating value={info.getValue()} />
     </div>
   ),
   enableGlobalFilter: false,
@@ -88,7 +97,7 @@ const ALLOCINE_PRESS_RATING_COLUMN = columnHelper.accessor('ap_r', {
   ),
   cell: (info) => (
     <div className="hidden lg:flex lg:justify-center">
-      <Rating value={info.getValue()} />
+      <MovieRating value={info.getValue()} />
     </div>
   ),
   enableGlobalFilter: false,
@@ -107,7 +116,7 @@ const ALLOCINE_VIEWER_RATING_COLUMN = columnHelper.accessor('as_r', {
   ),
   cell: (info) => (
     <div className="hidden lg:flex lg:justify-center">
-      <Rating value={info.getValue()} />
+      <MovieRating value={info.getValue()} />
     </div>
   ),
   enableGlobalFilter: false,

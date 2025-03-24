@@ -2,6 +2,7 @@ import { useState, type ReactNode } from 'react';
 import { Drawer } from 'vaul';
 import ThemeSetting from './ThemeSetting';
 import { Component as Cross } from '../../../icons/cross.svg?svgUse';
+import TitleDisplaySetting from './TitleDisplaySetting';
 
 const TITLE = 'Réglages';
 
@@ -29,7 +30,7 @@ export default function Settings({ children }: Props) {
         >
           <div className="flex h-full w-full grow flex-col bg-background p-5 md:border-l md:border-accent">
             <div>
-              <div className="relative mb-2">
+              <div className="relative mb-6">
                 <Cross
                   className="absolute top-1/2 left-0 -translate-y-1/2 cursor-pointer"
                   onClick={() => {
@@ -43,7 +44,10 @@ export default function Settings({ children }: Props) {
                   {TITLE}
                 </Drawer.Title>
               </div>
-              <ThemeSetting />
+              <div className="flex flex-col gap-y-4">
+                <ThemeSetting />
+                <TitleDisplaySetting />
+              </div>
             </div>
           </div>
         </Drawer.Content>

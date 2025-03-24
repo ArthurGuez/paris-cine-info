@@ -1,13 +1,10 @@
 import { Theme, useTheme } from '../../../contexts/theme';
-import { Option } from '../../../types';
-import Radio from '../../atoms/input/Radio';
+import { Setting as SettingType } from '../../../types';
+import Setting from './Setting';
 
-interface ThemeSetting {
-  name: string;
-  items: Option<Theme>[];
-}
+const THEME_SETTING_TITLE = 'Thème';
 
-const THEME_SETTING: ThemeSetting = {
+const THEME_SETTING: SettingType<Theme> = {
   name: 'theme',
   items: [
     { label: 'Sombre', value: 'dark' },
@@ -20,20 +17,11 @@ export default function ThemeSetting() {
   const { theme, handleThemeChange } = useTheme();
 
   return (
-    <div className="flex flex-col gap-3">
-      <h3 className="text-body uppercase">Thème</h3>
-      <div className="flex">
-        {THEME_SETTING.items.map((option) => (
-          <Radio
-            key={option.value}
-            name={THEME_SETTING.name}
-            value={option.value}
-            isSelected={option.value === theme}
-            label={option.label}
-            onChange={handleThemeChange}
-          />
-        ))}
-      </div>
-    </div>
+    <Setting
+      handleChange={handleThemeChange}
+      selectedValue={theme}
+      setting={THEME_SETTING}
+      title={THEME_SETTING_TITLE}
+    />
   );
 }

@@ -15,7 +15,7 @@ export default function Radio<T extends string>({
 }: Props<T>) {
   return (
     <label
-      className={`flex-1 cursor-pointer border border-accent px-4 py-2 text-center text-sm text-body first:rounded-l-md first:border-r-0 last:rounded-r-md last:border-l-0 hover:bg-accent ${
+      className={`min-w-[111px] flex-1 cursor-pointer border border-accent px-4 py-2 text-center text-sm text-body first:rounded-l-md first:border-r-0 last:rounded-r-md last:border-l-0 hover:bg-accent ${
         isSelected ? 'bg-accent' : 'bg-background'
       }`}
     >

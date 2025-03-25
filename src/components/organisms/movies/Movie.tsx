@@ -10,12 +10,18 @@ export default function Movie({ id }: Props) {
 
   useEffect(() => {
     async function fetchPoster() {
-      const posterResponse = await getPoster(id);
-      setPoster(posterResponse);
+      try {
+        const posterResponse = await getPoster(id);
+        setPoster(posterResponse);
+      } catch (error) {
+        console.error('Error fetching poster:', error);
+      }
     }
 
-    fetchPoster();
-  }, []);
+    fetchPoster().catch((error: unknown) => {
+      console.error('Unhandled error in fetchPoster:', error);
+    });
+  }, [id]);
 
   return (
     <div>

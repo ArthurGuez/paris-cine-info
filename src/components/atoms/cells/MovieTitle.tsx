@@ -18,7 +18,7 @@ export default function MovieTitle({ originalTitle, frenchTitle }: Props) {
       return (
         <div>
           <p className="font-bold">{frenchTitle}</p>
-          <p className="text-sm text-gray-500">{originalTitle}</p>
+          {originalTitle.length > 0 && <p className="text-sm text-gray-500">{originalTitle}</p>}
         </div>
       );
   }

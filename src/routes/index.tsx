@@ -12,6 +12,7 @@ import {
 
 import { MOVIES_COLUMNS } from '../constants/columns';
 import { getRouteApi } from '@tanstack/react-router';
+import { useCallback } from 'react';
 
 export const Route = createFileRoute('/')({
   component: HomeComponent,
@@ -34,9 +35,12 @@ function HomeComponent() {
     getRowCanExpand: () => true,
   });
 
-  function handleSearch(searchTerm: string) {
-    table.setGlobalFilter(searchTerm);
-  }
+  const handleSearch = useCallback(
+    (searchTerm: string) => {
+      table.setGlobalFilter(searchTerm);
+    },
+    [table],
+  );
 
   return (
     <div className="flex h-dvh flex-col text-sm lg:mx-10 lg:text-base">

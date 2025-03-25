@@ -12,7 +12,7 @@ export default function SearchBar({ onSearch }: Props) {
 
   useEffect(() => {
     onSearch(searchTerm);
-  }, [searchTerm]);
+  }, [onSearch, searchTerm]);
 
   return (
     <form className="flex flex-1 items-center">

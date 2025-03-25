@@ -1,4 +1,4 @@
-import { useState, type ReactNode } from 'react';
+import { type ReactNode } from 'react';
 import { Drawer } from 'vaul';
 import ThemeSetting from './ThemeSetting';
 import { Component as Cross } from '../../../icons/cross.svg?svgUse';
@@ -11,12 +11,10 @@ interface Props {
 }
 
 export default function Settings({ children }: Props) {
-  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
   return (
-    <Drawer.Root direction="right" open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
+    <Drawer.Root direction="right">
       <Drawer.Trigger>
-        <div className="flex h-10 w-40 flex-1 cursor-pointer items-center justify-center gap-1.5 border border-accent uppercase">
+        <div className="flex h-10 w-40 flex-1 cursor-pointer items-center justify-center gap-1.5 border border-l-0 border-accent uppercase">
           {children}
           <span className="text-lg font-bold text-body">{TITLE}</span>
         </div>
@@ -31,15 +29,9 @@ export default function Settings({ children }: Props) {
           <div className="flex h-full w-full grow flex-col bg-background p-5 md:border-l md:border-accent">
             <div>
               <div className="relative mb-6">
-                <Cross
-                  className="absolute top-1/2 left-0 -translate-y-1/2 cursor-pointer"
-                  onClick={() => {
-                    setIsDrawerOpen(false);
-                  }}
-                  color="var(--accent)"
-                  height="30px"
-                  width="30px"
-                />
+                <Drawer.Close className="absolute top-1/2 left-0 -translate-y-1/2 cursor-pointer">
+                  <Cross color="var(--accent)" height="30px" width="30px" />
+                </Drawer.Close>
                 <Drawer.Title className="text-center font-medium text-body uppercase">
                   {TITLE}
                 </Drawer.Title>

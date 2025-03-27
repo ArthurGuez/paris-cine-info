@@ -11,7 +11,7 @@ export const movieSchema = z.object({
   id: z.string(),
   i_id: z.string(),
   im_r: z.string(),
-  newstatus: z.string(),
+  ne: z.string(),
   o_ti: z.string(),
   rel: z.string(),
   ret: z.string(),

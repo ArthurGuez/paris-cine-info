@@ -10,7 +10,14 @@ export async function getAllMovies(): Promise<GetAllMoviesResponse> {
     throw new Error('Failed to fetch data');
   }
 
-  return getAllMoviesResponseSchema.parse(await res.json());
+  const result = getAllMoviesResponseSchema.safeParse(await res.json());
+
+  if (!result.success) {
+    console.error('Validation error:', result.error.format());
+    throw new Error('Invalid API response format');
+  }
+
+  return result.data;
 }
 
 export async function getPoster(id: string): Promise<string> {

@@ -13,6 +13,7 @@ export default tseslint.config(
   reactHooks.configs['recommended-latest'],
   reactPlugin.configs.flat.recommended,
   reactPlugin.configs.flat['jsx-runtime'],
+  { settings: { react: { version: 'detect' } } },
   { ignores: ['**/dist/**', 'lint-staged.config.js'] },
   {
     languageOptions: {

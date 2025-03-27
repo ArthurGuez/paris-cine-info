@@ -1,3 +1,4 @@
+import { getAllMoviesResponseSchema } from './schemas';
 import type { GetAllMoviesResponse } from './types';
 
 export async function getAllMovies(): Promise<GetAllMoviesResponse> {
@@ -9,7 +10,7 @@ export async function getAllMovies(): Promise<GetAllMoviesResponse> {
     throw new Error('Failed to fetch data');
   }
 
-  return res.json();
+  return getAllMoviesResponseSchema.parse(await res.json());
 }
 
 export async function getPoster(id: string): Promise<string> {

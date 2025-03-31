@@ -6,6 +6,7 @@ import {
   getCoreRowModel,
   getExpandedRowModel,
   getFilteredRowModel,
+  getPaginationRowModel,
   getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table';
@@ -14,12 +15,9 @@ import { MOVIES_COLUMNS } from '../constants/columns';
 import { getRouteApi } from '@tanstack/react-router';
 import { useCallback } from 'react';
 
-export const Route = createFileRoute('/')({
-  component: HomeComponent,
-  loader: () => getAllMovies(),
-});
+export const Route = createFileRoute('/')({ component: Home, loader: () => getAllMovies() });
 
-function HomeComponent() {
+function Home() {
   const routeApi = getRouteApi('/');
   const loaderData = routeApi.useLoaderData();
 
@@ -29,10 +27,11 @@ function HomeComponent() {
     getCoreRowModel: getCoreRowModel(),
     getExpandedRowModel: getExpandedRowModel(),
     getFilteredRowModel: getFilteredRowModel(),
-    globalFilterFn: 'includesString',
-    getSortedRowModel: getSortedRowModel(),
-    // By default, the row.getCanExpand() row instance API will return false unless it finds subRows on a row
+    getPaginationRowModel: getPaginationRowModel(),
     getRowCanExpand: () => true,
+    getSortedRowModel: getSortedRowModel(),
+    globalFilterFn: 'includesString',
+    initialState: { pagination: { pageIndex: 0, pageSize: 100 } },
   });
 
   const handleSearch = useCallback(
@@ -43,7 +42,7 @@ function HomeComponent() {
   );
 
   return (
-    <div className="flex h-dvh flex-col text-sm lg:mx-10 lg:text-base">
+    <div className="flex h-dvh flex-col text-sm lg:mx-5 lg:text-base">
       <Header onSearch={handleSearch} />
       <MoviesTable table={table} />
     </div>

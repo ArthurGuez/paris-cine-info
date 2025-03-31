@@ -1,4 +1,4 @@
-import { Setting } from '../../../types';
+import type { Setting } from '../../../types';
 import Radio from '../../atoms/input/Radio';
 
 interface Props<T> {

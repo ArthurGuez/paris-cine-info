@@ -1,7 +1,8 @@
 import { useAtom } from 'jotai';
-import { Setting as SettingType } from '../../../types';
+import type { Setting as SettingType } from '../../../types';
 import Setting from '../settings/Setting';
-import { ScreeningTime, screeningTimeAtom } from '../../../atoms/filters';
+import type { ScreeningTime} from '../../../atoms/filters';
+import { screeningTimeAtom } from '../../../atoms/filters';
 import { useNavigate } from '@tanstack/react-router';
 
 const SCREENING_TIME_FILTER_TITLE = 'Période';

@@ -22,4 +22,5 @@ export default tseslint.config(
     },
   },
   { files: ['**/*.mjs'], extends: [tseslint.configs.disableTypeChecked] },
+  { rules: { '@typescript-eslint/consistent-type-imports': 'error' } },
 );

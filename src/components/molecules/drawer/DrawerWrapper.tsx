@@ -1,6 +1,6 @@
 import { Drawer } from 'vaul';
 import { Component as Cross } from '../../../icons/cross.svg?svgUse';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 
 interface Props {
   alwaysShowLabel?: boolean;

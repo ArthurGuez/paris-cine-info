@@ -1,5 +1,6 @@
-import { Theme, useTheme } from '../../../contexts/theme';
-import { Setting as SettingType } from '../../../types';
+import type { Theme} from '../../../contexts/theme';
+import { useTheme } from '../../../contexts/theme';
+import type { Setting as SettingType } from '../../../types';
 import Setting from './Setting';
 
 const THEME_SETTING_TITLE = 'Thème';

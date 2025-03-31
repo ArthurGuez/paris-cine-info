@@ -1,8 +1,9 @@
-import { flexRender, Table } from '@tanstack/react-table';
+import type { Table } from '@tanstack/react-table';
+import { flexRender } from '@tanstack/react-table';
 import React from 'react';
 
 import Movie from './Movie';
-import { Movie as MovieType } from '../../../services/types';
+import type { Movie as MovieType } from '../../../services/types';
 import Pagination from '../../molecules/pagination/Pagination';
 import Filters from '../../molecules/filters/Filters';
 

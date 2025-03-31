@@ -1,6 +1,7 @@
 import { useAtom } from 'jotai';
-import { TitleDisplay, titleDisplayAtom } from '../../../atoms/settings';
-import { Setting as SettingType } from '../../../types';
+import type { TitleDisplay} from '../../../atoms/settings';
+import { titleDisplayAtom } from '../../../atoms/settings';
+import type { Setting as SettingType } from '../../../types';
 import Setting from './Setting';
 
 const TITLE_DISPLAY_SETTING_TITLE = 'Affichage des titres';

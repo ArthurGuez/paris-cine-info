@@ -1,4 +1,4 @@
-import { SortDirection } from '@tanstack/react-table';
+import type { SortDirection } from '@tanstack/react-table';
 import { Component as Triangle } from '../../../icons/triangle.svg?svgUse';
 import { Component as FilledTriangle } from '../../../icons/filled-triangle.svg?svgUse';
 

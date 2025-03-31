@@ -15,13 +15,14 @@ export const Route = createRootRoute({
     ],
     links: [{ rel: 'icon', href: '/favicon.ico' }],
   }),
+  errorComponent: () => <p>Error</p>,
 });
 
 function RootComponent() {
   return (
     <>
       <Outlet />
-      <TanStackRouterDevtools position="bottom-right" />
+      <TanStackRouterDevtools position="top-left" />
     </>
   );
 }

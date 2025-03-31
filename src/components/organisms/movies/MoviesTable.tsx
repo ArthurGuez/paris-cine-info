@@ -2,9 +2,9 @@ import { flexRender, Table } from '@tanstack/react-table';
 import React from 'react';
 
 import Movie from './Movie';
-import OptionsBar from '../../molecules/options-bar/OptionsBar';
 import { Movie as MovieType } from '../../../services/types';
 import Pagination from '../../molecules/pagination/Pagination';
+import Filters from '../../molecules/filters/Filters';
 
 interface Props {
   table: Table<MovieType>;
@@ -72,8 +72,8 @@ export default function MoviesTable({ table }: Props) {
           <Pagination table={table} />
         </div>
       </div>
-      <div className="sticky bottom-0 bg-background md:hidden">
-        <OptionsBar />
+      <div className="fixed bottom-10 left-1/2 flex -translate-x-1/2 justify-center">
+        <Filters />
       </div>
     </main>
   );

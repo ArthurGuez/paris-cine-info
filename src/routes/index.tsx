@@ -12,14 +12,19 @@ import {
 } from '@tanstack/react-table';
 
 import { MOVIES_COLUMNS } from '../constants/columns';
-import { getRouteApi } from '@tanstack/react-router';
 import { useCallback } from 'react';
+import { z } from 'zod';
+import { SCREENING_TIMES } from '../constants/filters';
 
-export const Route = createFileRoute('/')({ component: Home, loader: () => getAllMovies() });
+export const Route = createFileRoute('/')({
+  component: Home,
+  validateSearch: z.object({ time: z.enum(SCREENING_TIMES).exclude(['all']).optional() }),
+  loaderDeps: ({ search: { time } }) => ({ time }),
+  loader: ({ deps: { time } }) => getAllMovies({ time: time ?? 'all' }),
+});
 
 function Home() {
-  const routeApi = getRouteApi('/');
-  const loaderData = routeApi.useLoaderData();
+  const loaderData = Route.useLoaderData();
 
   const table = useReactTable({
     columns: MOVIES_COLUMNS,

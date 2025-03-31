@@ -18,7 +18,7 @@ export default function MoviesTable({ table }: Props) {
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
               <tr
-                className="sticky top-0 bg-gradient-to-b from-background via-background to-background/90 text-body uppercase"
+                className="sticky top-0 bg-gradient-to-b from-background via-background to-background/90 text-body uppercase shadow-[0_1px_1px_rgba(255,255,255,0.05)]"
                 key={headerGroup.id}
               >
                 {headerGroup.headers.map((header) => (

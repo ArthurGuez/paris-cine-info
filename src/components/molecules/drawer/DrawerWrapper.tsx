@@ -20,7 +20,7 @@ export default function DrawerWrapper({
   return (
     <Drawer.Root direction={direction}>
       <Drawer.Trigger>
-        <div className="flex h-10 cursor-pointer items-center justify-center gap-1.5 rounded-full border border-accent bg-background px-2 uppercase md:rounded-2xl md:px-6">
+        <div className="flex h-10 cursor-pointer items-center justify-center gap-1.5 rounded-full border border-accent bg-background px-2 uppercase md:rounded-2xl md:px-4">
           {triggerIcon}
           <span
             className={`${alwaysShowLabel ? '' : 'hidden md:block'} text-lg font-bold text-body`}

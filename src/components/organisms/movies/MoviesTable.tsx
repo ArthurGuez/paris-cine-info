@@ -5,7 +5,6 @@ import React from 'react';
 import Movie from './Movie';
 import type { Movie as MovieType } from '../../../services/types';
 import Pagination from '../../molecules/pagination/Pagination';
-import Filters from '../../molecules/filters/Filters';
 
 interface Props {
   table: Table<MovieType>;
@@ -19,7 +18,7 @@ export default function MoviesTable({ table }: Props) {
           <thead>
             {table.getHeaderGroups().map((headerGroup) => (
               <tr
-                className="sticky top-0 bg-gradient-to-b from-background via-background to-background/90 text-body uppercase shadow-[0_1px_1px_rgba(255,255,255,0.05)]"
+                className="sticky top-0 bg-gradient-to-b from-background via-background to-background/90 text-body uppercase"
                 key={headerGroup.id}
               >
                 {headerGroup.headers.map((header) => (
@@ -72,9 +71,6 @@ export default function MoviesTable({ table }: Props) {
         <div className="py-1 shadow-[0_-2px_3px_rgba(255,255,255,0.05)]">
           <Pagination table={table} />
         </div>
-      </div>
-      <div className="fixed bottom-10 left-1/2 flex -translate-x-1/2 justify-center">
-        <Filters />
       </div>
     </main>
   );

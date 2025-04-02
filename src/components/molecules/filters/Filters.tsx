@@ -7,8 +7,6 @@ const TITLE = 'Filtres';
 export default function Filters() {
   return (
     <DrawerWrapper
-      alwaysShowLabel
-      direction="bottom"
       title={TITLE}
       triggerIcon={<Filter color="var(--accent)" height="30px" width="30px" />}
     >

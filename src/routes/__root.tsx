@@ -22,7 +22,7 @@ function RootComponent() {
   return (
     <>
       <Outlet />
-      <TanStackRouterDevtools position="top-left" />
+      <TanStackRouterDevtools position="bottom-left" />
     </>
   );
 }

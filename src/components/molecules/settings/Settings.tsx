@@ -8,7 +8,6 @@ const TITLE = 'Réglages';
 export default function Settings() {
   return (
     <DrawerWrapper
-      direction="right"
       title={TITLE}
       triggerIcon={<Gear color="var(--accent)" height="25px" width="25px" />}
     >

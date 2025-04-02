@@ -1,3 +1,4 @@
+import Filters from '../../molecules/filters/Filters';
 import SearchBar from '../../molecules/search-bar/SearchBar';
 import Settings from '../../molecules/settings/Settings';
 
@@ -15,6 +16,7 @@ export default function Header({ onSearch }: Props) {
         <img alt="Logo Paris Ciné Info" src="/images/pci-logo.png" />
       </div>
       <SearchBar onSearch={onSearch} />
+      <Filters />
       <Settings />
     </header>
   );

@@ -16,8 +16,10 @@ export default function Header({ onSearch }: Props) {
         <img alt="Logo Paris Ciné Info" src="/images/pci-logo.png" />
       </div>
       <SearchBar onSearch={onSearch} />
-      <Filters />
-      <Settings />
+      <div className="flex gap-4">
+        <Filters />
+        <Settings />
+      </div>
     </header>
   );
 }

@@ -12,7 +12,7 @@ export default function DrawerWrapper({ children, title, triggerIcon }: Props) {
   return (
     <Drawer.Root direction="right">
       <Drawer.Trigger>
-        <div className="flex h-10 cursor-pointer items-center justify-center gap-1.5 bg-background px-2 uppercase md:rounded-2xl md:px-4">
+        <div className="flex h-10 cursor-pointer items-center justify-center gap-1.5 bg-background uppercase md:rounded-2xl">
           {triggerIcon}
           <span className="hidden text-lg font-bold text-body md:block">{title}</span>
         </div>

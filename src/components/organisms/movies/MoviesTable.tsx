@@ -68,9 +68,11 @@ export default function MoviesTable({ table }: Props) {
             ))}
           </tfoot>
         </table>
-        <div className="py-1 shadow-[0_-2px_3px_rgba(255,255,255,0.05)]">
-          <Pagination table={table} />
-        </div>
+        {table.getPageCount() && (
+          <div className="py-1 shadow-[0_-2px_3px_rgba(255,255,255,0.05)]">
+            <Pagination table={table} />
+          </div>
+        )}
       </div>
     </main>
   );

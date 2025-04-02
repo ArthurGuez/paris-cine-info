@@ -22,7 +22,10 @@ export default function MoviesTable({ table }: Props) {
                 key={headerGroup.id}
               >
                 {headerGroup.headers.map((header) => (
-                  <th className="pb-3 text-start" key={header.id}>
+                  <th
+                    className={`${header.column.columnDef.meta?.className ?? ''} pb-3 text-start`}
+                    key={header.id}
+                  >
                     {header.isPlaceholder
                       ? null
                       : flexRender(header.column.columnDef.header, header.getContext())}
@@ -39,7 +42,10 @@ export default function MoviesTable({ table }: Props) {
                   onClick={row.getToggleExpandedHandler()}
                 >
                   {row.getVisibleCells().map((cell) => (
-                    <td className="py-3" key={cell.id}>
+                    <td
+                      className={`${cell.column.columnDef.meta?.className ?? ''} py-3`}
+                      key={cell.id}
+                    >
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}
                     </td>
                   ))}

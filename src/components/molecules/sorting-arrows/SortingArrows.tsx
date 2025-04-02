@@ -11,16 +11,16 @@ export default function SortingArrows({ isSorted }: Props) {
     <div className="flex flex-col">
       <div>
         {isSorted === 'asc' ? (
-          <FilledTriangle color="var(--accent)" height="15px" width="18px" />
+          <FilledTriangle color="var(--accent)" height="12px" width="12px" />
         ) : (
-          <Triangle color="var(--accent)" height="15px" width="18px" />
+          <Triangle color="var(--accent)" height="12px" width="12px" />
         )}
       </div>
       <div className="rotate-180">
         {isSorted === 'desc' ? (
-          <FilledTriangle color="var(--accent)" height="15px" width="18px" />
+          <FilledTriangle color="var(--accent)" height="12px" width="12px" />
         ) : (
-          <Triangle color="var(--accent)" height="15px" width="18px" />
+          <Triangle color="var(--accent)" height="12px" width="12px" />
         )}
       </div>
     </div>

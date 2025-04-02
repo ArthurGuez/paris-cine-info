@@ -12,7 +12,7 @@ import MovieTitle from '../components/atoms/cells/MovieTitle';
 const columnHelper = createColumnHelper<Movie>();
 
 const TITLE_COLUMN = columnHelper.accessor(
-  (row) => ({ frenchTitle: row.ti, originalTitle: row.o_ti }),
+  (row) => ({ frenchTitle: row.ti, originalTitle: row.o_ti, isNew: row.ne === '1' }),
   {
     id: 'title',
     header: ({ column }) => (
@@ -28,6 +28,7 @@ const TITLE_COLUMN = columnHelper.accessor(
       return rowA.original.ti.localeCompare(rowB.original.ti);
     },
     sortDescFirst: false,
+    meta: { className: 'pr-1' },
   },
 );
 
@@ -35,7 +36,7 @@ const DIRECTOR_COLUMN = columnHelper.accessor('di', {
   header: ({ column }) => (
     <div
       onClick={column.getToggleSortingHandler()}
-      className="flex min-w-35 cursor-pointer items-center gap-1"
+      className="flex min-w-32 cursor-pointer items-center gap-1"
     >
       Réalisateur <SortingArrows isSorted={column.getIsSorted()} />
     </div>
@@ -44,7 +45,12 @@ const DIRECTOR_COLUMN = columnHelper.accessor('di', {
     info
       .getValue()
       .split(',')
-      .map((director) => <p key={director}>{director}</p>),
+      .map((director) => (
+        <p className="text-2xs" key={director}>
+          {director}
+        </p>
+      )),
+  meta: { className: 'pr-1' },
 });
 
 const IMDB_RATING_COLUMN = columnHelper.accessor('im_r', {

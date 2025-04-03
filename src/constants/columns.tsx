@@ -6,6 +6,7 @@ import imdbLogo from '../icons/imdb-logo.svg';
 import allocinePressIcon from '../icons/allocine-press.svg';
 import allocinePublicIcon from '../icons/allocine-public.svg';
 import sensCritiqueLogo from '../icons/sens-critique-logo.svg';
+import { Component as FilmRoll } from '../icons/film-roll.svg?svgUse';
 import MovieRating from '../components/atoms/cells/MovieRating';
 import MovieTitle from '../components/atoms/cells/MovieTitle';
 
@@ -144,19 +145,20 @@ const YEAR_COLUMN = columnHelper.accessor((row) => row.ye, {
   sortDescFirst: true,
 });
 
-const SCREENINGS_COLUMN = columnHelper.accessor('co', {
+const PRINTS_NUMBER_COLUMN = columnHelper.accessor('co', {
   header: ({ column }) => (
     <div
       onClick={column.getToggleSortingHandler()}
-      className="hidden cursor-pointer lg:flex lg:items-center lg:justify-center lg:gap-1"
+      className="lg:flex lg:cursor-pointer lg:items-center lg:justify-center lg:gap-1"
     >
-      Séances
+      <FilmRoll color="var(--body)" height="20px" />
       <SortingArrows isSorted={column.getIsSorted()} />
     </div>
   ),
-  cell: (info) => <p className="hidden lg:block lg:text-center">{info.getValue()}</p>,
+  cell: (info) => <p className="lg:text-center">{info.getValue()}</p>,
   enableGlobalFilter: false,
   sortDescFirst: true,
+  meta: { className: 'hidden lg:block' },
 });
 
 export const MOVIES_COLUMNS = [
@@ -167,5 +169,5 @@ export const MOVIES_COLUMNS = [
   ALLOCINE_PRESS_RATING_COLUMN,
   ALLOCINE_VIEWER_RATING_COLUMN,
   YEAR_COLUMN,
-  SCREENINGS_COLUMN,
+  PRINTS_NUMBER_COLUMN,
 ];

@@ -13,24 +13,27 @@ import MovieTitle from '../components/atoms/cells/MovieTitle';
 
 const columnHelper = createColumnHelper<Movie>();
 
-const TITLE_COLUMN = columnHelper.accessor(
-  (row) => ({ frenchTitle: row.ti, originalTitle: row.o_ti, isNew: row.ne === '1' }),
-  {
-    id: 'title',
-    header: ({ column }) => (
-      <div
-        onClick={column.getToggleSortingHandler()}
-        className="flex cursor-pointer items-center gap-1"
-      >
-        Titre <SortingArrows isSorted={column.getIsSorted()} />
-      </div>
-    ),
-    cell: (info) => <MovieTitle {...info.getValue()} />,
-    sortingFn: (rowA, rowB) => rowA.original.ti.localeCompare(rowB.original.ti),
-    sortDescFirst: false,
-    meta: { className: 'pr-1.5 max-w-36' },
-  },
-);
+const TITLE_COLUMN = columnHelper.accessor('ti', {
+  id: 'title',
+  header: ({ column }) => (
+    <div
+      onClick={column.getToggleSortingHandler()}
+      className="flex cursor-pointer items-center gap-1"
+    >
+      Titre <SortingArrows isSorted={column.getIsSorted()} />
+    </div>
+  ),
+  cell: ({ row, getValue }) => (
+    <MovieTitle
+      frenchTitle={getValue()}
+      originalTitle={row.original.o_ti}
+      isNew={row.original.ne === '1'}
+    />
+  ),
+  sortingFn: (rowA, rowB) => rowA.original.ti.localeCompare(rowB.original.ti),
+  sortDescFirst: false,
+  meta: { className: 'pr-1.5 max-w-36' },
+});
 
 const DIRECTOR_COLUMN = columnHelper.accessor('di', {
   header: ({ column }) => (

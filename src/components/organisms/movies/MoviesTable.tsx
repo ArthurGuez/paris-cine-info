@@ -43,7 +43,7 @@ export default function MoviesTable({ table }: Props) {
                 >
                   {row.getVisibleCells().map((cell) => (
                     <td
-                      className={`${cell.column.columnDef.meta?.className ?? ''} py-3`}
+                      className={`${cell.column.columnDef.meta?.className ?? ''} py-2.5`}
                       key={cell.id}
                     >
                       {flexRender(cell.column.columnDef.cell, cell.getContext())}

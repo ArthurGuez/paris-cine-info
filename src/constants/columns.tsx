@@ -3,8 +3,9 @@ import { createColumnHelper } from '@tanstack/react-table';
 import type { Movie } from '../services/types';
 import SortingArrows from '../components/molecules/sorting-arrows/SortingArrows';
 import imdbLogo from '../icons/imdb-logo.svg';
-import allocinePressIcon from '../icons/allocine-press.svg';
-import allocinePublicIcon from '../icons/allocine-public.svg';
+import allocineLogo from '../icons/allocine-logo.svg';
+import { Component as Newspaper } from '../icons/newspaper.svg?svgUse';
+import { Component as People } from '../icons/people.svg?svgUse';
 import sensCritiqueLogo from '../icons/sens-critique-logo.svg';
 import { Component as FilmRoll } from '../icons/film-roll.svg?svgUse';
 import MovieRating from '../components/atoms/cells/MovieRating';
@@ -19,7 +20,7 @@ const TITLE_COLUMN = columnHelper.accessor(
     header: ({ column }) => (
       <div
         onClick={column.getToggleSortingHandler()}
-        className="flex min-w-40 cursor-pointer items-center gap-1"
+        className="flex cursor-pointer items-center gap-1"
       >
         Titre <SortingArrows isSorted={column.getIsSorted()} />
       </div>
@@ -27,7 +28,7 @@ const TITLE_COLUMN = columnHelper.accessor(
     cell: (info) => <MovieTitle {...info.getValue()} />,
     sortingFn: (rowA, rowB) => rowA.original.ti.localeCompare(rowB.original.ti),
     sortDescFirst: false,
-    meta: { className: 'pr-1.5' },
+    meta: { className: 'pr-1.5 max-w-36' },
   },
 );
 
@@ -35,7 +36,7 @@ const DIRECTOR_COLUMN = columnHelper.accessor('di', {
   header: ({ column }) => (
     <div
       onClick={column.getToggleSortingHandler()}
-      className="flex min-w-32 cursor-pointer items-center gap-1"
+      className="flex cursor-pointer items-center gap-1 pr-2"
     >
       Réalisateur <SortingArrows isSorted={column.getIsSorted()} />
     </div>
@@ -49,7 +50,7 @@ const DIRECTOR_COLUMN = columnHelper.accessor('di', {
           {director}
         </p>
       )),
-  meta: { className: 'pr-1' },
+  meta: { className: 'pr-1 max-w-30' },
 });
 
 const IMDB_RATING_COLUMN = columnHelper.accessor('im_r', {
@@ -97,7 +98,10 @@ const ALLOCINE_PRESS_RATING_COLUMN = columnHelper.accessor('ap_r', {
       onClick={column.getToggleSortingHandler()}
       className="cursor-pointer lg:flex lg:items-center lg:justify-center lg:gap-1"
     >
-      <img alt="Allociné Presse" src={allocinePressIcon} />
+      <div className="flex gap-0.5">
+        <img alt="Allociné" width="20px" src={allocineLogo} />
+        <Newspaper color="var(--body)" width="20px" />
+      </div>
       <SortingArrows isSorted={column.getIsSorted()} />
     </div>
   ),
@@ -117,7 +121,10 @@ const ALLOCINE_VIEWER_RATING_COLUMN = columnHelper.accessor('as_r', {
       onClick={column.getToggleSortingHandler()}
       className="cursor-pointer lg:flex lg:items-center lg:justify-center lg:gap-1"
     >
-      <img alt="Allociné Spectateurs" src={allocinePublicIcon} />
+      <div className="flex gap-0.5">
+        <img alt="Allociné" width="20px" src={allocineLogo} />
+        <People color="var(--body)" width="20px" />
+      </div>
       <SortingArrows isSorted={column.getIsSorted()} />
     </div>
   ),

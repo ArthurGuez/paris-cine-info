@@ -12,7 +12,7 @@ function renderTitle(titleDisplay: TitleDisplay, originalTitle: string, frenchTi
       return (
         <div>
           <p className="font-bold">{frenchTitle}</p>
-          {originalTitle.length > 0 && <p className="text-sm text-gray-500">{originalTitle}</p>}
+          {originalTitle.length > 0 && <p className="text-xs text-gray-500">{originalTitle}</p>}
         </div>
       );
   }

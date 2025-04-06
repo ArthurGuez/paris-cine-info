@@ -7,6 +7,9 @@ import allocineLogo from '../icons/allocine-logo.svg';
 import { Component as Newspaper } from '../icons/newspaper.svg?svgUse';
 import { Component as People } from '../icons/people.svg?svgUse';
 import sensCritiqueLogo from '../icons/sens-critique-logo.svg';
+import letterboxdLogo from '../icons/letterboxd-logo.svg';
+import metacriticLogo from '../icons/metacritic-logo.svg';
+import rottenTomatoesLogo from '../icons/rotten-tomatoes-logo.svg';
 import { Component as FilmRoll } from '../icons/film-roll.svg?svgUse';
 import MovieRating from '../components/atoms/cells/MovieRating';
 import MovieTitle from '../components/atoms/cells/MovieTitle';
@@ -48,7 +51,7 @@ const TITLE_COLUMN = columnHelper.accessor('ti', {
   ),
   sortingFn: (rowA, rowB) => rowA.original.ti.localeCompare(rowB.original.ti),
   sortDescFirst: false,
-  meta: { className: 'pr-1.5 max-w-36' },
+  meta: { className: 'pr-1.5 max-w-36 lg:max-w-2xl' },
 });
 
 const DIRECTOR_COLUMN = columnHelper.accessor('di', {
@@ -97,7 +100,67 @@ const SENS_CRITIQUE_RATING_COLUMN = columnHelper.accessor('sc_r', {
       onClick={column.getToggleSortingHandler()}
       className="cursor-pointer lg:flex lg:items-center lg:justify-center lg:gap-1"
     >
-      <img alt="Sens Critique" src={sensCritiqueLogo} />
+      <img alt="Sens Critique" width="30px" src={sensCritiqueLogo} />
+      <SortingArrows isSorted={column.getIsSorted()} />
+    </div>
+  ),
+  cell: (info) => (
+    <div className="lg:flex lg:justify-center">
+      <MovieRating value={info.getValue()} />
+    </div>
+  ),
+  enableGlobalFilter: false,
+  sortDescFirst: true,
+  meta: { className: 'hidden lg:table-cell' },
+});
+
+const LETTERBOXD_RATING_COLUMN = columnHelper.accessor('lb_r', {
+  header: ({ column }) => (
+    <div
+      onClick={column.getToggleSortingHandler()}
+      className="cursor-pointer lg:flex lg:items-center lg:justify-center lg:gap-1"
+    >
+      <img alt="Letterboxd" width="30px" src={letterboxdLogo} />
+      <SortingArrows isSorted={column.getIsSorted()} />
+    </div>
+  ),
+  cell: (info) => (
+    <div className="lg:flex lg:justify-center">
+      <MovieRating value={info.getValue()} />
+    </div>
+  ),
+  enableGlobalFilter: false,
+  sortDescFirst: true,
+  meta: { className: 'hidden lg:table-cell' },
+});
+
+const ROTTEN_TOMATOES_RATING_COLUMN = columnHelper.accessor('rt_r', {
+  header: ({ column }) => (
+    <div
+      onClick={column.getToggleSortingHandler()}
+      className="cursor-pointer lg:flex lg:items-center lg:justify-center lg:gap-1"
+    >
+      <img alt="Rotten Tomatoes" width="30px" src={rottenTomatoesLogo} />
+      <SortingArrows isSorted={column.getIsSorted()} />
+    </div>
+  ),
+  cell: (info) => (
+    <div className="lg:flex lg:justify-center">
+      <MovieRating value={info.getValue()} />
+    </div>
+  ),
+  enableGlobalFilter: false,
+  sortDescFirst: true,
+  meta: { className: 'hidden lg:table-cell' },
+});
+
+const METACRITIC_RATING_COLUMN = columnHelper.accessor('mc_r', {
+  header: ({ column }) => (
+    <div
+      onClick={column.getToggleSortingHandler()}
+      className="cursor-pointer lg:flex lg:items-center lg:justify-center lg:gap-1"
+    >
+      <img alt="Metacritic" width="30px" src={metacriticLogo} />
       <SortingArrows isSorted={column.getIsSorted()} />
     </div>
   ),
@@ -195,6 +258,9 @@ export const MOVIES_COLUMNS = [
   DIRECTOR_COLUMN,
   IMDB_RATING_COLUMN,
   SENS_CRITIQUE_RATING_COLUMN,
+  LETTERBOXD_RATING_COLUMN,
+  ROTTEN_TOMATOES_RATING_COLUMN,
+  METACRITIC_RATING_COLUMN,
   ALLOCINE_PRESS_RATING_COLUMN,
   ALLOCINE_VIEWER_RATING_COLUMN,
   YEAR_COLUMN,

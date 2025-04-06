@@ -10,8 +10,24 @@ import sensCritiqueLogo from '../icons/sens-critique-logo.svg';
 import { Component as FilmRoll } from '../icons/film-roll.svg?svgUse';
 import MovieRating from '../components/atoms/cells/MovieRating';
 import MovieTitle from '../components/atoms/cells/MovieTitle';
+import { Component as Bookmark } from '../icons/bookmark.svg?svgUse';
+import MovieBookmark from '../components/atoms/cells/MovieBookmark';
 
 const columnHelper = createColumnHelper<Movie>();
+
+const BOOKMARK_COLUMN = columnHelper.accessor('id', {
+  header: ({ column }) => (
+    <div
+      className="flex cursor-pointer items-center justify-center pr-1"
+      onClick={column.getToggleSortingHandler()}
+    >
+      <Bookmark color="var(--body)" width="25px" />
+      <SortingArrows isSorted={column.getIsSorted()} />
+    </div>
+  ),
+  cell: (info) => <MovieBookmark movieId={info.getValue()} />,
+  sortingFn: 'sortingBookmarks',
+});
 
 const TITLE_COLUMN = columnHelper.accessor('ti', {
   id: 'title',
@@ -174,6 +190,7 @@ const PRINTS_NUMBER_COLUMN = columnHelper.accessor('co', {
 });
 
 export const MOVIES_COLUMNS = [
+  BOOKMARK_COLUMN,
   TITLE_COLUMN,
   DIRECTOR_COLUMN,
   IMDB_RATING_COLUMN,

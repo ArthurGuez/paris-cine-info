@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import Header from '../components/organisms/header/Header';
 import { getAllMovies } from '../services/movies';
 import MoviesTable from '../components/organisms/movies/MoviesTable';
+import type { Row } from '@tanstack/react-table';
 import {
   getCoreRowModel,
   getExpandedRowModel,
@@ -15,6 +16,9 @@ import { MOVIES_COLUMNS } from '../constants/columns';
 import { useCallback } from 'react';
 import { z } from 'zod';
 import { SCREENING_TIMES } from '../constants/filters';
+import { useAtomValue } from 'jotai';
+import { bookmarksAtom } from '../atoms/bookmarks';
+import type { Movie } from '../services/types';
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -25,6 +29,7 @@ export const Route = createFileRoute('/')({
 
 function Home() {
   const loaderData = Route.useLoaderData();
+  const bookmarks = useAtomValue(bookmarksAtom);
 
   const table = useReactTable({
     columns: MOVIES_COLUMNS,
@@ -37,6 +42,14 @@ function Home() {
     getSortedRowModel: getSortedRowModel(),
     globalFilterFn: 'includesString',
     initialState: { pagination: { pageIndex: 0, pageSize: 100 } },
+    sortingFns: {
+      sortingBookmarks: (rowA: Row<Movie>, rowB: Row<Movie>): number => {
+        const movieA = bookmarks.includes(rowA.original.id) ? 1 : 0;
+        const movieB = bookmarks.includes(rowB.original.id) ? 1 : 0;
+
+        return movieB - movieA;
+      },
+    },
   });
 
   const handleSearch = useCallback(

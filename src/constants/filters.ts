@@ -8,5 +8,18 @@ export const CARDS = {
 };
 export const CATEGORIES = ['nouveautés', 'ressorties', 'retrospectives', 'évènements'];
 export const DAYS = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche'];
-export const TECHNOLOGIES = ['35mm', 'Numérique', '3D', 'Imax', 'Imax 3d'];
+export const FORMATS = [
+  'all',
+  '35mm',
+  '3D',
+  'imax',
+  'imax3d',
+  'dci',
+  'dat',
+  'ice',
+  'scx',
+  'onx',
+  '4dx',
+  '4de',
+] as const;
 export const SCREENING_TIMES = ['all', 'matin', 'après-midi', 'soir'] as const;

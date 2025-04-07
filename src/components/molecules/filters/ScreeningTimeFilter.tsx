@@ -24,7 +24,10 @@ export default function ScreeningTimeFilter() {
   function handleScreeningTimeFilterChange(newScreeningTime: ScreeningTime) {
     void navigate({
       to: '/',
-      search: newScreeningTime === 'all' ? undefined : { time: newScreeningTime },
+      search: (prevSearch) => ({
+        ...prevSearch,
+        time: newScreeningTime === 'all' ? undefined : newScreeningTime,
+      }),
     });
     setScreeningTime(newScreeningTime);
   }

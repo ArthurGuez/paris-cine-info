@@ -15,16 +15,20 @@ import {
 import { MOVIES_COLUMNS } from '../constants/columns';
 import { useCallback } from 'react';
 import { z } from 'zod';
-import { SCREENING_TIMES } from '../constants/filters';
+import { FORMATS, SCREENING_TIMES } from '../constants/filters';
 import { useAtomValue } from 'jotai';
 import { bookmarksAtom } from '../atoms/bookmarks';
 import type { Movie } from '../services/types';
 
 export const Route = createFileRoute('/')({
   component: Home,
-  validateSearch: z.object({ time: z.enum(SCREENING_TIMES).exclude(['all']).optional() }),
-  loaderDeps: ({ search: { time } }) => ({ time }),
-  loader: ({ deps: { time } }) => getAllMovies({ time: time ?? 'all' }),
+  validateSearch: z.object({
+    time: z.enum(SCREENING_TIMES).exclude(['all']).optional(),
+    format: z.enum(FORMATS).exclude(['all']).optional(),
+  }),
+  loaderDeps: ({ search: { format, time } }) => ({ format, time }),
+  loader: ({ deps: { time, format } }) =>
+    getAllMovies({ time: time ?? 'all', format: format ?? 'all' }),
 });
 
 function Home() {

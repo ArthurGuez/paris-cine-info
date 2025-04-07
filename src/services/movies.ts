@@ -1,5 +1,4 @@
-import type { ScreeningTime } from '../atoms/filters';
-import type { Format } from '../types';
+import type { Format, ScreeningTime } from '../types';
 import { getAllMoviesResponseSchema } from './schemas';
 import type { GetAllMoviesResponse } from './types';
 

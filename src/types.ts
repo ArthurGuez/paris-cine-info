@@ -1,4 +1,4 @@
-import type { FORMATS } from './constants/filters';
+import type { FORMATS, SCREENING_TIMES } from './constants/filters';
 
 export interface Option<T> {
   label: string;
@@ -9,5 +9,7 @@ export interface OptionGroup<T> {
   name: string;
   items: Option<T>[];
 }
+
+export type ScreeningTime = (typeof SCREENING_TIMES)[number];
 
 export type Format = (typeof FORMATS)[number];

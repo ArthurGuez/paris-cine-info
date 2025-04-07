@@ -26,8 +26,8 @@ const FORMAT_FILTER: OptionGroup<Format> = {
 const routeApi = getRouteApi('/');
 
 export default function FormatFilter() {
-  const { format: formatSearchParam } = routeApi.useSearch();
-  const [format, setFormat] = useState<Format>(formatSearchParam ?? 'all');
+  const { format: formatSearchParam = 'all' } = routeApi.useSearch();
+  const [format, setFormat] = useState<Format>(formatSearchParam);
   const navigate = useNavigate({ from: '/' });
 
   function handleFormatFilterChange(newFormat: Format) {

@@ -1,9 +1,7 @@
-import { useAtom } from 'jotai';
-import type { OptionGroup } from '../../../types';
+import type { OptionGroup, ScreeningTime } from '../../../types';
 import RadioGroup from '../fields/RadioGroup';
-import type { ScreeningTime } from '../../../atoms/filters';
-import { screeningTimeAtom } from '../../../atoms/filters';
-import { useNavigate } from '@tanstack/react-router';
+import { getRouteApi, useNavigate } from '@tanstack/react-router';
+import { useState } from 'react';
 
 const SCREENING_TIME_FILTER_TITLE = 'Période';
 
@@ -17,8 +15,11 @@ const SCREENING_TIME_FILTER: OptionGroup<ScreeningTime> = {
   ],
 };
 
+const routeApi = getRouteApi('/');
+
 export default function ScreeningTimeFilter() {
-  const [screeningTime, setScreeningTime] = useAtom(screeningTimeAtom);
+  const { time: timeSearchParam = 'all' } = routeApi.useSearch();
+  const [screeningTime, setScreeningTime] = useState<ScreeningTime>(timeSearchParam);
   const navigate = useNavigate({ from: '/' });
 
   function handleScreeningTimeFilterChange(newScreeningTime: ScreeningTime) {

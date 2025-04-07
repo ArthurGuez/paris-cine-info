@@ -85,9 +85,12 @@ const IMDB_RATING_COLUMN = columnHelper.accessor('im_r', {
       <SortingArrows isSorted={column.getIsSorted()} />
     </div>
   ),
-  cell: (info) => (
+  cell: ({ getValue, row }) => (
     <div className="flex justify-center">
-      <MovieRating value={info.getValue()} />
+      <MovieRating
+        rating={getValue()}
+        sourceLink={`https://www.imdb.com/title/tt00${row.original.i_id}`}
+      />
     </div>
   ),
   enableGlobalFilter: false,
@@ -104,9 +107,12 @@ const SENS_CRITIQUE_RATING_COLUMN = columnHelper.accessor('sc_r', {
       <SortingArrows isSorted={column.getIsSorted()} />
     </div>
   ),
-  cell: (info) => (
+  cell: ({ getValue, row }) => (
     <div className="lg:flex lg:justify-center">
-      <MovieRating value={info.getValue()} />
+      <MovieRating
+        rating={getValue()}
+        sourceLink={`https://www.senscritique.com/film/${row.original.sc_u}`}
+      />
     </div>
   ),
   enableGlobalFilter: false,
@@ -124,9 +130,12 @@ const LETTERBOXD_RATING_COLUMN = columnHelper.accessor('lb_r', {
       <SortingArrows isSorted={column.getIsSorted()} />
     </div>
   ),
-  cell: (info) => (
+  cell: ({ getValue, row }) => (
     <div className="lg:flex lg:justify-center">
-      <MovieRating value={info.getValue()} />
+      <MovieRating
+        rating={getValue()}
+        sourceLink={`https://letterboxd.com/film/${row.original.lb_u}/`}
+      />
     </div>
   ),
   enableGlobalFilter: false,
@@ -144,9 +153,12 @@ const ROTTEN_TOMATOES_RATING_COLUMN = columnHelper.accessor('rt_r', {
       <SortingArrows isSorted={column.getIsSorted()} />
     </div>
   ),
-  cell: (info) => (
+  cell: ({ getValue, row }) => (
     <div className="lg:flex lg:justify-center">
-      <MovieRating value={info.getValue()} />
+      <MovieRating
+        rating={getValue()}
+        sourceLink={`https://www.rottentomatoes.com${row.original.rt_u}`}
+      />
     </div>
   ),
   enableGlobalFilter: false,
@@ -164,9 +176,12 @@ const METACRITIC_RATING_COLUMN = columnHelper.accessor('mc_r', {
       <SortingArrows isSorted={column.getIsSorted()} />
     </div>
   ),
-  cell: (info) => (
+  cell: ({ getValue, row }) => (
     <div className="lg:flex lg:justify-center">
-      <MovieRating value={info.getValue()} />
+      <MovieRating
+        rating={getValue()}
+        sourceLink={`https://www.metacritic.com${row.original.mc_u}/`}
+      />
     </div>
   ),
   enableGlobalFilter: false,
@@ -187,9 +202,12 @@ const ALLOCINE_PRESS_RATING_COLUMN = columnHelper.accessor('ap_r', {
       <SortingArrows isSorted={column.getIsSorted()} />
     </div>
   ),
-  cell: (info) => (
+  cell: ({ getValue, row }) => (
     <div className="lg:flex lg:justify-center">
-      <MovieRating value={info.getValue()} />
+      <MovieRating
+        rating={getValue()}
+        sourceLink={`https://www.allocine.fr/film/fichefilm_gen_cfilm=${row.original.id}.html`}
+      />
     </div>
   ),
   enableGlobalFilter: false,
@@ -210,9 +228,12 @@ const ALLOCINE_VIEWER_RATING_COLUMN = columnHelper.accessor('as_r', {
       <SortingArrows isSorted={column.getIsSorted()} />
     </div>
   ),
-  cell: (info) => (
+  cell: ({ getValue, row }) => (
     <div className="lg:flex lg:justify-center">
-      <MovieRating value={info.getValue()} />
+      <MovieRating
+        rating={getValue()}
+        sourceLink={`https://www.allocine.fr/film/fichefilm_gen_cfilm=${row.original.id}.html`}
+      />
     </div>
   ),
   enableGlobalFilter: false,

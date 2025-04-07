@@ -11,6 +11,10 @@ interface Props {
 }
 
 export default function MoviesTable({ table }: Props) {
+  if (table.options.data.length === 0) {
+    return <p className="text-center text-body">Pas de résultat</p>;
+  }
+
   return (
     <main className="flex flex-grow flex-col overflow-hidden">
       <div className="flex-grow overflow-auto px-1.5 [-ms-overflow-style:none] [scrollbar-width:none] lg:px-3 [&::-webkit-scrollbar]:hidden">

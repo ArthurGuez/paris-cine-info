@@ -52,7 +52,7 @@ const TITLE_COLUMN = columnHelper.accessor('ti', {
   ),
   sortingFn: (rowA, rowB) => rowA.original.ti.localeCompare(rowB.original.ti),
   sortDescFirst: false,
-  meta: { className: 'pr-1.5 max-w-36 lg:max-w-2xl' },
+  meta: { className: 'pr-1.5 max-w-36 lg:max-w-46' },
 });
 
 const DIRECTOR_COLUMN = columnHelper.accessor('di', {
@@ -73,7 +73,7 @@ const DIRECTOR_COLUMN = columnHelper.accessor('di', {
           {director}
         </p>
       )),
-  meta: { className: 'pr-1 max-w-30' },
+  meta: { className: 'pr-1 max-w-30 lg:max-w-32' },
 });
 
 const IMDB_RATING_COLUMN = columnHelper.accessor('im_r', {

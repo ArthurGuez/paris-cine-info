@@ -22,9 +22,10 @@ interface Props {
   originalTitle: string;
   frenchTitle: string;
   isNew: boolean;
+  isPremiere: boolean;
 }
 
-export default function MovieTitle({ originalTitle, frenchTitle, isNew }: Props) {
+export default function MovieTitle({ originalTitle, frenchTitle, isNew, isPremiere }: Props) {
   const titleDisplay = useAtomValue(titleDisplayAtom);
 
   return (
@@ -37,6 +38,15 @@ export default function MovieTitle({ originalTitle, frenchTitle, isNew }: Props)
           className="rounded-full bg-accent px-1.5 py-0.5 font-bold"
         >
           N
+        </div>
+      )}
+      {isPremiere && (
+        <div
+          title="Avant-première"
+          aria-label="Avant-première"
+          className="rounded-full bg-accent px-1.5 py-0.5 font-bold"
+        >
+          A
         </div>
       )}
     </div>

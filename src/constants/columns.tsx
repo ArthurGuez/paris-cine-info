@@ -47,6 +47,7 @@ const TITLE_COLUMN = columnHelper.accessor('ti', {
       frenchTitle={getValue()}
       originalTitle={row.original.o_ti}
       isNew={row.original.ne === '1'}
+      isPremiere={row.original.ne === '2'}
     />
   ),
   sortingFn: (rowA, rowB) => rowA.original.ti.localeCompare(rowB.original.ti),

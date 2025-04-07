@@ -1,12 +1,12 @@
 import { useAtom } from 'jotai';
-import type { TitleDisplay} from '../../../atoms/settings';
+import type { TitleDisplay } from '../../../atoms/settings';
 import { titleDisplayAtom } from '../../../atoms/settings';
-import type { Setting as SettingType } from '../../../types';
-import Setting from './Setting';
+import type { OptionGroup } from '../../../types';
+import RadioGroup from '../fields/RadioGroup';
 
 const TITLE_DISPLAY_SETTING_TITLE = 'Affichage des titres';
 
-const TITLE_DISPLAY_SETTING: SettingType<TitleDisplay> = {
+const TITLE_DISPLAY_SETTING: OptionGroup<TitleDisplay> = {
   name: 'title',
   items: [
     { value: 'french', label: 'Français' },
@@ -19,10 +19,10 @@ export default function TitleDisplaySetting() {
   const [titleDisplay, setTitleDisplay] = useAtom(titleDisplayAtom);
 
   return (
-    <Setting
+    <RadioGroup
       handleChange={setTitleDisplay}
       selectedValue={titleDisplay}
-      setting={TITLE_DISPLAY_SETTING}
+      optionGroup={TITLE_DISPLAY_SETTING}
       title={TITLE_DISPLAY_SETTING_TITLE}
     />
   );

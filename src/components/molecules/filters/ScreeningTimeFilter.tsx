@@ -1,13 +1,13 @@
 import { useAtom } from 'jotai';
-import type { Setting as SettingType } from '../../../types';
-import Setting from '../settings/Setting';
-import type { ScreeningTime} from '../../../atoms/filters';
+import type { OptionGroup } from '../../../types';
+import RadioGroup from '../fields/RadioGroup';
+import type { ScreeningTime } from '../../../atoms/filters';
 import { screeningTimeAtom } from '../../../atoms/filters';
 import { useNavigate } from '@tanstack/react-router';
 
 const SCREENING_TIME_FILTER_TITLE = 'Période';
 
-const SCREENING_TIME_FILTER: SettingType<ScreeningTime> = {
+const SCREENING_TIME_FILTER: OptionGroup<ScreeningTime> = {
   name: 'screeningTime',
   items: [
     { label: 'Toutes', value: 'all' },
@@ -30,10 +30,10 @@ export default function ScreeningTimeFilter() {
   }
 
   return (
-    <Setting
+    <RadioGroup
       handleChange={handleScreeningTimeFilterChange}
       selectedValue={screeningTime}
-      setting={SCREENING_TIME_FILTER}
+      optionGroup={SCREENING_TIME_FILTER}
       title={SCREENING_TIME_FILTER_TITLE}
     />
   );

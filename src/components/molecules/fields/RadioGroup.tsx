@@ -1,29 +1,29 @@
-import type { Setting } from '../../../types';
-import Radio from '../../atoms/input/Radio';
+import type { OptionGroup } from '../../../types';
+import Radio from '../../atoms/inputs/Radio';
 
 interface Props<T> {
   handleChange: ((newValue: T) => void) | undefined;
   selectedValue: T;
-  setting: Setting<T>;
+  optionGroup: OptionGroup<T>;
   title: string;
 }
 
-export default function Setting<T extends string>({
+export default function RadioGroup<T extends string>({
   handleChange,
   selectedValue,
-  setting,
+  optionGroup,
   title,
 }: Props<T>) {
   return (
     <div className="flex flex-col gap-y-2.5">
       <h3 className="text-body uppercase">{title}</h3>
       <div className="flex flex-wrap">
-        {setting.items.map((option) => (
+        {optionGroup.items.map((option) => (
           <Radio
             isSelected={option.value === selectedValue}
             key={option.value}
             label={option.label}
-            name={setting.name}
+            name={optionGroup.name}
             onChange={handleChange}
             value={option.value}
           />

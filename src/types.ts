@@ -3,7 +3,7 @@ export interface Option<T> {
   value: T;
 }
 
-export interface Setting<T> {
+export interface OptionGroup<T> {
   name: string;
   items: Option<T>[];
 }

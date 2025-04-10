@@ -24,12 +24,13 @@ export default function MovieBookmark({ movieId }: Props) {
   }
 
   return (
-    <div className="flex cursor-pointer justify-center">
+    <div className="group flex cursor-pointer justify-center">
       <Bookmark
         color={isMovieBookmarked ? 'var(--accent)' : 'var(--background)'}
         stroke="var(--accent)"
         width="25px"
         onClick={handleBookmark}
+        className="transition-colors duration-200 group-hover:stroke-body"
       />
     </div>
   );

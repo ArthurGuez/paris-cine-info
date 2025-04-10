@@ -35,7 +35,7 @@ export default function MovieTitle({ originalTitle, frenchTitle, isNew, isPremie
         <div
           title="Nouveauté"
           aria-label="Nouveauté"
-          className="rounded-full bg-accent px-1.5 py-0.5 font-bold"
+          className="rounded-full bg-accent px-1.5 py-0.5 text-xs font-bold"
         >
           N
         </div>
@@ -44,7 +44,7 @@ export default function MovieTitle({ originalTitle, frenchTitle, isNew, isPremie
         <div
           title="Avant-première"
           aria-label="Avant-première"
-          className="rounded-full bg-accent px-1.5 py-0.5 font-bold"
+          className="rounded-full bg-accent px-1.5 py-0.5 text-xs font-bold"
         >
           A
         </div>

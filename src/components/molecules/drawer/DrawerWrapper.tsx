@@ -12,7 +12,7 @@ export default function DrawerWrapper({ children, title, triggerIcon }: Props) {
   return (
     <Drawer.Root direction="right">
       <Drawer.Trigger>
-        <div className="hover:color-accent flex h-10 cursor-pointer items-center justify-center gap-1.5 rounded-full border border-accent bg-background px-2 uppercase hover:bg-body/5">
+        <div className="hover:color-accent flex h-9 w-10 cursor-pointer items-center justify-center gap-1.5 rounded-full border border-accent bg-background px-2 uppercase hover:bg-body/5 md:h-10 md:w-fit">
           {triggerIcon}
           <span className="hidden text-lg font-bold text-body md:block">{title}</span>
         </div>
@@ -21,7 +21,7 @@ export default function DrawerWrapper({ children, title, triggerIcon }: Props) {
         <Drawer.Overlay className="fixed inset-0 bg-black/40" />
         <Drawer.Content
           aria-describedby={undefined}
-          className="fixed top-0 right-0 bottom-0 z-10 flex w-[375px] outline-none"
+          className="fixed top-0 right-0 bottom-0 z-10 flex w-full outline-none sm:w-[375px]"
           // The gap between the edge of the screen and the drawer is 8px in this case.
           style={{ '--initial-transform': 'calc(100% + 8px)' } as React.CSSProperties}
         >

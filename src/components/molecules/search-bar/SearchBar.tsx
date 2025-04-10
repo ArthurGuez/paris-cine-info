@@ -18,7 +18,7 @@ export default function SearchBar({ onSearch }: Props) {
     <form className="flex flex-1 items-center">
       <div className="relative w-full">
         <input
-          className="h-8.5 w-full truncate rounded-full border border-accent bg-transparent pr-11 pl-5 text-body outline-none lg:h-10 lg:text-base"
+          className="h-8.5 w-full truncate rounded-full border border-accent bg-transparent pr-11 pl-5 text-base text-body outline-none lg:h-10"
           name="query"
           onChange={(event) => {
             setSearchTerm(event.target.value);

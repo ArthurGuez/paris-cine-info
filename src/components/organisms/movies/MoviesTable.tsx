@@ -42,7 +42,7 @@ export default function MoviesTable({ table }: Props) {
             {table.getRowModel().rows.map((row) => (
               <React.Fragment key={row.id}>
                 <tr
-                  className="border-b border-accent last:border-b-0 hover:bg-gray-100 dark:hover:bg-[#1e1e1e]"
+                  className="border-b border-accent last:border-b-0 hover:bg-body/5"
                   onClick={row.getToggleExpandedHandler()}
                 >
                   {row.getVisibleCells().map((cell) => (

@@ -1,7 +1,7 @@
 import type { OptionGroup } from '../../../types';
 
 interface Props<T> {
-  onChange: ((newValue: T) => void) | undefined;
+  onChange: (newValue: T) => void;
   optionGroup: OptionGroup<T>;
   title: string;
   value: T;
@@ -23,9 +23,7 @@ export default function Select<T extends string>({
         id={optionGroup.name}
         name={optionGroup.name}
         onChange={(e) => {
-          if (onChange) {
-            onChange(e.target.value as T);
-          }
+          onChange(e.target.value as T);
         }}
         value={value}
       >

@@ -1,18 +1,20 @@
-import type { Format, ScreeningTime } from '../types';
+import type { Day, Format, ScreeningTime } from '../types';
 import { getAllMoviesResponseSchema } from './schemas';
 import type { GetAllMoviesResponse } from './types';
 
 interface GetAllMoviesOptions {
+  day: Day;
   format: Format;
   time: ScreeningTime;
 }
 
 export async function getAllMovies({
+  day,
   format,
   time,
 }: GetAllMoviesOptions): Promise<GetAllMoviesResponse> {
   const res = await fetch(
-    `https://paris-cine.info/get_pcimovies_nocors.php?selday=week&selcard=ugc&seladdr=Paris&seltime=${time}&selformat=${format}`,
+    `https://paris-cine.info/get_pcimovies_nocors.php?selday=${day}&selcard=ugc&seladdr=Paris&seltime=${time}&selformat=${format}`,
   );
 
   if (!res.ok) {

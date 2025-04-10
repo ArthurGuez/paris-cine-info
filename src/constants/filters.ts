@@ -7,7 +7,20 @@ export const CARDS = {
   mk2: 'Carte 5 MK2',
 };
 export const CATEGORIES = ['nouveautés', 'ressorties', 'retrospectives', 'évènements'];
-export const DAYS = ['lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi', 'dimanche'];
+
+export const DAYS = [
+  'all',
+  'week',
+  'today',
+  'lundi',
+  'mardi',
+  'mercredi',
+  'jeudi',
+  'vendredi',
+  'samedi',
+  'dimanche',
+] as const;
+
 export const FORMATS = [
   'all',
   '35mm',
@@ -22,4 +35,5 @@ export const FORMATS = [
   '4dx',
   '4de',
 ] as const;
+
 export const SCREENING_TIMES = ['all', 'matin', 'après-midi', 'soir'] as const;

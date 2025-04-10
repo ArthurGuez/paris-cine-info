@@ -11,7 +11,7 @@ export default function MovieRating({ rating, sourceLink }: Props) {
       onClick={(event) => {
         event.stopPropagation();
       }}
-      className="w-9 cursor-pointer rounded-md border border-accent p-1 text-center"
+      className="w-9 cursor-pointer rounded-md border border-accent p-1 text-center hover:bg-body/5"
       href={sourceLink}
       target="_blank"
       rel="noreferrer"

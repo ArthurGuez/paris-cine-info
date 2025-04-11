@@ -1,11 +1,24 @@
-export const CARDS = {
-  ugc: 'UGC illimité',
-  pass: 'Gaumont Le Pass',
-  cip: 'Ciné Carte CIP',
-  cinecheques: 'Cinéchèques',
-  ug_5p: 'La carte UGC',
-  mk2: 'Carte 5 MK2',
-};
+export const CARDS = [
+  'all',
+  'ugc',
+  'pass',
+  'librepass',
+  'cip',
+  'cinecarte',
+  'multicine',
+  'mk2',
+  'dulac',
+  'lacarte',
+  'ugc!',
+  'pass!',
+  'librepass!',
+  'librepass|ugc',
+  'librepass|pass',
+  'ugc|pass',
+  'ugc,pass',
+  'cinecheques',
+] as const;
+
 export const CATEGORIES = ['nouveautés', 'ressorties', 'retrospectives', 'évènements'];
 
 export const DAYS = [

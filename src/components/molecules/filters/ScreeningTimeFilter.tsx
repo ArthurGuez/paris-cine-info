@@ -7,7 +7,7 @@ const SCREENING_TIME_FILTER_TITLE = 'Période';
 
 const SCREENING_TIME_FILTER: OptionGroup<ScreeningTime> = {
   name: 'screeningTime',
-  items: [
+  options: [
     { label: 'Toutes', value: 'all' },
     { label: 'Matin', value: 'matin' },
     { label: 'Après-midi', value: 'après-midi' },

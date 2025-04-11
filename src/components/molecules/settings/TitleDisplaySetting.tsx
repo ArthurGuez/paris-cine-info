@@ -8,7 +8,7 @@ const TITLE_DISPLAY_SETTING_TITLE = 'Affichage des titres';
 
 const TITLE_DISPLAY_SETTING: OptionGroup<TitleDisplay> = {
   name: 'title',
-  items: [
+  options: [
     { value: 'french', label: 'Français' },
     { value: 'original', label: 'Originaux' },
     { value: 'both', label: 'Les deux' },

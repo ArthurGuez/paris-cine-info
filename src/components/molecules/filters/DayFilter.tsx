@@ -19,7 +19,7 @@ const DAYS_OF_WEEK: Option<Partial<Day>>[] = [
 
 const DAY_FILTER: OptionGroup<Day> = {
   name: 'day',
-  items: [
+  options: [
     { label: 'Cette semaine', value: 'week' },
     { label: "Aujourd'hui", value: 'today' },
     ...DAYS_OF_WEEK.slice(CURRENT_DAY_INDEX),

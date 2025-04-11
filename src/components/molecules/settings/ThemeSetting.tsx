@@ -7,7 +7,7 @@ const THEME_SETTING_TITLE = 'Thème';
 
 const THEME_SETTING: OptionGroup<Theme> = {
   name: 'theme',
-  items: [
+  options: [
     { label: 'Sombre', value: 'dark' },
     { label: 'Clair', value: 'light' },
     { label: 'Auto', value: 'auto' },

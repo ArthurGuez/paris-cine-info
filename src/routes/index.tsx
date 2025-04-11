@@ -15,7 +15,7 @@ import {
 import { MOVIES_COLUMNS } from '../constants/columns';
 import { useCallback } from 'react';
 import { z } from 'zod';
-import { DAYS, FORMATS, SCREENING_TIMES } from '../constants/filters';
+import { CARDS, DAYS, FORMATS, SCREENING_TIMES } from '../constants/filters';
 import { useAtomValue } from 'jotai';
 import { bookmarksAtom } from '../atoms/bookmarks';
 import type { Movie } from '../services/types';
@@ -23,13 +23,19 @@ import type { Movie } from '../services/types';
 export const Route = createFileRoute('/')({
   component: Home,
   validateSearch: z.object({
+    card: z.enum(CARDS).exclude(['all']).optional(),
     day: z.enum(DAYS).exclude(['week']).optional(),
     format: z.enum(FORMATS).exclude(['all']).optional(),
     time: z.enum(SCREENING_TIMES).exclude(['all']).optional(),
   }),
-  loaderDeps: ({ search: { day, format, time } }) => ({ day, format, time }),
-  loader: ({ deps: { day, time, format } }) =>
-    getAllMovies({ day: day ?? 'week', time: time ?? 'all', format: format ?? 'all' }),
+  loaderDeps: ({ search: { card, day, format, time } }) => ({ card, day, format, time }),
+  loader: ({ deps: { card, day, time, format } }) =>
+    getAllMovies({
+      card: card ?? 'all',
+      day: day ?? 'week',
+      format: format ?? 'all',
+      time: time ?? 'all',
+    }),
 });
 
 function Home() {

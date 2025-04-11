@@ -18,7 +18,7 @@ export default function RadioGroup<T extends string>({
     <div className="flex flex-col gap-y-2.5">
       <h3 className="text-body uppercase">{title}</h3>
       <div className="flex flex-wrap">
-        {optionGroup.items.map((option) => (
+        {optionGroup.options.map((option) => (
           <Radio
             isSelected={option.value === selectedValue}
             key={option.value}

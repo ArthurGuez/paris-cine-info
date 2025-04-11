@@ -7,7 +7,7 @@ const FORMAT_FILTER_TITLE = 'Format';
 
 const FORMAT_FILTER: OptionGroup<Format> = {
   name: 'format',
-  items: [
+  options: [
     { label: 'Tous', value: 'all' },
     { label: '35mm', value: '35mm' },
     { label: '3D', value: '3D' },

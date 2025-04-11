@@ -1,4 +1,14 @@
 import { z } from 'zod';
+import {
+  CARDS,
+  DAYS,
+  DEFAULT_CARD_VALUE,
+  DEFAULT_DAY_VALUE,
+  DEFAULT_FORMAT_VALUE,
+  DEFAULT_SCREENING_TIME_VALUE,
+  FORMATS,
+  SCREENING_TIMES,
+} from '../constants';
 
 export const movieSchema = z.object({
   ac: z.string(),
@@ -31,4 +41,11 @@ export const getAllMoviesResponseSchema = z.object({
   data: z.array(movieSchema),
   favs: z.boolean(),
   follow_movs: z.array(z.string()),
+});
+
+export const validationSearchSchema = z.object({
+  card: z.enum(CARDS).exclude([DEFAULT_CARD_VALUE]).optional(),
+  day: z.enum(DAYS).exclude([DEFAULT_DAY_VALUE]).optional(),
+  format: z.enum(FORMATS).exclude([DEFAULT_FORMAT_VALUE]).optional(),
+  time: z.enum(SCREENING_TIMES).exclude([DEFAULT_SCREENING_TIME_VALUE]).optional(),
 });

@@ -1,19 +1,25 @@
+import {
+  DEFAULT_CARD_VALUE,
+  DEFAULT_DAY_VALUE,
+  DEFAULT_FORMAT_VALUE,
+  DEFAULT_SCREENING_TIME_VALUE,
+} from '../constants';
 import type { Card, Day, Format, ScreeningTime } from '../types';
 import { getAllMoviesResponseSchema } from './schemas';
 import type { GetAllMoviesResponse } from './types';
 
 interface GetAllMoviesOptions {
-  card: Card;
-  day: Day;
-  format: Format;
-  time: ScreeningTime;
+  card?: Card;
+  day?: Day;
+  format?: Format;
+  time?: ScreeningTime;
 }
 
 export async function getAllMovies({
-  card,
-  day,
-  format,
-  time,
+  card = DEFAULT_CARD_VALUE,
+  day = DEFAULT_DAY_VALUE,
+  format = DEFAULT_FORMAT_VALUE,
+  time = DEFAULT_SCREENING_TIME_VALUE,
 }: GetAllMoviesOptions): Promise<GetAllMoviesResponse> {
   const res = await fetch(
     `https://paris-cine.info/get_pcimovies_nocors.php?selday=${day}&selcard=${card}&seladdr=Paris&seltime=${time}&selformat=${format}`,

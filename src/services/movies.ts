@@ -1,10 +1,10 @@
 import {
-  DEFAULT_CARD_VALUE,
   DEFAULT_DAY_VALUE,
   DEFAULT_FORMAT_VALUE,
   DEFAULT_SCREENING_TIME_VALUE,
 } from '../constants';
 import type { Card, Day, Format, ScreeningTime } from '../types';
+import { getInitialCard } from '../utils';
 import { getAllMoviesResponseSchema } from './schemas';
 import type { GetAllMoviesResponse } from './types';
 
@@ -16,7 +16,7 @@ interface GetAllMoviesOptions {
 }
 
 export async function getAllMovies({
-  card = DEFAULT_CARD_VALUE,
+  card = getInitialCard(),
   day = DEFAULT_DAY_VALUE,
   format = DEFAULT_FORMAT_VALUE,
   time = DEFAULT_SCREENING_TIME_VALUE,

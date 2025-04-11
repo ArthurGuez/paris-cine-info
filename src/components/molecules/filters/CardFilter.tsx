@@ -3,6 +3,7 @@ import type { Card, NestedOptionGroup } from '../../../types';
 import { useState } from 'react';
 import Select from '../../atoms/inputs/Select';
 import { DEFAULT_CARD_VALUE } from '../../../constants';
+import { getInitialCard } from '../../../utils';
 
 const CARD_FILTER_TITLE = 'Carte';
 
@@ -54,11 +55,14 @@ const CARD_FILTER: NestedOptionGroup<Card> = {
   ],
 };
 
+const INITIAL_CARD = getInitialCard();
+
 const routeApi = getRouteApi('/');
 
 export default function CardFilter() {
-  const { card: cardSearchParam = DEFAULT_CARD_VALUE } = routeApi.useSearch();
-  const [card, setCard] = useState<Card>(cardSearchParam);
+  const { card: cardSearchParam } = routeApi.useSearch();
+  const defaultCard = cardSearchParam ?? INITIAL_CARD;
+  const [card, setCard] = useState<Card>(defaultCard);
   const navigate = useNavigate({ from: '/' });
 
   function handleCardFilterChange(newCard: Card) {
@@ -69,6 +73,7 @@ export default function CardFilter() {
         card: newCard === DEFAULT_CARD_VALUE ? undefined : newCard,
       }),
     });
+    localStorage.setItem('card', newCard);
     setCard(newCard);
   }
 

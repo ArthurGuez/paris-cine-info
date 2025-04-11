@@ -1,3 +1,16 @@
+/* Settings */
+
+export const RATINGS = [
+  { value: 'imdb', label: 'IMDB' },
+  { value: 'allocine_press', label: 'Allociné presse' },
+  { value: 'allocine_public', label: 'Allociné spectateurs' },
+  { value: 'senscritique', label: 'Senscritique' },
+];
+
+/* End of Settings */
+
+/* Filters */
+
 export const CARDS = [
   'all',
   'ugc',
@@ -50,3 +63,5 @@ export const FORMATS = [
 ] as const;
 
 export const SCREENING_TIMES = ['all', 'matin', 'après-midi', 'soir'] as const;
+
+/* End of Filters */

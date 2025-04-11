@@ -1,4 +1,4 @@
-import type { CARDS, DAYS, FORMATS, SCREENING_TIMES } from './constants/filters';
+import type { CARDS, DAYS, FORMATS, SCREENING_TIMES } from './constants';
 
 export interface Option<T> {
   label: string;

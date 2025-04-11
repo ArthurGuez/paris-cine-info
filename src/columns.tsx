@@ -1,20 +1,20 @@
 import { createColumnHelper } from '@tanstack/react-table';
 
-import type { Movie } from '../services/types';
-import SortingArrows from '../components/molecules/sorting-arrows/SortingArrows';
-import imdbLogo from '../icons/imdb-logo.svg';
-import allocineLogo from '../icons/allocine-logo.svg';
-import { Component as Newspaper } from '../icons/newspaper.svg?svgUse';
-import { Component as People } from '../icons/people.svg?svgUse';
-import sensCritiqueLogo from '../icons/sens-critique-logo.svg';
-import letterboxdLogo from '../icons/letterboxd-logo.svg';
-import metacriticLogo from '../icons/metacritic-logo.svg';
-import rottenTomatoesLogo from '../icons/rotten-tomatoes-logo.svg';
-import { Component as FilmRoll } from '../icons/film-roll.svg?svgUse';
-import MovieRating from '../components/atoms/cells/MovieRating';
-import MovieTitle from '../components/atoms/cells/MovieTitle';
-import { Component as Bookmark } from '../icons/bookmark.svg?svgUse';
-import MovieBookmark from '../components/atoms/cells/MovieBookmark';
+import type { Movie } from './services/types';
+import SortingArrows from './components/molecules/sorting-arrows/SortingArrows';
+import imdbLogo from './icons/imdb-logo.svg';
+import allocineLogo from './icons/allocine-logo.svg';
+import { Component as Newspaper } from './icons/newspaper.svg?svgUse';
+import { Component as People } from './icons/people.svg?svgUse';
+import sensCritiqueLogo from './icons/sens-critique-logo.svg';
+import letterboxdLogo from './icons/letterboxd-logo.svg';
+import metacriticLogo from './icons/metacritic-logo.svg';
+import rottenTomatoesLogo from './icons/rotten-tomatoes-logo.svg';
+import { Component as FilmRoll } from './icons/film-roll.svg?svgUse';
+import MovieRating from './components/atoms/cells/MovieRating';
+import MovieTitle from './components/atoms/cells/MovieTitle';
+import { Component as Bookmark } from './icons/bookmark.svg?svgUse';
+import MovieBookmark from './components/atoms/cells/MovieBookmark';
 
 const columnHelper = createColumnHelper<Movie>();
 

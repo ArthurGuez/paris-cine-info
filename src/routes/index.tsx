@@ -12,10 +12,10 @@ import {
   useReactTable,
 } from '@tanstack/react-table';
 
-import { MOVIES_COLUMNS } from '../constants/columns';
+import { MOVIES_COLUMNS } from '../columns';
 import { useCallback } from 'react';
 import { z } from 'zod';
-import { CARDS, DAYS, FORMATS, SCREENING_TIMES } from '../constants/filters';
+import { CARDS, DAYS, FORMATS, SCREENING_TIMES } from '../constants';
 import { useAtomValue } from 'jotai';
 import { bookmarksAtom } from '../atoms/bookmarks';
 import type { Movie } from '../services/types';

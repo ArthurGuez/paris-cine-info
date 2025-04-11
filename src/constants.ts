@@ -11,8 +11,10 @@ export const RATINGS = [
 
 /* Filters */
 
+export const DEFAULT_CARD_VALUE = 'all';
+
 export const CARDS = [
-  'all',
+  DEFAULT_CARD_VALUE,
   'ugc',
   'pass',
   'librepass',
@@ -34,9 +36,11 @@ export const CARDS = [
 
 export const CATEGORIES = ['nouveautés', 'ressorties', 'retrospectives', 'évènements'];
 
+export const DEFAULT_DAY_VALUE = 'week';
+
 export const DAYS = [
   'all',
-  'week',
+  DEFAULT_DAY_VALUE,
   'today',
   'lundi',
   'mardi',
@@ -47,8 +51,10 @@ export const DAYS = [
   'dimanche',
 ] as const;
 
+export const DEFAULT_FORMAT_VALUE = 'all';
+
 export const FORMATS = [
-  'all',
+  DEFAULT_FORMAT_VALUE,
   '35mm',
   '3D',
   'imax',
@@ -62,6 +68,13 @@ export const FORMATS = [
   '4de',
 ] as const;
 
-export const SCREENING_TIMES = ['all', 'matin', 'après-midi', 'soir'] as const;
+export const DEFAULT_SCREENING_TIME_VALUE = 'all';
+
+export const SCREENING_TIMES = [
+  DEFAULT_SCREENING_TIME_VALUE,
+  'matin',
+  'après-midi',
+  'soir',
+] as const;
 
 /* End of Filters */

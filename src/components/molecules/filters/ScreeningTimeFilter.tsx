@@ -1,3 +1,4 @@
+import { DEFAULT_SCREENING_TIME_VALUE } from '../../../constants';
 import type { OptionGroup, ScreeningTime } from '../../../types';
 import RadioGroup from '../fields/RadioGroup';
 import { getRouteApi, useNavigate } from '@tanstack/react-router';
@@ -8,7 +9,7 @@ const SCREENING_TIME_FILTER_TITLE = 'Période';
 const SCREENING_TIME_FILTER: OptionGroup<ScreeningTime> = {
   name: 'screeningTime',
   options: [
-    { label: 'Toutes', value: 'all' },
+    { label: 'Toutes', value: DEFAULT_SCREENING_TIME_VALUE },
     { label: 'Matin', value: 'matin' },
     { label: 'Après-midi', value: 'après-midi' },
     { label: 'Soir', value: 'soir' },
@@ -18,7 +19,7 @@ const SCREENING_TIME_FILTER: OptionGroup<ScreeningTime> = {
 const routeApi = getRouteApi('/');
 
 export default function ScreeningTimeFilter() {
-  const { time: timeSearchParam = 'all' } = routeApi.useSearch();
+  const { time: timeSearchParam = DEFAULT_SCREENING_TIME_VALUE } = routeApi.useSearch();
   const [screeningTime, setScreeningTime] = useState<ScreeningTime>(timeSearchParam);
   const navigate = useNavigate({ from: '/' });
 
@@ -27,7 +28,7 @@ export default function ScreeningTimeFilter() {
       to: '/',
       search: (prevSearch) => ({
         ...prevSearch,
-        time: newScreeningTime === 'all' ? undefined : newScreeningTime,
+        time: newScreeningTime === DEFAULT_SCREENING_TIME_VALUE ? undefined : newScreeningTime,
       }),
     });
     setScreeningTime(newScreeningTime);

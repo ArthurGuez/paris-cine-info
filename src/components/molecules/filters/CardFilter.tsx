@@ -2,12 +2,13 @@ import { getRouteApi, useNavigate } from '@tanstack/react-router';
 import type { Card, NestedOptionGroup } from '../../../types';
 import { useState } from 'react';
 import Select from '../../atoms/inputs/Select';
+import { DEFAULT_CARD_VALUE } from '../../../constants';
 
 const CARD_FILTER_TITLE = 'Carte';
 
 const CARD_FILTER: NestedOptionGroup<Card> = {
   name: 'card',
-  defaultOption: { label: 'Toutes', value: 'all' },
+  defaultOption: { label: 'Toutes', value: DEFAULT_CARD_VALUE },
   nestedOptionGroup: [
     {
       name: 'illimites',
@@ -56,14 +57,17 @@ const CARD_FILTER: NestedOptionGroup<Card> = {
 const routeApi = getRouteApi('/');
 
 export default function CardFilter() {
-  const { card: cardSearchParam = 'all' } = routeApi.useSearch();
+  const { card: cardSearchParam = DEFAULT_CARD_VALUE } = routeApi.useSearch();
   const [card, setCard] = useState<Card>(cardSearchParam);
   const navigate = useNavigate({ from: '/' });
 
   function handleCardFilterChange(newCard: Card) {
     void navigate({
       to: '/',
-      search: (prevSearch) => ({ ...prevSearch, card: newCard === 'all' ? undefined : newCard }),
+      search: (prevSearch) => ({
+        ...prevSearch,
+        card: newCard === DEFAULT_CARD_VALUE ? undefined : newCard,
+      }),
     });
     setCard(newCard);
   }

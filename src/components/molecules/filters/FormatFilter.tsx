@@ -2,13 +2,14 @@ import { useState } from 'react';
 import Select from '../../atoms/inputs/Select';
 import { getRouteApi, useNavigate } from '@tanstack/react-router';
 import type { Format, OptionGroup } from '../../../types';
+import { DEFAULT_FORMAT_VALUE } from '../../../constants';
 
 const FORMAT_FILTER_TITLE = 'Format';
 
 const FORMAT_FILTER: OptionGroup<Format> = {
   name: 'format',
   options: [
-    { label: 'Tous', value: 'all' },
+    { label: 'Tous', value: DEFAULT_FORMAT_VALUE },
     { label: '35mm', value: '35mm' },
     { label: '3D', value: '3D' },
     { label: 'IMAX', value: 'imax' },
@@ -26,7 +27,7 @@ const FORMAT_FILTER: OptionGroup<Format> = {
 const routeApi = getRouteApi('/');
 
 export default function FormatFilter() {
-  const { format: formatSearchParam = 'all' } = routeApi.useSearch();
+  const { format: formatSearchParam = DEFAULT_FORMAT_VALUE } = routeApi.useSearch();
   const [format, setFormat] = useState<Format>(formatSearchParam);
   const navigate = useNavigate({ from: '/' });
 
@@ -35,7 +36,7 @@ export default function FormatFilter() {
       to: '/',
       search: (prevSearch) => ({
         ...prevSearch,
-        format: newFormat === 'all' ? undefined : newFormat,
+        format: newFormat === DEFAULT_FORMAT_VALUE ? undefined : newFormat,
       }),
     });
     setFormat(newFormat);

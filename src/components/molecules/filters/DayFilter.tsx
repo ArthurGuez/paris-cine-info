@@ -1,3 +1,4 @@
+import { DEFAULT_DAY_VALUE } from '../../../constants';
 import type { OptionGroup, Day, Option } from '../../../types';
 import Select from '../../atoms/inputs/Select';
 import { getRouteApi, useNavigate } from '@tanstack/react-router';
@@ -20,7 +21,7 @@ const DAYS_OF_WEEK: Option<Partial<Day>>[] = [
 const DAY_FILTER: OptionGroup<Day> = {
   name: 'day',
   options: [
-    { label: 'Cette semaine', value: 'week' },
+    { label: 'Cette semaine', value: DEFAULT_DAY_VALUE },
     { label: "Aujourd'hui", value: 'today' },
     ...DAYS_OF_WEEK.slice(CURRENT_DAY_INDEX),
     ...DAYS_OF_WEEK.slice(0, CURRENT_DAY_INDEX),
@@ -31,14 +32,17 @@ const DAY_FILTER: OptionGroup<Day> = {
 const routeApi = getRouteApi('/');
 
 export default function DayFilter() {
-  const { day: daySearchParam = 'week' } = routeApi.useSearch();
+  const { day: daySearchParam = DEFAULT_DAY_VALUE } = routeApi.useSearch();
   const [day, setDay] = useState<Day>(daySearchParam);
   const navigate = useNavigate({ from: '/' });
 
   function handleDayFilterChange(newDay: Day) {
     void navigate({
       to: '/',
-      search: (prevSearch) => ({ ...prevSearch, day: newDay === 'week' ? undefined : newDay }),
+      search: (prevSearch) => ({
+        ...prevSearch,
+        day: newDay === DEFAULT_DAY_VALUE ? undefined : newDay,
+      }),
     });
     setDay(newDay);
   }

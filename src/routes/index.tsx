@@ -15,7 +15,16 @@ import {
 import { MOVIES_COLUMNS } from '../columns';
 import { useCallback } from 'react';
 import { z } from 'zod';
-import { CARDS, DAYS, FORMATS, SCREENING_TIMES } from '../constants';
+import {
+  CARDS,
+  DAYS,
+  DEFAULT_CARD_VALUE,
+  DEFAULT_DAY_VALUE,
+  DEFAULT_FORMAT_VALUE,
+  DEFAULT_SCREENING_TIME_VALUE,
+  FORMATS,
+  SCREENING_TIMES,
+} from '../constants';
 import { useAtomValue } from 'jotai';
 import { bookmarksAtom } from '../atoms/bookmarks';
 import type { Movie } from '../services/types';
@@ -23,18 +32,18 @@ import type { Movie } from '../services/types';
 export const Route = createFileRoute('/')({
   component: Home,
   validateSearch: z.object({
-    card: z.enum(CARDS).exclude(['all']).optional(),
-    day: z.enum(DAYS).exclude(['week']).optional(),
-    format: z.enum(FORMATS).exclude(['all']).optional(),
-    time: z.enum(SCREENING_TIMES).exclude(['all']).optional(),
+    card: z.enum(CARDS).exclude([DEFAULT_CARD_VALUE]).optional(),
+    day: z.enum(DAYS).exclude([DEFAULT_DAY_VALUE]).optional(),
+    format: z.enum(FORMATS).exclude([DEFAULT_FORMAT_VALUE]).optional(),
+    time: z.enum(SCREENING_TIMES).exclude([DEFAULT_SCREENING_TIME_VALUE]).optional(),
   }),
   loaderDeps: ({ search: { card, day, format, time } }) => ({ card, day, format, time }),
   loader: ({ deps: { card, day, time, format } }) =>
     getAllMovies({
-      card: card ?? 'all',
-      day: day ?? 'week',
-      format: format ?? 'all',
-      time: time ?? 'all',
+      card: card ?? DEFAULT_CARD_VALUE,
+      day: day ?? DEFAULT_DAY_VALUE,
+      format: format ?? DEFAULT_FORMAT_VALUE,
+      time: time ?? DEFAULT_SCREENING_TIME_VALUE,
     }),
 });
 

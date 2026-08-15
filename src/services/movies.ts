@@ -7,6 +7,7 @@ import {
 import type { Card, Day, Format, Language, ScreeningTime } from '../types';
 import { getInitialCard } from '../utils';
 import { getAllMoviesResponseSchema } from './schemas';
+import { z } from 'zod';
 import type { GetAllMoviesResponse } from './types';
 
 interface GetAllMoviesOptions {
@@ -35,7 +36,7 @@ export async function getAllMovies({
   const result = getAllMoviesResponseSchema.safeParse(await res.json());
 
   if (!result.success) {
-    console.error('Validation error:', result.error.format());
+    console.error('Validation error:', z.treeifyError(result.error));
     throw new Error('Invalid API response format');
   }
 

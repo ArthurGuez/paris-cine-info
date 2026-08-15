@@ -10,7 +10,7 @@ export default tseslint.config(
   eslint.configs.recommended,
   tseslint.configs.strictTypeChecked,
   tseslint.configs.stylisticTypeChecked,
-  reactHooks.configs['recommended-latest'],
+  reactHooks.configs.flat.recommended,
   reactPlugin.configs.flat.recommended,
   reactPlugin.configs.flat['jsx-runtime'],
   { settings: { react: { version: 'detect' } } },

@@ -1,9 +1,10 @@
 import {
   DEFAULT_DAY_VALUE,
   DEFAULT_FORMAT_VALUE,
+  DEFAULT_LANGUAGE_VALUE,
   DEFAULT_SCREENING_TIME_VALUE,
 } from '../constants';
-import type { Card, Day, Format, ScreeningTime } from '../types';
+import type { Card, Day, Format, Language, ScreeningTime } from '../types';
 import { getInitialCard } from '../utils';
 import { getAllMoviesResponseSchema } from './schemas';
 import type { GetAllMoviesResponse } from './types';
@@ -13,6 +14,7 @@ interface GetAllMoviesOptions {
   day?: Day;
   format?: Format;
   time?: ScreeningTime;
+  language?: Language;
 }
 
 export async function getAllMovies({
@@ -20,9 +22,10 @@ export async function getAllMovies({
   day = DEFAULT_DAY_VALUE,
   format = DEFAULT_FORMAT_VALUE,
   time = DEFAULT_SCREENING_TIME_VALUE,
+  language = DEFAULT_LANGUAGE_VALUE,
 }: GetAllMoviesOptions): Promise<GetAllMoviesResponse> {
   const res = await fetch(
-    `https://paris-cine.info/get_pcimovies_nocors.php?selday=${day}&selcard=${card}&seladdr=Paris&seltime=${time}&selformat=${format}`,
+    `https://paris-cine.info/get_pcimovies_nocors.php?selday=${day}&selcard=${card}&seladdr=Paris&seltime=${time}&selformat=${format}&sellang=${language}`,
   );
 
   if (!res.ok) {

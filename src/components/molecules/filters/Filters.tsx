@@ -4,6 +4,7 @@ import DrawerWrapper from '../drawer/DrawerWrapper';
 import FormatFilter from './FormatFilter';
 import DayFilter from './DayFilter';
 import CardFilter from './CardFilter';
+import LanguageFilter from './LanguageFilter';
 
 const TITLE = 'Filtres';
 
@@ -17,6 +18,7 @@ export default function Filters() {
       <ScreeningTimeFilter />
       <DayFilter />
       <FormatFilter />
+      <LanguageFilter/>
     </DrawerWrapper>
   );
 }

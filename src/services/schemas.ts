@@ -5,8 +5,10 @@ import {
   DEFAULT_CARD_VALUE,
   DEFAULT_DAY_VALUE,
   DEFAULT_FORMAT_VALUE,
+  DEFAULT_LANGUAGE_VALUE,
   DEFAULT_SCREENING_TIME_VALUE,
   FORMATS,
+  LANGUAGES,
   SCREENING_TIMES,
 } from '../constants';
 
@@ -48,4 +50,5 @@ export const validationSearchSchema = z.object({
   day: z.enum(DAYS).exclude([DEFAULT_DAY_VALUE]).optional(),
   format: z.enum(FORMATS).exclude([DEFAULT_FORMAT_VALUE]).optional(),
   time: z.enum(SCREENING_TIMES).exclude([DEFAULT_SCREENING_TIME_VALUE]).optional(),
+  language: z.enum(LANGUAGES).exclude([DEFAULT_LANGUAGE_VALUE]).optional(),
 });

@@ -1,4 +1,4 @@
-import type { CARDS, DAYS, FORMATS, SCREENING_TIMES } from './constants';
+import type { CARDS, DAYS, FORMATS, LANGUAGES, SCREENING_TIMES } from './constants';
 
 export interface Option<T> {
   label: string;
@@ -24,3 +24,5 @@ export type Format = (typeof FORMATS)[number];
 export type Day = (typeof DAYS)[number];
 
 export type Card = (typeof CARDS)[number];
+
+export type Language = (typeof LANGUAGES)[number];

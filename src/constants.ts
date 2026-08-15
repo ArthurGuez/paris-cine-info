@@ -77,4 +77,42 @@ export const SCREENING_TIMES = [
   'soir',
 ] as const;
 
+export const DEFAULT_LANGUAGE_VALUE = 'all';
+
+export const LANGUAGES = [
+  DEFAULT_LANGUAGE_VALUE,
+  'VO',
+  'VF',
+  'VFSTF',
+  'STF',
+  'STA',
+  'English',
+  'French',
+  'Spanish',
+  'Japanese',
+  'Italian',
+  'Portuguese',
+  'Mandarin',
+  'German',
+  'Arabic',
+  'Bengali',
+  'Cantonese',
+  'Catalan',
+  'Korean',
+  'Farsi',
+  'Filipino',
+  'Greek',
+  'Dutch',
+  'Hungarian',
+  'Silent',
+  'Norwegian',
+  'Polish',
+  'Somali',
+  'Swedish',
+  'Czech',
+  'Thai',
+  'Turkish',
+  'Zhuang',
+] as const;
+
 /* End of Filters */

@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@svg-use/react':
-        specifier: ^1.0.0
-        version: 1.0.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+        specifier: ^1.1.0
+        version: 1.1.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
       '@tanstack/react-router':
         specifier: ^1.170.32
         version: 1.170.32(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
@@ -34,8 +34,8 @@ importers:
         version: 4.1.13
     devDependencies:
       '@svg-use/vite':
-        specifier: ^1.0.0
-        version: 1.0.0(@svg-use/react@1.0.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1))
+        specifier: ^1.1.1
+        version: 1.1.1(@svg-use/react@1.1.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(rollup@4.38.0)(vite@8.2.2(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.20.5)(yaml@2.8.1))
       '@tailwindcss/vite':
         specifier: ^4.1.17
         version: 4.1.17(vite@8.2.2(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.20.5)(yaml@2.8.1))
@@ -899,8 +899,8 @@ packages:
       '@types/react':
         optional: true
 
-  '@rgrove/parse-xml@4.2.0':
-    resolution: {integrity: sha512-UuBOt7BOsKVOkFXRe4Ypd/lADuNIfqJXv8GvHqtXaTYXPPKkj2nS2zPllVsrtRjcomDhIJVBnZwfmlI222WH8g==}
+  '@rgrove/parse-xml@4.2.3':
+    resolution: {integrity: sha512-Jhlb+0zYez1T1yXUQs3F1qAtFuJljBVNdy9TKmLDauAXkxsOXopKYOyQ5Wm6SvP3fycav0GviX4Y15WWhGetMw==}
     engines: {node: '>=14.0.0'}
 
   '@rolldown/binding-android-arm-eabi@1.2.5':
@@ -996,8 +996,8 @@ packages:
   '@rolldown/pluginutils@1.0.1':
     resolution: {integrity: sha512-2j9bGt5Jh8hj+vPtgzPtl72j0yRxHAyumoo6TNfAjsLB04UtpSvPbPcDcBMxz7n+9CYB0c1GxQFxYRg2jimqGw==}
 
-  '@rollup/pluginutils@5.1.4':
-    resolution: {integrity: sha512-USm05zrsFxYLPdWWq+K3STlWiT/3ELn3RcV5hJMghpeAIhxfsUIg6mt12CBJBInWMV4VneoV7SfGv8xIwo2qNQ==}
+  '@rollup/pluginutils@5.4.0':
+    resolution: {integrity: sha512-MfPp06CjRLfXQ3wY0R8vJDYBy/MvVcc9OulEfR0B8Iv9ko+GCNaRZ+EpJYFl27LhKsZK0o420sYCRHCjfCgeUg==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
@@ -1108,24 +1108,26 @@ packages:
   '@svg-use/core@1.0.0':
     resolution: {integrity: sha512-O46PHvvUraByhR7ucDYl4qMSg507tJCEc2gc29Cp/LjnbF+ykC4QY2eNPf9xnAywiGKkSnqAb3bJlFtpVhg3EQ==}
 
-  '@svg-use/react@1.0.0':
-    resolution: {integrity: sha512-5LhqGm8jw3C3g7K6FoVaDQAXUEL73qJZzzLfSMuV419prsldDR3IV1cy0DDOT5cxH+BGXtOYjbrYQWjE6U1UUw==}
+  '@svg-use/react@1.1.0':
+    resolution: {integrity: sha512-c27PUf7PoPT1ce2kMIWbpjzrFfHlv6VxnWJrzjr9DmFqPvXxO7qdSXYppSMkUKzgxWG7cIN74oTGAhH69Rzzmg==}
     peerDependencies:
       react: ^18 || ^19
       react-dom: ^18 || ^19
 
-  '@svg-use/rollup@1.0.0':
-    resolution: {integrity: sha512-55rKj/8jpvtz4/ERZrLIzEOhoj4WtoAjHTvKWERBnLI6AaNlRTRaz6hQ9AWMv5iJaplki3H9jz+8iAMEDkl+yA==}
+  '@svg-use/rollup@1.1.0':
+    resolution: {integrity: sha512-FOBcnMXVzKbnlfMERHXKwhG9ZTLSSlRf+EWNO6opHDQDvW35sYZndQ3fWK3nF0LTFgrwVMA2asGDgH3I8wWwXA==}
     peerDependencies:
-      '@svg-use/react': ^1.0.0
+      '@svg-use/react': ^1.1.0
+      rollup: ^4
     peerDependenciesMeta:
       '@svg-use/react':
         optional: true
 
-  '@svg-use/vite@1.0.0':
-    resolution: {integrity: sha512-qUoCANlBNN9UgrjvKw+r/Jd9yMmBEybaGHE9h7nzc4bK4VQ4Lgec1JKWphJHweGexf4uNCz51BpKkGVacxLabw==}
+  '@svg-use/vite@1.1.1':
+    resolution: {integrity: sha512-TV2Hr0RvUD8I2Fm7iM4+oj3ynadtaLG2YNnndasredIyoz1NTMczdPLki00uwz2WLJdkoKvK8h/HrUXvr+TaTw==}
     peerDependencies:
-      '@svg-use/react': ^1.0.0
+      '@svg-use/react': ^1.1.0
+      vite: ^6 || ^7
     peerDependenciesMeta:
       '@svg-use/react':
         optional: true
@@ -1318,15 +1320,11 @@ packages:
     resolution: {integrity: sha512-uhOeFyxLcU41HzvrxsGpiWdcMbScY1EDgbZ5K7DVRMYInbLYWAC0EA/kx9wXAoSM8q82bUG2hRl8+EAjE6XAbA==}
     engines: {node: '>=20.19'}
 
-  '@trysound/sax@0.2.0':
-    resolution: {integrity: sha512-L7z9BgrNEcYyUYtF+HaEfiS5ebkh9jXqbszz7pC0hRBPaatV0XjSD3+eHrpqFemQfgwiFF0QPIarnIihIDn7OA==}
-    engines: {node: '>=10.13.0'}
-
   '@types/estree@1.0.7':
     resolution: {integrity: sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ==}
 
-  '@types/estree@1.0.8':
-    resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
+  '@types/estree@1.0.9':
+    resolution: {integrity: sha512-GhdPgy1el4/ImP05X05Uw4cw2/M93BCUmnEvWZNStlCzEKME4Fkk+YpoA5OiHNQmoS7Cafb8Xa3Pya8m1Qrzeg==}
 
   '@types/react-dom@19.2.3':
     resolution: {integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==}
@@ -1523,8 +1521,8 @@ packages:
   cookie-es@3.1.1:
     resolution: {integrity: sha512-UaXxwISYJPTr9hwQxMFYZ7kNhSXboMXP+Z3TRX6f1/NyaGPfuNUZOWP1pUEb75B2HjfklIYLVRfWiFZJyC6Npg==}
 
-  css-select@5.1.0:
-    resolution: {integrity: sha512-nwoRF1rvRRnnCqqY7updORDsuqKzqYJ28+oSMaJMMgOauh3fvwHqMS7EZpIPqK8GL+g9mKxF1vP/ZjSeNjEVHg==}
+  css-select@5.2.2:
+    resolution: {integrity: sha512-TizTzUddG/xYLA3NXodFM0fSbNizXjOKhqiQQwvhlspadZokn1KDy0NZFS0wuEubIYAV5/c1/lAr0TaaFXEXzw==}
 
   css-tree@2.2.1:
     resolution: {integrity: sha512-OA0mILzGc1kCOCSJerOeqDxDQ4HOh+G8NbOJFOTgOCzpw7fCBubk0fEyxp8AgOL/jvLgYA/uV0cMbe43ElF1JA==}
@@ -1534,8 +1532,8 @@ packages:
     resolution: {integrity: sha512-6Fv1DV/TYw//QF5IzQdqsNDjx/wc8TrMBZsqjL9eW01tWb7R7k/mq+/VXfJCl7SoD5emsJop9cOByJZfs8hYIw==}
     engines: {node: ^10 || ^12.20.0 || ^14.13.0 || >=15.0.0}
 
-  css-what@6.1.0:
-    resolution: {integrity: sha512-HTUrgRJ7r4dsZKU6GjmpfRK1O76h97Z8MfS1G0FozR+oF2kG6Vfe8JE6zwrkbxigziPHinCJ+gCPjA9EaBDtRw==}
+  css-what@6.2.2:
+    resolution: {integrity: sha512-u/O3vwbptzhMs3L1fQE82ZSLHQQfto5gyZzwteVIEyeaY5Fc7R4dapF/BvRoSYFeqfBk4m0V1Vafq5Pjv25wvA==}
     engines: {node: '>= 6'}
 
   csso@5.0.5:
@@ -1894,10 +1892,6 @@ packages:
   picocolors@1.1.1:
     resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
 
-  picomatch@4.0.2:
-    resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
-    engines: {node: '>=12'}
-
   picomatch@4.0.7:
     resolution: {integrity: sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==}
     engines: {node: '>=12'}
@@ -1967,6 +1961,10 @@ packages:
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
     hasBin: true
 
+  sax@1.6.1:
+    resolution: {integrity: sha512-42tBVwLWnaQvW5zc4HbZrTuWccECCZfBi92FDuwtqxasH+JbPB3/FOKb1m222K42R4WxuxzzMsTswfzgtSu64Q==}
+    engines: {node: '>=11.0.0'}
+
   scheduler@0.27.0:
     resolution: {integrity: sha512-eNv+WrVbKu1f3vbYJT/xtiF5syA5HPIMtf9IgY/nKg0sWqzAUEvqY/xm7OcZc/qafLx/iO9FgOmeSAp4v5ti/Q==}
 
@@ -1988,8 +1986,8 @@ packages:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
     engines: {node: '>=0.10.0'}
 
-  svgo@3.3.2:
-    resolution: {integrity: sha512-OoohrmuUlBs8B8o6MB2Aevn+pRIH9zDALSR+6hhqVfa6fRwG/Qw9VUMSMW9VNg2CFc/MTIfabtdOVl9ODIJjpw==}
+  svgo@3.3.5:
+    resolution: {integrity: sha512-8SQMzdrvWaD8deUmrnYB+ASyxBVgWUOilg+A75nE/76WdLpj6LopCwiAVvkzkcqy/9b7t2Mg7faFLjg0ZRcZ3w==}
     engines: {node: '>=14.0.0'}
     hasBin: true
 
@@ -2021,17 +2019,17 @@ packages:
     engines: {node: '>=16.20.0'}
     hasBin: true
 
-  unist-util-is@6.0.0:
-    resolution: {integrity: sha512-2qCTHimwdxLfz+YzdGfkqNlH0tLi9xjTnHddPmJwtIG9MGsdbutfTc4P+haPD7l7Cjxf/WZj+we5qfVPvvxfYw==}
+  unist-util-is@6.0.1:
+    resolution: {integrity: sha512-LsiILbtBETkDz8I9p1dQ0uyRUWuaQzd/cuEeS1hoRSyW5E5XGmTzlwY1OrNzzakGowI9Dr/I8HVaw4hTtnxy8g==}
 
   unist-util-stringify-position@4.0.0:
     resolution: {integrity: sha512-0ASV06AAoKCDkS2+xw5RXJywruurpbC4JZSm7nr7MOt1ojAzvyyaO+UxZf18j8FCF6kmzCZKcAgN/yu2gm2XgQ==}
 
-  unist-util-visit-parents@6.0.1:
-    resolution: {integrity: sha512-L/PqWzfTP9lzzEa6CKs0k2nARxTdZduw3zyh8d2NVBnsyvHjSX4TWse388YrrQKbvI8w20fGjGlhgT96WwKykw==}
+  unist-util-visit-parents@6.0.2:
+    resolution: {integrity: sha512-goh1s1TBrqSqukSc8wrjwWhL0hiJxgA8m4kFxGlQ+8FYQ3C/m11FcTs4YYem7V664AhHVvgoQLk890Ssdsr2IQ==}
 
-  unist-util-visit@5.0.0:
-    resolution: {integrity: sha512-MR04uvD+07cwl/yhVuVWAtw+3GOR/knlL55Nd/wAdblk27GCVt3lqpTivy/tkJcZoNPzTwS1Y+KMojlLDhoTzg==}
+  unist-util-visit@5.1.0:
+    resolution: {integrity: sha512-m+vIdyeCOpdr/QeQCu2EzxX/ohgS8KbnPDgFni4dQsfSCtpz8UqDyY5GjRru8PDKuYn7Fq19j1CQ+nJSsGKOzg==}
 
   unplugin@3.3.0:
     resolution: {integrity: sha512-qa66K+crbfyE6JK10GjvbJeRrOsuC/JpbnHctfyp/i4oBTxWOzJfRZyDiOk1PtErMFRu8JhsU/wPvOdBNWe5Rg==}
@@ -2106,8 +2104,8 @@ packages:
   vfile-location@5.0.3:
     resolution: {integrity: sha512-5yXvWDEgqeiYiBe1lbxYF7UMAIm/IcopxMHrMQDq3nvKcjPKIhZklUKL+AE7J7uApI4kwe2snsK+eI6UTj9EHg==}
 
-  vfile-message@4.0.2:
-    resolution: {integrity: sha512-jRDZ1IMLttGj41KcZvlrYAaI3CfqpLpfpf+Mfig13viT6NKvRzWZ+lXz0Y5D60w6uJIBAOGq9mSHf0gktF0duw==}
+  vfile-message@4.0.3:
+    resolution: {integrity: sha512-QTHzsGd1EhbZs4AsQ20JX1rC3cOlt/IWJruk893DfLRr57lcnOeMaWG4K0JrRta4mIJZKth2Au3mM3u03/JWKw==}
 
   vfile@6.0.3:
     resolution: {integrity: sha512-KzIbH/9tXat2u30jf+smMwFCsno4wHVdNmzFyL+T/L3UGqqk6JKfVqOFOZEpZSHADH1k40ab6NUIXZq422ov3Q==}
@@ -2726,7 +2724,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.2.7
 
-  '@rgrove/parse-xml@4.2.0': {}
+  '@rgrove/parse-xml@4.2.3': {}
 
   '@rolldown/binding-android-arm-eabi@1.2.5':
     optional: true
@@ -2775,11 +2773,11 @@ snapshots:
 
   '@rolldown/pluginutils@1.0.1': {}
 
-  '@rollup/pluginutils@5.1.4(rollup@4.38.0)':
+  '@rollup/pluginutils@5.4.0(rollup@4.38.0)':
     dependencies:
-      '@types/estree': 1.0.8
+      '@types/estree': 1.0.9
       estree-walker: 2.0.2
-      picomatch: 4.0.2
+      picomatch: 4.0.7
     optionalDependencies:
       rollup: 4.38.0
 
@@ -2845,28 +2843,31 @@ snapshots:
 
   '@svg-use/core@1.0.0':
     dependencies:
-      svgo: 3.3.2
-      unist-util-visit: 5.0.0
+      svgo: 3.3.5
+      unist-util-visit: 5.1.0
       xast-util-from-xml: 4.0.0
 
-  '@svg-use/react@1.0.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
+  '@svg-use/react@1.1.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1)':
     dependencies:
       react: 19.2.1
       react-dom: 19.2.1(react@19.2.1)
 
-  '@svg-use/rollup@1.0.0(@svg-use/react@1.0.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1))':
+  '@svg-use/rollup@1.1.0(@svg-use/react@1.1.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(rollup@4.38.0)':
     dependencies:
-      '@rollup/pluginutils': 5.1.4(rollup@4.38.0)
+      '@rollup/pluginutils': 5.4.0(rollup@4.38.0)
       '@svg-use/core': 1.0.0
       rollup: 4.38.0
     optionalDependencies:
-      '@svg-use/react': 1.0.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+      '@svg-use/react': 1.1.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
 
-  '@svg-use/vite@1.0.0(@svg-use/react@1.0.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1))':
+  '@svg-use/vite@1.1.1(@svg-use/react@1.1.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(rollup@4.38.0)(vite@8.2.2(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.20.5)(yaml@2.8.1))':
     dependencies:
-      '@svg-use/rollup': 1.0.0(@svg-use/react@1.0.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1))
+      '@svg-use/rollup': 1.1.0(@svg-use/react@1.1.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1))(rollup@4.38.0)
+      vite: 8.2.2(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.20.5)(yaml@2.8.1)
     optionalDependencies:
-      '@svg-use/react': 1.0.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+      '@svg-use/react': 1.1.0(react-dom@19.2.1(react@19.2.1))(react@19.2.1)
+    transitivePeerDependencies:
+      - rollup
 
   '@tailwindcss/node@4.1.17':
     dependencies:
@@ -3055,11 +3056,9 @@ snapshots:
 
   '@tanstack/virtual-file-routes@1.162.0': {}
 
-  '@trysound/sax@0.2.0': {}
-
   '@types/estree@1.0.7': {}
 
-  '@types/estree@1.0.8': {}
+  '@types/estree@1.0.9': {}
 
   '@types/react-dom@19.2.3(@types/react@19.2.7)':
     dependencies:
@@ -3181,10 +3180,10 @@ snapshots:
 
   cookie-es@3.1.1: {}
 
-  css-select@5.1.0:
+  css-select@5.2.2:
     dependencies:
       boolbase: 1.0.0
-      css-what: 6.1.0
+      css-what: 6.2.2
       domhandler: 5.0.3
       domutils: 3.2.2
       nth-check: 2.1.1
@@ -3199,7 +3198,7 @@ snapshots:
       mdn-data: 2.0.30
       source-map-js: 1.2.1
 
-  css-what@6.1.0: {}
+  css-what@6.2.2: {}
 
   csso@5.0.5:
     dependencies:
@@ -3533,8 +3532,6 @@ snapshots:
 
   picocolors@1.1.1: {}
 
-  picomatch@4.0.2: {}
-
   picomatch@4.0.7: {}
 
   postcss@8.5.26:
@@ -3631,6 +3628,8 @@ snapshots:
       '@rollup/rollup-win32-x64-msvc': 4.38.0
       fsevents: 2.3.3
 
+  sax@1.6.1: {}
+
   scheduler@0.27.0: {}
 
   semver@6.3.1: {}
@@ -3643,15 +3642,15 @@ snapshots:
 
   source-map-js@1.2.1: {}
 
-  svgo@3.3.2:
+  svgo@3.3.5:
     dependencies:
-      '@trysound/sax': 0.2.0
       commander: 7.2.0
-      css-select: 5.1.0
+      css-select: 5.2.2
       css-tree: 2.3.1
-      css-what: 6.1.0
+      css-what: 6.2.2
       csso: 5.0.5
       picocolors: 1.1.1
+      sax: 1.6.1
 
   tailwindcss@4.1.17: {}
 
@@ -3697,7 +3696,7 @@ snapshots:
       '@typescript/typescript-win32-arm64': 7.0.2
       '@typescript/typescript-win32-x64': 7.0.2
 
-  unist-util-is@6.0.0:
+  unist-util-is@6.0.1:
     dependencies:
       '@types/unist': 3.0.3
 
@@ -3705,16 +3704,16 @@ snapshots:
     dependencies:
       '@types/unist': 3.0.3
 
-  unist-util-visit-parents@6.0.1:
+  unist-util-visit-parents@6.0.2:
     dependencies:
       '@types/unist': 3.0.3
-      unist-util-is: 6.0.0
+      unist-util-is: 6.0.1
 
-  unist-util-visit@5.0.0:
+  unist-util-visit@5.1.0:
     dependencies:
       '@types/unist': 3.0.3
-      unist-util-is: 6.0.0
-      unist-util-visit-parents: 6.0.1
+      unist-util-is: 6.0.1
+      unist-util-visit-parents: 6.0.2
 
   unplugin@3.3.0(esbuild@0.28.2)(rolldown@1.2.5)(rollup@4.38.0)(vite@8.2.2(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.20.5)(yaml@2.8.1)):
     dependencies:
@@ -3766,7 +3765,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile: 6.0.3
 
-  vfile-message@4.0.2:
+  vfile-message@4.0.3:
     dependencies:
       '@types/unist': 3.0.3
       unist-util-stringify-position: 4.0.0
@@ -3774,7 +3773,7 @@ snapshots:
   vfile@6.0.3:
     dependencies:
       '@types/unist': 3.0.3
-      vfile-message: 4.0.2
+      vfile-message: 4.0.3
 
   vite@8.2.2(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.20.5)(yaml@2.8.1):
     dependencies:
@@ -3794,10 +3793,10 @@ snapshots:
 
   xast-util-from-xml@4.0.0:
     dependencies:
-      '@rgrove/parse-xml': 4.2.0
+      '@rgrove/parse-xml': 4.2.3
       '@types/xast': 2.0.4
       vfile-location: 5.0.3
-      vfile-message: 4.0.2
+      vfile-message: 4.0.3
 
   yallist@3.1.1: {}
 

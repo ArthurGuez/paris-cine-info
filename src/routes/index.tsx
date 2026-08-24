@@ -1,12 +1,19 @@
 import { createFileRoute } from '@tanstack/react-router';
-import type { Row } from '@tanstack/react-table';
 import {
-  getCoreRowModel,
-  getExpandedRowModel,
-  getFilteredRowModel,
-  getPaginationRowModel,
-  getSortedRowModel,
-  useReactTable,
+  tableFeatures,
+  rowSortingFeature,
+  rowExpandingFeature,
+  columnFilteringFeature,
+  createSortedRowModel,
+  createExpandedRowModel,
+  globalFilteringFeature,
+  useTable,
+  createFilteredRowModel,
+  createPaginatedRowModel,
+  columnVisibilityFeature,
+  rowPaginationFeature,
+  filterFn_includesString,
+  metaHelper,
 } from '@tanstack/react-table';
 import { useAtomValue } from 'jotai';
 import { useCallback } from 'react';
@@ -17,7 +24,23 @@ import Header from '../components/organisms/header/Header';
 import MoviesTable from '../components/organisms/movies/MoviesTable';
 import { getAllMovies } from '../services/movies';
 import { validationSearchSchema } from '../services/schemas';
-import type { Movie } from '../services/types';
+
+const features = tableFeatures({
+  columnFilteringFeature,
+  columnVisibilityFeature,
+  globalFilteringFeature,
+  rowSortingFeature,
+  rowExpandingFeature,
+  rowPaginationFeature,
+  sortedRowModel: createSortedRowModel(),
+  expandedRowModel: createExpandedRowModel(),
+  filteredRowModel: createFilteredRowModel(),
+  paginatedRowModel: createPaginatedRowModel(),
+  filterFns: { includesString: filterFn_includesString },
+  tableMeta: metaHelper<{ bookmarks: string[] }>(),
+});
+
+export type MyFeatures = typeof features;
 
 export const Route = createFileRoute('/')({
   component: Home,
@@ -30,25 +53,14 @@ function Home() {
   const loaderData = Route.useLoaderData();
   const bookmarks = useAtomValue(bookmarksAtom);
 
-  const table = useReactTable({
+  const table = useTable({
+    features,
     columns: MOVIES_COLUMNS,
     data: loaderData.data,
-    getCoreRowModel: getCoreRowModel(),
-    getExpandedRowModel: getExpandedRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
     getRowCanExpand: () => true,
-    getSortedRowModel: getSortedRowModel(),
     globalFilterFn: 'includesString',
     initialState: { pagination: { pageIndex: 0, pageSize: 100 } },
-    sortingFns: {
-      sortingBookmarks: (rowA: Row<Movie>, rowB: Row<Movie>): number => {
-        const movieA = bookmarks.includes(rowA.original.id) ? 1 : 0;
-        const movieB = bookmarks.includes(rowB.original.id) ? 1 : 0;
-
-        return movieB - movieA;
-      },
-    },
+    meta: { bookmarks },
   });
 
   const handleSearch = useCallback(

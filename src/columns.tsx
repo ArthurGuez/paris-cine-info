@@ -14,9 +14,10 @@ import { Component as Newspaper } from './icons/newspaper.svg?svgUse';
 import { Component as People } from './icons/people.svg?svgUse';
 import rottenTomatoesLogo from './icons/rotten-tomatoes-logo.svg';
 import sensCritiqueLogo from './icons/sens-critique-logo.svg';
+import type { MyFeatures } from './routes';
 import type { Movie } from './services/types';
 
-const columnHelper = createColumnHelper<Movie>();
+const columnHelper = createColumnHelper<MyFeatures, Movie>();
 
 const BOOKMARK_COLUMN = columnHelper.accessor('id', {
   header: ({ column }) => (
@@ -29,7 +30,12 @@ const BOOKMARK_COLUMN = columnHelper.accessor('id', {
     </div>
   ),
   cell: (info) => <MovieBookmark movieId={info.getValue()} />,
-  sortingFn: 'sortingBookmarks',
+  sortFn: (rowA, rowB) => {
+    const movieA = rowA.table.options.meta?.bookmarks.includes(rowA.original.id) ? 1 : 0;
+    const movieB = rowB.table.options.meta?.bookmarks.includes(rowB.original.id) ? 1 : 0;
+
+    return movieB - movieA;
+  },
 });
 
 const TITLE_COLUMN = columnHelper.accessor('ti', {
@@ -50,7 +56,7 @@ const TITLE_COLUMN = columnHelper.accessor('ti', {
       isPremiere={row.original.ne === '2'}
     />
   ),
-  sortingFn: (rowA, rowB) => rowA.original.ti.localeCompare(rowB.original.ti),
+  sortFn: (rowA, rowB) => rowA.original.ti.localeCompare(rowB.original.ti),
   sortDescFirst: false,
   meta: { className: 'pr-1.5 max-w-36 lg:max-w-46' },
 });
@@ -274,7 +280,7 @@ const PRINTS_NUMBER_COLUMN = columnHelper.accessor('co', {
   meta: { className: 'hidden lg:table-cell' },
 });
 
-export const MOVIES_COLUMNS = [
+export const MOVIES_COLUMNS = columnHelper.columns([
   BOOKMARK_COLUMN,
   TITLE_COLUMN,
   DIRECTOR_COLUMN,
@@ -287,4 +293,4 @@ export const MOVIES_COLUMNS = [
   ALLOCINE_VIEWER_RATING_COLUMN,
   YEAR_COLUMN,
   PRINTS_NUMBER_COLUMN,
-];
+]);

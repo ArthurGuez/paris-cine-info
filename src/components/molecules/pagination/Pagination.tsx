@@ -2,10 +2,11 @@ import type { Table } from '@tanstack/react-table';
 
 import { Component as BackArrow } from '../../../icons/back-arrow.svg?svgUse';
 import { Component as NextArrow } from '../../../icons/next-arrow.svg?svgUse';
+import type { MyFeatures } from '../../../routes';
 import type { Movie } from '../../../services/types';
 
 interface Props {
-  table: Table<Movie>;
+  table: Table<MyFeatures, Movie>;
 }
 
 export default function Pagination({ table }: Props) {
@@ -29,7 +30,7 @@ export default function Pagination({ table }: Props) {
           />
         </button>
       </div>
-      {table.getState().pagination.pageIndex + 1}/{table.getPageCount()}
+      {table.atoms.pagination.get().pageIndex + 1}/{table.getPageCount()}
       <div>
         <button
           className={`flex ${isNextPageDisabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}

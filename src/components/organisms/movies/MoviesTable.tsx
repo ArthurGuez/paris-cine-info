@@ -2,12 +2,13 @@ import type { Table } from '@tanstack/react-table';
 import { flexRender } from '@tanstack/react-table';
 import React from 'react';
 
+import type { MyFeatures } from '../../../routes';
 import type { Movie as MovieType } from '../../../services/types';
 import Pagination from '../../molecules/pagination/Pagination';
 import Movie from './Movie';
 
 interface Props {
-  table: Table<MovieType>;
+  table: Table<MyFeatures, MovieType>;
 }
 
 export default function MoviesTable({ table }: Props) {

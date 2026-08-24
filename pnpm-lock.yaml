@@ -30,8 +30,8 @@ importers:
         specifier: ^1.1.2
         version: 1.1.2(@types/react-dom@19.2.5(@types/react@19.2.18))(@types/react@19.2.18)(react-dom@19.2.8(react@19.2.8))(react@19.2.8)
       zod:
-        specifier: ^4.1.13
-        version: 4.1.13
+        specifier: ^4.4.3
+        version: 4.4.3
     devDependencies:
       '@svg-use/vite':
         specifier: ^1.1.1
@@ -2167,9 +2167,6 @@ packages:
     engines: {node: '>= 14.6'}
     hasBin: true
 
-  zod@4.1.13:
-    resolution: {integrity: sha512-AvvthqfqrAhNH9dnfmrfKzX5upOdjUVJYFqNSlkmGf64gRaTzlPwz99IHYnVs28qYAybvAlBV+H7pn0saFY4Ig==}
-
   zod@4.4.3:
     resolution: {integrity: sha512-ytENFjIJFl2UwYglde2jchW2Hwm4GJFLDiSXWdTrJQBIN9Fcyp7n4DhxJEiWNAJMV1/BqWfW/kkg71UDcHJyTQ==}
 
@@ -3802,7 +3799,5 @@ snapshots:
 
   yaml@2.8.1:
     optional: true
-
-  zod@4.1.13: {}
 
   zod@4.4.3: {}

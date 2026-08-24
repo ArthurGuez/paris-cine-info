@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@svg-use/react": "^1.0.0",
-    "@tanstack/react-router": "^1.139.14",
+    "@tanstack/react-router": "^1.170.32",
     "@tanstack/react-table": "^9.1.2",
     "jotai": "^2.12.2",
     "react": "^19.2.1",
@@ -26,8 +26,8 @@
   "devDependencies": {
     "@svg-use/vite": "^1.0.0",
     "@tailwindcss/vite": "^4.1.17",
-    "@tanstack/react-router-devtools": "^1.139.15",
-    "@tanstack/router-plugin": "^1.139.14",
+    "@tanstack/react-router-devtools": "^1.167.1",
+    "@tanstack/router-plugin": "^1.168.35",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.1.0",

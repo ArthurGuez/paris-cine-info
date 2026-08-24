@@ -1,10 +1,10 @@
 import { Component as Filter } from '../../../icons/filters.svg?svgUse';
-import ScreeningTimeFilter from './ScreeningTimeFilter';
 import DrawerWrapper from '../drawer/DrawerWrapper';
-import FormatFilter from './FormatFilter';
-import DayFilter from './DayFilter';
 import CardFilter from './CardFilter';
+import DayFilter from './DayFilter';
+import FormatFilter from './FormatFilter';
 import LanguageFilter from './LanguageFilter';
+import ScreeningTimeFilter from './ScreeningTimeFilter';
 
 const TITLE = 'Filtres';
 
@@ -18,7 +18,7 @@ export default function Filters() {
       <ScreeningTimeFilter />
       <DayFilter />
       <FormatFilter />
-      <LanguageFilter/>
+      <LanguageFilter />
     </DrawerWrapper>
   );
 }

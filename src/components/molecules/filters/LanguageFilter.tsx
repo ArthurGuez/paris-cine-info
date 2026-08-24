@@ -1,8 +1,9 @@
 import { getRouteApi, useNavigate } from '@tanstack/react-router';
 import { useState } from 'react';
+
+import { DEFAULT_LANGUAGE_VALUE } from '../../../constants';
 import type { Language, OptionGroup } from '../../../types';
 import Select from '../../atoms/inputs/Select';
-import { DEFAULT_LANGUAGE_VALUE } from '../../../constants';
 
 const LANGUAGE_FILTER_TITLE = 'Langue';
 

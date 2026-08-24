@@ -1,7 +1,7 @@
-import ThemeSetting from './ThemeSetting';
-import TitleDisplaySetting from './TitleDisplaySetting';
 import { Component as Gear } from '../../../icons/gear.svg?svgUse';
 import DrawerWrapper from '../drawer/DrawerWrapper';
+import ThemeSetting from './ThemeSetting';
+import TitleDisplaySetting from './TitleDisplaySetting';
 
 const TITLE = 'Réglages';
 

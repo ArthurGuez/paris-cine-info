@@ -1,4 +1,5 @@
 import { useAtomValue } from 'jotai';
+
 import type { TitleDisplay } from '../../../atoms/settings';
 import { titleDisplayAtom } from '../../../atoms/settings';
 

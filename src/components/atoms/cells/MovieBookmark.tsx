@@ -1,7 +1,8 @@
 import { useAtom } from 'jotai';
-import { Component as Bookmark } from '../../../icons/bookmark.svg?svgUse';
-import { bookmarksAtom } from '../../../atoms/bookmarks';
 import type { SyntheticEvent } from 'react';
+
+import { bookmarksAtom } from '../../../atoms/bookmarks';
+import { Component as Bookmark } from '../../../icons/bookmark.svg?svgUse';
 
 interface Props {
   movieId: string;

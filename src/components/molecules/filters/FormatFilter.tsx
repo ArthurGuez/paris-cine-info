@@ -1,8 +1,9 @@
-import { useState } from 'react';
-import Select from '../../atoms/inputs/Select';
 import { getRouteApi, useNavigate } from '@tanstack/react-router';
-import type { Format, OptionGroup } from '../../../types';
+import { useState } from 'react';
+
 import { DEFAULT_FORMAT_VALUE } from '../../../constants';
+import type { Format, OptionGroup } from '../../../types';
+import Select from '../../atoms/inputs/Select';
 
 const FORMAT_FILTER_TITLE = 'Format';
 

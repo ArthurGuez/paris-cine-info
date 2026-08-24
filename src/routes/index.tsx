@@ -1,7 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router';
-import Header from '../components/organisms/header/Header';
-import { getAllMovies } from '../services/movies';
-import MoviesTable from '../components/organisms/movies/MoviesTable';
 import type { Row } from '@tanstack/react-table';
 import {
   getCoreRowModel,
@@ -11,13 +8,16 @@ import {
   getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table';
-
-import { MOVIES_COLUMNS } from '../columns';
-import { useCallback } from 'react';
 import { useAtomValue } from 'jotai';
+import { useCallback } from 'react';
+
 import { bookmarksAtom } from '../atoms/bookmarks';
-import type { Movie } from '../services/types';
+import { MOVIES_COLUMNS } from '../columns';
+import Header from '../components/organisms/header/Header';
+import MoviesTable from '../components/organisms/movies/MoviesTable';
+import { getAllMovies } from '../services/movies';
 import { validationSearchSchema } from '../services/schemas';
+import type { Movie } from '../services/types';
 
 export const Route = createFileRoute('/')({
   component: Home,

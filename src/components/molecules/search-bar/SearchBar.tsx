@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+
 import { Component as MagnifyingGlass } from '../../../icons/magnifying-glass.svg?svgUse';
 
 const SEARCH_BAR_PLACEHOLDER = 'Rechercher un film, un réalisateur, une salle...';

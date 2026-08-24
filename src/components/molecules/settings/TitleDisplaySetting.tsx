@@ -1,4 +1,5 @@
 import { useAtom } from 'jotai';
+
 import type { TitleDisplay } from '../../../atoms/settings';
 import { titleDisplayAtom } from '../../../atoms/settings';
 import type { OptionGroup } from '../../../types';

@@ -1,3 +1,5 @@
+import { z } from 'zod';
+
 import {
   DEFAULT_DAY_VALUE,
   DEFAULT_FORMAT_VALUE,
@@ -7,7 +9,6 @@ import {
 import type { Card, Day, Format, Language, ScreeningTime } from '../types';
 import { getInitialCard } from '../utils';
 import { getAllMoviesResponseSchema } from './schemas';
-import { z } from 'zod';
 import type { GetAllMoviesResponse } from './types';
 
 interface GetAllMoviesOptions {

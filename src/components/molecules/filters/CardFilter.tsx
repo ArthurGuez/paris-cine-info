@@ -1,9 +1,10 @@
 import { getRouteApi, useNavigate } from '@tanstack/react-router';
-import type { Card, NestedOptionGroup } from '../../../types';
 import { useState } from 'react';
-import Select from '../../atoms/inputs/Select';
+
 import { DEFAULT_CARD_VALUE } from '../../../constants';
+import type { Card, NestedOptionGroup } from '../../../types';
 import { getInitialCard } from '../../../utils';
+import Select from '../../atoms/inputs/Select';
 
 const CARD_FILTER_TITLE = 'Carte';
 

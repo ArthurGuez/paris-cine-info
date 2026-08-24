@@ -1,5 +1,5 @@
-import type { NestedOptionGroup, Option, OptionGroup } from '../../../types';
 import { Component as FilledTriangle } from '../../../icons/filled-triangle.svg?svgUse';
+import type { NestedOptionGroup, Option, OptionGroup } from '../../../types';
 
 function renderOptions<T extends string>(options: Option<T>[]) {
   return options.map((option) => (

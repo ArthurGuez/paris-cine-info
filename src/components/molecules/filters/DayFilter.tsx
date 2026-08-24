@@ -1,8 +1,9 @@
+import { getRouteApi, useNavigate } from '@tanstack/react-router';
+import { useState } from 'react';
+
 import { DEFAULT_DAY_VALUE } from '../../../constants';
 import type { OptionGroup, Day, Option } from '../../../types';
 import Select from '../../atoms/inputs/Select';
-import { getRouteApi, useNavigate } from '@tanstack/react-router';
-import { useState } from 'react';
 
 const CURRENT_DAY_INDEX = new Date().getDay();
 

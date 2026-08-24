@@ -2,9 +2,9 @@ import type { Table } from '@tanstack/react-table';
 import { flexRender } from '@tanstack/react-table';
 import React from 'react';
 
-import Movie from './Movie';
 import type { Movie as MovieType } from '../../../services/types';
 import Pagination from '../../molecules/pagination/Pagination';
+import Movie from './Movie';
 
 interface Props {
   table: Table<MovieType>;

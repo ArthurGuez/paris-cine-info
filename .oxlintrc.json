@@ -1,29 +1,11 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": [
-    "typescript",
-    "unicorn",
-    "react"
-  ],
-  "categories": {
-    "correctness": "off"
-  },
-  "options": {
-    "typeAware": true
-  },
-  "env": {
-    "builtin": true,
-    "browser": true
-  },
-  "settings": {
-    "react": {
-      "version": "19.2.1"
-    }
-  },
-  "ignorePatterns": [
-    "**/dist/**",
-    "lint-staged.config.js"
-  ],
+  "plugins": ["typescript", "unicorn", "react"],
+  "categories": { "correctness": "off" },
+  "options": { "typeAware": true },
+  "env": { "builtin": true, "browser": true },
+  "settings": { "react": { "version": "19.2.1" } },
+  "ignorePatterns": ["**/dist/**", "lint-staged.config.js"],
   "rules": {
     "constructor-super": "error",
     "for-direction": "error",
@@ -118,12 +100,7 @@
     "react/set-state-in-render": "error",
     "react/unsupported-syntax": "warn",
     "typescript/await-thenable": "error",
-    "typescript/ban-ts-comment": [
-      "error",
-      {
-        "minimumDescriptionLength": 10
-      }
-    ],
+    "typescript/ban-ts-comment": ["error", { "minimumDescriptionLength": 10 }],
     "typescript/no-array-delete": "error",
     "typescript/no-base-to-string": "error",
     "typescript/no-confusing-void-expression": "error",
@@ -200,10 +177,7 @@
         "allowRegExp": false
       }
     ],
-    "typescript/return-await": [
-      "error",
-      "error-handling-correctness-only"
-    ],
+    "typescript/return-await": ["error", "error-handling-correctness-only"],
     "typescript/triple-slash-reference": "error",
     "typescript/unbound-method": "error",
     "typescript/unified-signatures": "error",
@@ -232,12 +206,7 @@
   },
   "overrides": [
     {
-      "files": [
-        "**/*.ts",
-        "**/*.tsx",
-        "**/*.mts",
-        "**/*.cts"
-      ],
+      "files": ["**/*.ts", "**/*.tsx", "**/*.mts", "**/*.cts"],
       "rules": {
         "constructor-super": "off",
         "getter-return": "off",
@@ -263,9 +232,7 @@
       }
     },
     {
-      "files": [
-        "**/*.mjs"
-      ],
+      "files": ["**/*.mjs"],
       "rules": {
         "typescript/await-thenable": "off",
         "typescript/consistent-return": "off",

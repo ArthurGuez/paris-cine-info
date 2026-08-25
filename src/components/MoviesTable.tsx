@@ -1,6 +1,6 @@
 import type { Table } from '@tanstack/react-table';
 import { flexRender } from '@tanstack/react-table';
-import React from 'react';
+import React, { Suspense } from 'react';
 
 import type { MyFeatures } from '../routes';
 import type { Movie as MovieType } from '../services/types';
@@ -58,7 +58,9 @@ export default function MoviesTable({ table }: Props) {
                 {row.getIsExpanded() && (
                   <tr>
                     <td colSpan={row.getAllCells().length}>
-                      <Movie id={row.original.id} />
+                      <Suspense fallback={<p>Loading poster…</p>}>
+                        <Movie id={row.original.id} />
+                      </Suspense>
                     </td>
                   </tr>
                 )}

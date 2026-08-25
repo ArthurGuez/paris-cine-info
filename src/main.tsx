@@ -1,3 +1,4 @@
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { RouterProvider, createRouter } from '@tanstack/react-router';
 import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
@@ -5,15 +6,15 @@ import ReactDOM from 'react-dom/client';
 import { ThemeProvider } from './contexts/theme';
 import { routeTree } from './routeTree.gen';
 
-// Set up a Router instance
 const router = createRouter({ routeTree, defaultPreload: 'intent' });
 
-// Register things for typesafety
 declare module '@tanstack/react-router' {
   interface Register {
     router: typeof router;
   }
 }
+
+const queryClient = new QueryClient();
 
 const rootElement = document.getElementById('app');
 
@@ -22,9 +23,11 @@ if (rootElement && !rootElement.innerHTML) {
 
   root.render(
     <StrictMode>
-      <ThemeProvider>
-        <RouterProvider router={router} />
-      </ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <ThemeProvider>
+          <RouterProvider router={router} />
+        </ThemeProvider>
+      </QueryClientProvider>
     </StrictMode>,
   );
 }

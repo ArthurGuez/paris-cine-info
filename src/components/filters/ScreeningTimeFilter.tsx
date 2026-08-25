@@ -1,8 +1,8 @@
 import { useLocation, useNavigate } from '@tanstack/react-router';
 
-import { DEFAULT_SCREENING_TIME_VALUE } from '../../../constants';
-import type { OptionGroup, ScreeningTime } from '../../../types';
-import RadioGroup from '../fields/RadioGroup';
+import { DEFAULT_SCREENING_TIME_VALUE } from '../../constants';
+import type { OptionGroup, ScreeningTime } from '../../types';
+import RadioGroup from '../inputs/RadioGroup';
 
 const SCREENING_TIME_FILTER_TITLE = 'Période';
 

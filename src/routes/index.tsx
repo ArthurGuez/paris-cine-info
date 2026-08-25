@@ -20,8 +20,8 @@ import { useCallback } from 'react';
 
 import { bookmarksAtom } from '../atoms/bookmarks';
 import { MOVIES_COLUMNS } from '../columns';
-import Header from '../components/organisms/header/Header';
-import MoviesTable from '../components/organisms/movies/MoviesTable';
+import Header from '../components/Header';
+import MoviesTable from '../components/MoviesTable';
 import { getAllMovies } from '../services/movies';
 import { validationSearchSchema } from '../services/schemas';
 

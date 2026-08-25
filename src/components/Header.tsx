@@ -1,6 +1,6 @@
-import Filters from '../../molecules/filters/Filters';
-import SearchBar from '../../molecules/search-bar/SearchBar';
-import Settings from '../../molecules/settings/Settings';
+import Filters from './filters/Filters';
+import SearchBar from './SearchBar';
+import Settings from './settings/Settings';
 
 interface Props {
   onSearch: (searchTerm: string) => void;

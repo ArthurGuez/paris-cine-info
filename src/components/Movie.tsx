@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { getPoster } from '../../../services/movies';
+import { getPoster } from '../services/movies';
 
 interface Props {
   id: string;

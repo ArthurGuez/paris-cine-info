@@ -1,9 +1,9 @@
 import { useAtom } from 'jotai';
 
-import type { TitleDisplay } from '../../../atoms/settings';
-import { titleDisplayAtom } from '../../../atoms/settings';
-import type { OptionGroup } from '../../../types';
-import RadioGroup from '../fields/RadioGroup';
+import type { TitleDisplay } from '../../atoms/settings';
+import { titleDisplayAtom } from '../../atoms/settings';
+import type { OptionGroup } from '../../types';
+import RadioGroup from '../inputs/RadioGroup';
 
 const TITLE_DISPLAY_SETTING_TITLE = 'Affichage des titres';
 

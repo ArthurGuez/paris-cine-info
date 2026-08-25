@@ -1,5 +1,5 @@
-import type { OptionGroup } from '../../../types';
-import Radio from '../../atoms/inputs/Radio';
+import type { OptionGroup } from '../../types';
+import Radio from './Radio';
 
 interface Props<T> {
   handleChange: ((newValue: T) => void) | undefined;

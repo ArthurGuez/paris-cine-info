@@ -1,5 +1,5 @@
-import { Component as Gear } from '../../../icons/gear.svg?svgUse';
-import DrawerWrapper from '../drawer/DrawerWrapper';
+import { Component as Gear } from '../../icons/gear.svg?svgUse';
+import DrawerWrapper from '../DrawerWrapper';
 import ThemeSetting from './ThemeSetting';
 import TitleDisplaySetting from './TitleDisplaySetting';
 

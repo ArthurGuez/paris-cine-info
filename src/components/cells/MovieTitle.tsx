@@ -1,7 +1,7 @@
 import { useAtomValue } from 'jotai';
 
-import type { TitleDisplay } from '../../../atoms/settings';
-import { titleDisplayAtom } from '../../../atoms/settings';
+import type { TitleDisplay } from '../../atoms/settings';
+import { titleDisplayAtom } from '../../atoms/settings';
 
 function renderTitle(titleDisplay: TitleDisplay, originalTitle: string, frenchTitle: string) {
   switch (titleDisplay) {

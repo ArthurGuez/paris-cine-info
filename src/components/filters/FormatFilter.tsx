@@ -1,8 +1,8 @@
 import { useLocation, useNavigate } from '@tanstack/react-router';
 
-import { DEFAULT_FORMAT_VALUE } from '../../../constants';
-import type { Format, OptionGroup } from '../../../types';
-import Select from '../../atoms/inputs/Select';
+import { DEFAULT_FORMAT_VALUE } from '../../constants';
+import type { Format, OptionGroup } from '../../types';
+import Select from '../inputs/Select';
 
 const FORMAT_FILTER_TITLE = 'Format';
 

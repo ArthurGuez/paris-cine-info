@@ -1,5 +1,5 @@
-import { Component as Filter } from '../../../icons/filters.svg?svgUse';
-import DrawerWrapper from '../drawer/DrawerWrapper';
+import { Component as Filter } from '../../icons/filters.svg?svgUse';
+import DrawerWrapper from '../DrawerWrapper';
 import CardFilter from './CardFilter';
 import DayFilter from './DayFilter';
 import FormatFilter from './FormatFilter';

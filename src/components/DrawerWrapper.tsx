@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import { Drawer } from 'vaul';
 
-import { Component as Cross } from '../../../icons/cross.svg?svgUse';
+import { Component as Cross } from '../icons/cross.svg?svgUse';
 
 interface Props {
   children: ReactNode;

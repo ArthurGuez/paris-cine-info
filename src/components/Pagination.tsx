@@ -1,9 +1,9 @@
 import type { Table } from '@tanstack/react-table';
 
-import { Component as BackArrow } from '../../../icons/back-arrow.svg?svgUse';
-import { Component as NextArrow } from '../../../icons/next-arrow.svg?svgUse';
-import type { MyFeatures } from '../../../routes';
-import type { Movie } from '../../../services/types';
+import { Component as BackArrow } from '../icons/back-arrow.svg?svgUse';
+import { Component as NextArrow } from '../icons/next-arrow.svg?svgUse';
+import type { MyFeatures } from '../routes';
+import type { Movie } from '../services/types';
 
 interface Props {
   table: Table<MyFeatures, Movie>;

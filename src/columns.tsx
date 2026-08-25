@@ -1,9 +1,9 @@
 import { createColumnHelper } from '@tanstack/react-table';
 
-import MovieBookmark from './components/atoms/cells/MovieBookmark';
-import MovieRating from './components/atoms/cells/MovieRating';
-import MovieTitle from './components/atoms/cells/MovieTitle';
-import SortingArrows from './components/molecules/sorting-arrows/SortingArrows';
+import MovieBookmark from './components/cells/MovieBookmark';
+import MovieRating from './components/cells/MovieRating';
+import MovieTitle from './components/cells/MovieTitle';
+import SortingArrows from './components/SortingArrows';
 import allocineLogo from './icons/allocine-logo.svg';
 import { Component as Bookmark } from './icons/bookmark.svg?svgUse';
 import { Component as FilmRoll } from './icons/film-roll.svg?svgUse';

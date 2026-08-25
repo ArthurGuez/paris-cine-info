@@ -1,5 +1,4 @@
-import { getRouteApi, useNavigate } from '@tanstack/react-router';
-import { useState } from 'react';
+import { useLocation, useNavigate } from '@tanstack/react-router';
 
 import { DEFAULT_DAY_VALUE } from '../../../constants';
 import type { OptionGroup, Day, Option } from '../../../types';
@@ -30,11 +29,8 @@ const DAY_FILTER: OptionGroup<Day> = {
   ],
 };
 
-const routeApi = getRouteApi('/');
-
 export default function DayFilter() {
-  const { day: daySearchParam = DEFAULT_DAY_VALUE } = routeApi.useSearch();
-  const [day, setDay] = useState<Day>(daySearchParam);
+  const day = useLocation({ select: ({ search }) => search.day }) ?? DEFAULT_DAY_VALUE;
   const navigate = useNavigate({ from: '/' });
 
   function handleDayFilterChange(newDay: Day) {
@@ -45,7 +41,6 @@ export default function DayFilter() {
         day: newDay === DEFAULT_DAY_VALUE ? undefined : newDay,
       }),
     });
-    setDay(newDay);
   }
 
   return (

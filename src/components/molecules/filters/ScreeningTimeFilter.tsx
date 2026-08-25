@@ -1,5 +1,4 @@
-import { getRouteApi, useNavigate } from '@tanstack/react-router';
-import { useState } from 'react';
+import { useLocation, useNavigate } from '@tanstack/react-router';
 
 import { DEFAULT_SCREENING_TIME_VALUE } from '../../../constants';
 import type { OptionGroup, ScreeningTime } from '../../../types';
@@ -17,11 +16,9 @@ const SCREENING_TIME_FILTER: OptionGroup<ScreeningTime> = {
   ],
 };
 
-const routeApi = getRouteApi('/');
-
 export default function ScreeningTimeFilter() {
-  const { time: timeSearchParam = DEFAULT_SCREENING_TIME_VALUE } = routeApi.useSearch();
-  const [screeningTime, setScreeningTime] = useState<ScreeningTime>(timeSearchParam);
+  const screeningTime =
+    useLocation({ select: ({ search }) => search.time }) ?? DEFAULT_SCREENING_TIME_VALUE;
   const navigate = useNavigate({ from: '/' });
 
   function handleScreeningTimeFilterChange(newScreeningTime: ScreeningTime) {
@@ -32,7 +29,6 @@ export default function ScreeningTimeFilter() {
         time: newScreeningTime === DEFAULT_SCREENING_TIME_VALUE ? undefined : newScreeningTime,
       }),
     });
-    setScreeningTime(newScreeningTime);
   }
 
   return (

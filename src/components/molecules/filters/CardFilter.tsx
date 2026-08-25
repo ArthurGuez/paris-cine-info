@@ -1,5 +1,4 @@
-import { getRouteApi, useNavigate } from '@tanstack/react-router';
-import { useState } from 'react';
+import { useLocation, useNavigate } from '@tanstack/react-router';
 
 import { DEFAULT_CARD_VALUE } from '../../../constants';
 import type { Card, NestedOptionGroup } from '../../../types';
@@ -58,12 +57,8 @@ const CARD_FILTER: NestedOptionGroup<Card> = {
 
 const INITIAL_CARD = getInitialCard();
 
-const routeApi = getRouteApi('/');
-
 export default function CardFilter() {
-  const { card: cardSearchParam } = routeApi.useSearch();
-  const defaultCard = cardSearchParam ?? INITIAL_CARD;
-  const [card, setCard] = useState<Card>(defaultCard);
+  const card = useLocation({ select: ({ search }) => search.card }) ?? INITIAL_CARD;
   const navigate = useNavigate({ from: '/' });
 
   function handleCardFilterChange(newCard: Card) {
@@ -75,7 +70,6 @@ export default function CardFilter() {
       }),
     });
     localStorage.setItem('card', newCard);
-    setCard(newCard);
   }
 
   return (

@@ -1,5 +1,4 @@
-import { getRouteApi, useNavigate } from '@tanstack/react-router';
-import { useState } from 'react';
+import { useLocation, useNavigate } from '@tanstack/react-router';
 
 import { DEFAULT_FORMAT_VALUE } from '../../../constants';
 import type { Format, OptionGroup } from '../../../types';
@@ -25,11 +24,8 @@ const FORMAT_FILTER: OptionGroup<Format> = {
   ],
 };
 
-const routeApi = getRouteApi('/');
-
 export default function FormatFilter() {
-  const { format: formatSearchParam = DEFAULT_FORMAT_VALUE } = routeApi.useSearch();
-  const [format, setFormat] = useState<Format>(formatSearchParam);
+  const format = useLocation({ select: ({ search }) => search.format }) ?? DEFAULT_FORMAT_VALUE;
   const navigate = useNavigate({ from: '/' });
 
   function handleFormatFilterChange(newFormat: Format) {
@@ -40,7 +36,6 @@ export default function FormatFilter() {
         format: newFormat === DEFAULT_FORMAT_VALUE ? undefined : newFormat,
       }),
     });
-    setFormat(newFormat);
   }
 
   return (

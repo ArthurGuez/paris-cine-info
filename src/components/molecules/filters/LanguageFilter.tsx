@@ -1,5 +1,4 @@
-import { getRouteApi, useNavigate } from '@tanstack/react-router';
-import { useState } from 'react';
+import { useLocation, useNavigate } from '@tanstack/react-router';
 
 import { DEFAULT_LANGUAGE_VALUE } from '../../../constants';
 import type { Language, OptionGroup } from '../../../types';
@@ -46,11 +45,9 @@ const LANGUAGE_FILTER: OptionGroup<Language> = {
   ],
 };
 
-const routeApi = getRouteApi('/');
-
 export default function LanguageFilter() {
-  const { language: languageSearchParam = DEFAULT_LANGUAGE_VALUE } = routeApi.useSearch();
-  const [language, setLanguage] = useState<Language>(languageSearchParam);
+  const language =
+    useLocation({ select: ({ search }) => search.language }) ?? DEFAULT_LANGUAGE_VALUE;
   const navigate = useNavigate({ from: '/' });
 
   function handleLanguageFilterChange(newLanguage: Language) {
@@ -61,7 +58,6 @@ export default function LanguageFilter() {
         language: newLanguage === DEFAULT_LANGUAGE_VALUE ? undefined : newLanguage,
       }),
     });
-    setLanguage(newLanguage);
   }
 
   return (

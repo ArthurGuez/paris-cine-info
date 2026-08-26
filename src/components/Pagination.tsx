@@ -14,39 +14,41 @@ export default function Pagination({ table }: Props) {
   const isNextPageDisabled = !table.getCanNextPage();
 
   return (
-    <div className="flex h-8 items-center justify-between gap-1.5 text-xl text-body tabular-nums">
-      <div>
-        <button
-          type="button"
-          className={`flex ${isPrevPageDisabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
-          onClick={() => {
-            table.previousPage();
-          }}
-          disabled={isPrevPageDisabled}
-        >
-          <BackArrow
-            color={isPrevPageDisabled ? 'grey' : 'var(--accent)'}
-            height="35px"
-            width="35px"
-          />
-        </button>
-      </div>
-      {table.atoms.pagination.get().pageIndex + 1}/{table.getPageCount()}
-      <div>
-        <button
-          type="button"
-          className={`flex ${isNextPageDisabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
-          onClick={() => {
-            table.nextPage();
-          }}
-          disabled={isNextPageDisabled}
-        >
-          <NextArrow
-            color={isNextPageDisabled ? 'grey' : 'var(--accent)'}
-            height="35px"
-            width="35px"
-          />
-        </button>
+    <div className="py-1 shadow-[0_-2px_3px_rgba(255,255,255,0.05)]">
+      <div className="flex h-8 items-center justify-between gap-1.5 text-xl text-body tabular-nums">
+        <div>
+          <button
+            type="button"
+            className={`flex ${isPrevPageDisabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+            onClick={() => {
+              table.previousPage();
+            }}
+            disabled={isPrevPageDisabled}
+          >
+            <BackArrow
+              color={isPrevPageDisabled ? 'grey' : 'var(--accent)'}
+              height="35px"
+              width="35px"
+            />
+          </button>
+        </div>
+        {table.atoms.pagination.get().pageIndex + 1}/{table.getPageCount()}
+        <div>
+          <button
+            type="button"
+            className={`flex ${isNextPageDisabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+            onClick={() => {
+              table.nextPage();
+            }}
+            disabled={isNextPageDisabled}
+          >
+            <NextArrow
+              color={isNextPageDisabled ? 'grey' : 'var(--accent)'}
+              height="35px"
+              width="35px"
+            />
+          </button>
+        </div>
       </div>
     </div>
   );

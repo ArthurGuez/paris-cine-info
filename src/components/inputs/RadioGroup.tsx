@@ -2,7 +2,7 @@ import type { OptionGroup } from '../../types';
 import Radio from './Radio';
 
 interface Props<T> {
-  handleChange: ((newValue: T) => void) | undefined;
+  handleChange: (newValue: T) => void;
   selectedValue: T;
   optionGroup: OptionGroup<T>;
   title: string;

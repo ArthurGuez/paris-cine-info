@@ -4,16 +4,17 @@ export type Theme = 'auto' | 'dark' | 'light';
 
 interface ThemeContextType {
   theme: Theme;
-  handleThemeChange: ((newTheme: Theme) => void) | undefined;
+  handleThemeChange: (newTheme: Theme) => void;
 }
 
-const ThemeContext = createContext<ThemeContextType>({
-  theme: 'light',
-  handleThemeChange: undefined,
-});
+const ThemeContext = createContext<ThemeContextType | null>(null);
 
 export function useTheme(): ThemeContextType {
   const context = useContext(ThemeContext);
+
+  if (context === null) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
 
   return context;
 }

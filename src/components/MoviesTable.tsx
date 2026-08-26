@@ -1,5 +1,4 @@
-import type { Table } from '@tanstack/react-table';
-import { flexRender } from '@tanstack/react-table';
+import { type Table, flexRender } from '@tanstack/react-table';
 import React, { Suspense } from 'react';
 
 import type { MyFeatures } from '../routes';

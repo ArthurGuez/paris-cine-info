@@ -1,14 +1,20 @@
 import { useAtomValue } from 'jotai';
+import type { JSX } from 'react';
 
-import type { TitleDisplay } from '../../atoms/settings';
-import { titleDisplayAtom } from '../../atoms/settings';
+import { type TitleDisplay, titleDisplayAtom } from '../../atoms/settings';
 
-function renderTitle(titleDisplay: TitleDisplay, originalTitle: string, frenchTitle: string) {
+function renderTitle(
+  titleDisplay: TitleDisplay,
+  originalTitle: string,
+  frenchTitle: string,
+): JSX.Element {
   switch (titleDisplay) {
     case 'french':
       return <p className="font-bold">{frenchTitle}</p>;
     case 'original':
       return <p className="font-bold">{originalTitle.length > 0 ? originalTitle : frenchTitle}</p>;
+    // oxlint-disable-next-line no-useless-switch-case - Explicit case for exhaustiveness check
+    case 'both':
     default:
       return (
         <div>

@@ -1,5 +1,4 @@
-import type { Theme } from '../../contexts/theme';
-import { useTheme } from '../../contexts/theme';
+import { type Theme, useTheme } from '../../contexts/theme';
 import type { OptionGroup } from '../../types';
 import RadioGroup from '../inputs/RadioGroup';
 

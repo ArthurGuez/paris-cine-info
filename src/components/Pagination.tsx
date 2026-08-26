@@ -17,6 +17,7 @@ export default function Pagination({ table }: Props) {
     <div className="flex h-8 items-center justify-between gap-1.5 text-xl text-body tabular-nums">
       <div>
         <button
+          type="button"
           className={`flex ${isPrevPageDisabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
           onClick={() => {
             table.previousPage();
@@ -33,6 +34,7 @@ export default function Pagination({ table }: Props) {
       {table.atoms.pagination.get().pageIndex + 1}/{table.getPageCount()}
       <div>
         <button
+          type="button"
           className={`flex ${isNextPageDisabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
           onClick={() => {
             table.nextPage();

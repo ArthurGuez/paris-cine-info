@@ -1,7 +1,6 @@
 import { useAtom } from 'jotai';
 
-import type { TitleDisplay } from '../../atoms/settings';
-import { titleDisplayAtom } from '../../atoms/settings';
+import { type TitleDisplay, titleDisplayAtom } from '../../atoms/settings';
 import type { OptionGroup } from '../../types';
 import RadioGroup from '../inputs/RadioGroup';
 

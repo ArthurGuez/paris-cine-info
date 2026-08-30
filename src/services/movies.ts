@@ -27,7 +27,7 @@ export async function getAllMovies({
   language = DEFAULT_LANGUAGE_VALUE,
 }: GetAllMoviesOptions): Promise<GetAllMoviesResponse> {
   const res = await fetch(
-    `https://paris-cine.info/get_pcimovies_nocors.php?selday=${day}&selcard=${card}&seladdr=Paris&seltime=${time}&selformat=${format}&sellang=${language}`,
+    `https://paris-cine.info/get_pcimovies_nocors.php?selday=${day}&selcard=${card}&seladdr=Paris&seltime=${time}&selformat=${format}&sellang=${language}&addr=`,
   );
 
   if (!res.ok) {

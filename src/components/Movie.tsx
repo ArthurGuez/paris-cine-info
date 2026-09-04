@@ -1,20 +1,13 @@
-import { useSuspenseQuery } from '@tanstack/react-query';
-
-import { getPoster } from '../services/movies';
+const BASE_POSTER_URL = 'https://paris-cine.info/get_poster_nocors.php?id=';
 
 interface Props {
   id: string;
 }
 
 export default function Movie({ id }: Props) {
-  const { data: poster } = useSuspenseQuery({
-    queryKey: ['poster', id],
-    queryFn: () => getPoster(id),
-  });
-
   return (
     <div>
-      <img src={poster} alt="" />
+      <img src={`${BASE_POSTER_URL}${id}`} alt="" />
     </div>
   );
 }

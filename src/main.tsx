@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom/client';
 import { ThemeProvider } from './contexts/theme';
 import { routeTree } from './routeTree.gen';
 
-const router = createRouter({ routeTree, defaultPreload: 'intent' });
+const router = createRouter({ routeTree, defaultPreload: 'intent', defaultStaleTime: 10 * 60_000 });
 
 declare module '@tanstack/react-router' {
   interface Register {

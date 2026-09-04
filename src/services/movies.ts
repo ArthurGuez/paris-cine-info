@@ -8,7 +8,7 @@ import {
 } from '../constants';
 import type { Card, Day, Format, Language, ScreeningTime } from '../types';
 import { getInitialCard } from '../utils';
-import { getAllMoviesResponseSchema } from './schemas';
+import { getAllMoviesResponseSchema, getShowtimesResponseSchema } from './schemas';
 import type { GetAllMoviesResponse } from './types';
 
 interface GetAllMoviesOptions {
@@ -31,13 +31,32 @@ export async function getAllMovies({
   );
 
   if (!res.ok) {
-    throw new Error('Failed to fetch data');
+    throw new Error('Failed to fetch movies');
   }
 
   const result = getAllMoviesResponseSchema.safeParse(await res.json());
 
   if (!result.success) {
-    console.error('Validation error:', z.treeifyError(result.error));
+    console.error('Movies validation error:', { cause: z.treeifyError(result.error) });
+
+    throw new Error('Invalid API response format');
+  }
+
+  return result.data;
+}
+
+export async function getShowtimes(movieId: string) {
+  const res = await fetch(`https://paris-cine.info/get_showtimes_nocors.php?mov_id=${movieId}`);
+
+  if (!res.ok) {
+    throw new Error('Failed to fetch showtimes');
+  }
+
+  const result = getShowtimesResponseSchema.safeParse(await res.json());
+
+  if (!result.success) {
+    console.error('Showtimes validation error:', { cause: z.treeifyError(result.error) });
+
     throw new Error('Invalid API response format');
   }
 

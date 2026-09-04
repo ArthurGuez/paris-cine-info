@@ -46,6 +46,30 @@ export const getAllMoviesResponseSchema = z.object({
   follow_movs: z.array(z.string()),
 });
 
+const showtimeSchema = z.object({
+  title: z.string(),
+  tid: z.string(),
+  seat_res: z.enum(['0', '1']),
+  csup: z.number(),
+  start: z.string(),
+  type: z.string(),
+  exp: z.string(),
+  screen_id: z.number(),
+  screen_name: z.string(),
+  format: z.string(),
+  book: z.string(),
+  srcs: z.string(),
+  com: z.string(),
+  extra: z.number(),
+});
+
+export const getShowtimesResponseSchema = z.object({
+  view: z.enum(['listAll', 'listDay']),
+  maxpix: z.number(),
+  showtimes: z.array(showtimeSchema),
+  dates: z.array(z.string()),
+});
+
 export const validationSearchSchema = z.object({
   card: z.enum(CARDS).exclude([DEFAULT_CARD_VALUE]).optional(),
   day: z.enum(DAYS).exclude([DEFAULT_DAY_VALUE]).optional(),

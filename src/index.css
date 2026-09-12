@@ -19,3 +19,11 @@
   --color-accent: var(--accent);
   --color-background: var(--background);
 }
+
+body {
+  position: relative;
+}
+
+.root {
+  isolation: isolate;
+}

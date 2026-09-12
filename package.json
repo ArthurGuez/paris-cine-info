@@ -22,7 +22,6 @@
     "jotai": "^2.20.3",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "vaul": "^1.1.2",
     "zod": "^4.4.3"
   },
   "devDependencies": {

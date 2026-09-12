@@ -8,7 +8,7 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   plugins: [
     tanstackRouter({ target: 'react', autoCodeSplitting: true }),
-    react(),
+    react({ compiler: true }),
     svgUse(),
     tailwindcss(),
   ],

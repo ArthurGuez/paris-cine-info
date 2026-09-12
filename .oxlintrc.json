@@ -28,7 +28,7 @@
     "id-length": "off",
     "no-magic-numbers": "off",
     "no-else-return": "off",
-    "max-lines-per-function": "warn",
+    "max-lines-per-function": ["warn", { "max": 200 }],
     "unicorn/filename-case": "off",
     "unicorn/no-null": "off",
     "unicorn/switch-case-braces": "off",

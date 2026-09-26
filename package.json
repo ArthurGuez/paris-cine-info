@@ -23,7 +23,7 @@
     "jotai": "2.20.3",
     "react": "19.3.0",
     "react-dom": "19.3.0",
-    "zod": "4.6.2"
+    "zod": "4.6.5"
   },
   "devDependencies": {
     "@svg-use/vite": "1.1.1",

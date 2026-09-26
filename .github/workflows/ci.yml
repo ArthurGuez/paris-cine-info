@@ -8,6 +8,11 @@ on:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        check: [typecheck, format:check, lint]
+    name: ${{ matrix.check }}
     steps:
       - uses: actions/checkout@v4.4.0
       - uses: pnpm/action-setup@v6.1.0
@@ -16,7 +21,5 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm typecheck
-      - run: pnpm format:check
-      - run: pnpm lint
+      - run: pnpm ${{ matrix.check }}
       - run: pnpm build

@@ -20,8 +20,8 @@
     "@tanstack/react-router": "1.170.32",
     "@tanstack/react-table": "9.1.2",
     "jotai": "2.20.3",
-    "react": "19.2.8",
-    "react-dom": "19.2.8",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
     "zod": "4.6.2"
   },
   "devDependencies": {
@@ -29,8 +29,8 @@
     "@tailwindcss/vite": "4.3.3",
     "@tanstack/react-router-devtools": "1.167.1",
     "@tanstack/router-plugin": "1.168.35",
-    "@types/react": "^19.2.18",
-    "@types/react-dom": "^19.2.5",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.5",
     "@vitejs/plugin-react": "6.1.0",
     "husky": "9.1.7",
     "lint-staged": "17.3.0",

@@ -50,5 +50,5 @@
     ],
     "*.{json,jsonc}": "oxfmt --check"
   },
-  "packageManager": "pnpm@12.4.1"
+  "packageManager": "pnpm@12.6.0"
 }

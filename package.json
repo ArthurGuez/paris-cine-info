@@ -48,5 +48,6 @@
       "oxlint"
     ],
     "*.{json,jsonc}": "oxfmt --check"
-  }
+  },
+  "packageManager": "pnpm@12.4.1"
 }

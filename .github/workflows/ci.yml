@@ -6,13 +6,8 @@ on:
     branches: [main]
 
 jobs:
-  verify:
+  validate:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        check: [typecheck, format:check, lint]
-    name: ${{ matrix.check }}
     steps:
       - uses: actions/checkout@v4.4.0
       - uses: pnpm/action-setup@v6.1.0
@@ -21,5 +16,16 @@ jobs:
           node-version-file: .nvmrc
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm ${{ matrix.check }}
-      - run: pnpm build
+      # Run below steps regardless of whether an earlier one failed
+      - name: typecheck
+        if: ${{ !cancelled() }}
+        run: pnpm typecheck
+      - name: format:check
+        if: ${{ !cancelled() }}
+        run: pnpm format:check
+      - name: lint
+        if: ${{ !cancelled() }}
+        run: pnpm lint
+      # Run below step if all previous steps succeeded
+      - name: build
+        run: pnpm build

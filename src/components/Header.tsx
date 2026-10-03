@@ -4,9 +4,10 @@ import Settings from './settings/Settings';
 
 interface Props {
   onSearch: (searchTerm: string) => void;
+  searchTerm: string;
 }
 
-export default function Header({ onSearch }: Props) {
+export default function Header({ onSearch, searchTerm }: Props) {
   return (
     <header className="sticky top-0 flex items-center justify-between gap-2 bg-background px-1.5 py-2 lg:gap-5 lg:p-3">
       <div className="block w-8 lg:hidden">
@@ -15,7 +16,7 @@ export default function Header({ onSearch }: Props) {
       <div className="hidden w-52 lg:block">
         <img alt="Logo Paris Ciné Info" src="/images/pci-logo.png" />
       </div>
-      <SearchBar onSearch={onSearch} />
+      <SearchBar onSearch={onSearch} searchTerm={searchTerm} />
       <div className="flex gap-3 lg:gap-4">
         <Filters />
         <Settings />

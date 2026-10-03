@@ -11,7 +11,7 @@ interface Props {
 }
 
 export default function MoviesTable({ table }: Props) {
-  if (table.options.data.length === 0) {
+  if (table.options.data.length === 0 || table.getFilteredRowModel().rows.length === 0) {
     return <p className="text-center text-body">Pas de résultat</p>;
   }
 

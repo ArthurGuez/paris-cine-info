@@ -1,20 +1,13 @@
-import { useEffect, useState } from 'react';
-
 import { Component as MagnifyingGlass } from '../icons/magnifying-glass.svg?svgUse';
 
 const SEARCH_BAR_PLACEHOLDER = 'Rechercher un film, un réalisateur, une salle...';
 
 interface Props {
   onSearch: (searchTerm: string) => void;
+  searchTerm: string;
 }
 
-export default function SearchBar({ onSearch }: Props) {
-  const [searchTerm, setSearchTerm] = useState('');
-
-  useEffect(() => {
-    onSearch(searchTerm);
-  }, [onSearch, searchTerm]);
-
+export default function SearchBar({ onSearch, searchTerm }: Props) {
   return (
     <form className="flex flex-1 items-center">
       <div className="relative w-full">
@@ -22,7 +15,7 @@ export default function SearchBar({ onSearch }: Props) {
           className="h-8.5 w-full truncate rounded-full border border-accent bg-transparent pr-11 pl-5 text-base text-body outline-none lg:h-10"
           name="query"
           onChange={(event) => {
-            setSearchTerm(event.target.value);
+            onSearch(event.target.value);
           }}
           placeholder={SEARCH_BAR_PLACEHOLDER}
           value={searchTerm}

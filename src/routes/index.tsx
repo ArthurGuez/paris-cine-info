@@ -16,7 +16,6 @@ import {
   metaHelper,
 } from '@tanstack/react-table';
 import { useAtomValue } from 'jotai';
-import { useCallback } from 'react';
 
 import { bookmarksAtom } from '../atoms/bookmarks';
 import { MOVIES_COLUMNS } from '../columns';
@@ -63,16 +62,13 @@ function Home() {
     meta: { bookmarks },
   });
 
-  const handleSearch = useCallback(
-    (searchTerm: string) => {
-      table.setGlobalFilter(searchTerm);
-    },
-    [table],
-  );
+  function handleSearch(searchTerm: string) {
+    table.setGlobalFilter(searchTerm);
+  }
 
   return (
     <div className="flex h-dvh flex-col text-sm lg:mx-5 lg:text-base">
-      <Header onSearch={handleSearch} />
+      <Header onSearch={handleSearch} searchTerm={String(table.state.globalFilter ?? '')} />
       <MoviesTable table={table} />
     </div>
   );

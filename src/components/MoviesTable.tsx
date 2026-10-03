@@ -1,5 +1,5 @@
 import { type Table, flexRender } from '@tanstack/react-table';
-import React from 'react';
+import { Fragment } from 'react';
 
 import type { MyFeatures } from '../routes';
 import type { Movie as MovieType } from '../services/types';
@@ -40,7 +40,7 @@ export default function MoviesTable({ table }: Props) {
           </thead>
           <tbody className="text-body">
             {table.getRowModel().rows.map((row) => (
-              <React.Fragment key={row.id}>
+              <Fragment key={row.id}>
                 <tr
                   className="border-b border-accent last:border-b-0 hover:bg-body/5"
                   onClick={row.getToggleExpandedHandler()}
@@ -61,7 +61,7 @@ export default function MoviesTable({ table }: Props) {
                     </td>
                   </tr>
                 )}
-              </React.Fragment>
+              </Fragment>
             ))}
           </tbody>
           <tfoot>

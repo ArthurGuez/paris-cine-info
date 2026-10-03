@@ -8,7 +8,7 @@ const CURRENT_DAY_INDEX = new Date().getDay();
 
 const DAY_FILTER_TITLE = 'Jour';
 
-const DAYS_OF_WEEK: Option<Partial<Day>>[] = [
+const DAYS_OF_WEEK: Option<Day>[] = [
   { label: 'Lundi', value: 'lundi' },
   { label: 'Mardi', value: 'mardi' },
   { label: 'Mercredi', value: 'mercredi' },

@@ -11,7 +11,7 @@
   },
   "options": { "typeAware": true },
   "env": { "builtin": true, "browser": true },
-  "settings": { "react": { "version": "19.2.1" } },
+  "settings": { "react": { "version": "19.3.0" } },
   "ignorePatterns": ["**/dist/**", "lint-staged.config.js", "src/routeTree.gen.ts"],
   "rules": {
     "react/exhaustive-deps": "warn",
